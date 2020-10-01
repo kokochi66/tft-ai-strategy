@@ -1,3 +1,5 @@
+https://kokochi66.github.io/TrainingSample_HTML/
+
 HTML & CSS 실습용 프로젝트입니다.
 
 딱히 사이트 만들고싶은게 없어서 공부중인 java 라이브러리와 함수관련한 정보를
