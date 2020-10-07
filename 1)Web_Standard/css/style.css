@@ -7,14 +7,14 @@
 #skip a:focus {top: 0;}
 
 /* 전체 레이아웃 */
-#wrap {width: 100%;}
-#header {width: 100%; height: 325px; background: url(../img/header_bg.jpg) center top repeat-x;}
-#contents {width: 100%; height: 800px; background: #222;}
-#footer {width: 100%; height: 200px; background: #333;}
+#wrap {}
+#header {height: 325px; background: url(../img/header_bg.jpg) center top repeat-x;}
+#contents {}
+#footer {height: 200px; background: #333;}
 
 /* 컨텐츠 레이아웃 */
-#cont_nav {width: 100%; height: 200px; background: #444;}
-#cont_tit {width: 100%; height: 200px; background: #555;}
+#cont_nav {background: #f6fdff;}
+#cont_tit {background: #EAF7FD;}
 #cont_ban {width: 100%; height: 200px; background: #666;}
 #cont_cont {width: 100%; height: 200px; background: #777;}
 
@@ -43,6 +43,24 @@
 .header_tab .header-icon a.icon2:hover {background-position: -60px -60px;}
 .header_tab .header-icon a.icon3:hover {background-position: -60px -120px;}
 .header_tab .header-icon a.icon4:hover {background-position: -60px -180px;}
+
+
+/* 전체 메뉴 */
+.nav {overflow: hidden;padding: 30px 0;}
+.nav > div {float: left; width: 40%;}
+.nav > div:last-child {width: 20%;} /* ie9부터 사용가능 */
+.nav > div h3 {font-size: 18px; color: #25a2d0; margin-bottom: 4px;}
+.nav > div ol {overflow: hidden;}
+.nav > div ol li {float: left; width: 50%;}
+.nav > div:last-child ol li {width: 100%;}
+.nav > div ol li a:hover {text-decoration: underline;}
+
+
+/* 타이틀 */
+.tit {position: relative;}
+.tit h2 {font-size: 40px; text-align: center; padding: 5px 0;letter-spacing: 2px ;color: #2c94c4; font-family: 'Nanum Brush Script', cursive;}
+.tit .btn {position: absolute; top: 5px; right: 0; width: 60px; height: 60px;
+background: url(../img/icon.png) no-repeat 0 -600px;}
 
 
 
