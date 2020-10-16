@@ -120,15 +120,32 @@ background: url(../img/icon.png) no-repeat; left: 0;top: 0; position: absolute;}
 /* 게시판1 */ 
 .notice1 {position: relative;}
 .notice1 h4 {font-size: 14px; color: #0093bd; font-weight: bold; padding-bottom: 3px;}
-.notice1 ul {}
 .notice1 ul li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
 background: url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px;}
-.notice1 ul li a {}
 .notice1 a.more {position: absolute; right: 0; top: 0;
 background: url(../img/icon.png) -150px -90px; width: 17px;height: 17px; display: block;}
 
+/* 게시판2 */ 
+.notice2 {position: relative; margin-top: 15px;}
+.notice2 h4 {font-size: 14px; color: #0093bd; font-weight: bold; padding-bottom: 3px;}
+.notice2 ul li {background: url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px; overflow: hidden;}
+.notice2 ul li a {float: left; width: 65%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.notice2 ul li span {float: right; width: 30%;}
+.notice2 a.more {position: absolute; right: 0; top: 0;
+background: url(../img/icon.png) -150px -90px; width: 17px;height: 17px; display: block;}
 
 
+/* 게시판3 */ 
+.notice3 {}
+.notice3 h4 {font-size: 14px; color: #0093bd; font-weight: bold; padding-bottom: 5px;}
+.notice3 li {position: relative; height: 60px; padding: 8px 0 0 60px;}
+.notice3 li a img {width: 50px; height: 50px; position: absolute; left: 0; top: 0;
+border: 1px solid #86b5ce;}
+.notice3 li a:hover img {border: 2px solid #86b5ce;}
+.notice3 li a strong {display: block;}
+.notice3 li a span {width: 100%; display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.notice3 a.more {position: absolute; right: 0; top: 0;
+background: url(../img/icon.png) -150px -90px; width: 17px;height: 17px; display: block;}
 
 
 
