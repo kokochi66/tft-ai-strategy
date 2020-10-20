@@ -182,5 +182,13 @@ padding: 0 0 3px 0;}
 
 
 
-
-
+/* 게시판4 탭메뉴 하단 */
+.notice4 {position: relative; border: 1px solid #333; height: 105px; margin-top: 15px;}
+.notice4 h4 {border-bottom: 1px solid #333; padding: 7px 0px 7px 7px;
+    font-size: 14px; color: #0093bd; font-weight: bold;}
+.notice4 h4 em {color: #d73292;}
+.notice4 ul {padding: 8px 0px 8px 0; width: 280px;}
+.notice4 ul li {padding-left: 18px; background: url(../img/dot.gif) no-repeat 9px 8px;  overflow: hidden;}
+.notice4 ul li a {float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 65%;}
+.notice4 ul li span {float: right;}
+.notice4 .more {position: absolute; right: 7px; top: 7px;}
