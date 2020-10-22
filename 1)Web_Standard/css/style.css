@@ -125,7 +125,7 @@ background: url(../img/icon.png) -150px -90px; width: 17px;height: 17px; display
 /* 게시판2 */ 
 .notice2 {position: relative; margin-top: 15px;}
 .notice2 h4 {font-size: 14px; color: #0093bd; font-weight: bold; padding-bottom: 3px;}
-.notice2 ul li {background: url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px; overflow: hidden;}
+.notice2 ul li {position: relative; background: url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px; overflow: hidden;}
 .notice2 ul li a {float: left; width: 65%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
 .notice2 ul li span {float: right; width: 30%;}
 .notice2 a.more {position: absolute; right: 0; top: 0;
@@ -133,6 +133,7 @@ background: url(../img/icon.png) -150px -90px; width: 17px;height: 17px; display
 
 
 /* 게시판3 */ 
+.notice3 {position: relative;}
 .notice3 h4 {font-size: 14px; color: #0093bd; font-weight: bold; padding-bottom: 5px;}
 .notice3 li {position: relative; height: 60px; padding: 8px 0 0 60px;}
 .notice3 li a img {width: 50px; height: 50px; position: absolute; left: 0; top: 0;
@@ -192,3 +193,33 @@ padding: 0 0 3px 0;}
 .notice4 ul li a {float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 65%;}
 .notice4 ul li span {float: right;}
 .notice4 .more {position: absolute; right: 7px; top: 7px;}
+
+
+
+/* 갤러리 */
+.gallery {position: relative; border: 1px solid #333; overflow: hidden; height: 254px;}
+.gallery h4 {font-size: 14px; color: #0093bd; font-weight: bold; float: left; padding: 12px 8px 11px 11px;}
+.gallery .gallery_btn {position: absolute; top: 8px; right: 8px; }
+.gallery .gallery_btn li {float: left; margin-left: 5px;}
+.gallery .gallery_btn li a {display: block; height: 23px; width: 23px; background: url(../img/icon.png) no-repeat;}
+.gallery .gallery_btn li.gal_icon1 a {background-position: -150px -120px;}
+.gallery .gallery_btn li.gal_icon2 a {background-position: -150px -143px;}
+.gallery .gallery_btn li.gal_icon3 a {background-position: -150px -166px;}
+.gallery .gallery_btn li.gal_icon4 a {background-position: -150px -189px;}
+.gallery .gallery_btn li.gal_icon1 a:hover {background-position: -173px -120px;}
+.gallery .gallery_btn li.gal_icon2 a:hover {background-position: -173px -143px;}
+.gallery .gallery_btn li.gal_icon3 a:hover {background-position: -173px -166px;}
+.gallery .gallery_btn li.gal_icon4 a:hover {background-position: -173px -189px;}
+.gallery .gallery_img img {width: 100%; height: inherit;}
+
+
+
+
+
+
+
+
+
+
+
+
