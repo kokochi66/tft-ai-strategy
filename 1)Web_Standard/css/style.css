@@ -213,7 +213,23 @@ padding: 0 0 3px 0;}
 .gallery .gallery_img img {width: 100%; height: inherit;}
 
 
+/* 로그인 창 */
+#login_form {background: #f2f4f5; padding: 15px;}
+#login_form .login_header {overflow: hidden; font-size: 12px; height: 30px;}
+#login_form .login_header .lh_check {float: left; padding-right: 15px;}
+#login_form .login_header .lh_check .input_check {vertical-align: -2px;}
+#login_form .login_header .lh_ip {float: left;}
+#login_form .login_header .lh_ip em {color: #0093bd; text-decoration: underline;}
 
+#login_form .login_content {position: relative;}
+#login_form .login_content .lc_btn {position: absolute; right: 0; top: 0; width: 62px;
+height: 47px; background: #fff; border: 1px solid #bebebe;}
+#login_form .login_content .input_text {width: 180px; height: 16px; padding: 2px 5px;
+border: 1px solid #bebebe; margin-bottom: 3px; background: #fff;}
+
+#login_form .login_footer {margin-top: 5px;}
+#login_form .login_footer li {display: inline;}
+#login_form .login_footer li a {font-size: 12px;}
 
 
 
