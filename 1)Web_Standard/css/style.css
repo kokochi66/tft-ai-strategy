@@ -232,6 +232,13 @@ border: 1px solid #bebebe; margin-bottom: 3px; background: #fff;}
 #login_form .login_footer li a {font-size: 12px;}
 
 
+/* 팝업 */
+.popup {margin-top: 15px;}
+.popup h4 {font-size: 14px; color: #0093bd; font-weight: bold; padding-bottom: 5px;}
+.popup ul {overflow: hidden;}
+.popup li {margin-right: 5px; float: left; width: 90px;}
+.popup li.last {margin-right: 0;}
+.popup li img {width: 100%; border: 1px solid #86b5ce;}
 
 
 
