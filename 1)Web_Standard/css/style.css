@@ -8,7 +8,7 @@
 /* 전체 레이아웃 */
 #wrap {}
 #header {height: 325px; background: url(../img/header_bg.jpg) center top repeat-x;}
-#footer {background: #333; height: 200px;}
+#footer {border: 1px solid #eee;}
 
 /* 컨텐츠 레이아웃 */
 #cont_nav {background: #f6fdff;}
@@ -242,6 +242,14 @@ border: 1px solid #bebebe; margin-bottom: 3px; background: #fff;}
 
 
 
+/* 푸터 */
+.footer {text-align: center; padding: 25px 0;}
+.footer ul {margin-bottom: 20px;}
+.footer ul li {display: inline; padding: 0 8px 0 12px; position: relative;}
+.footer ul li:before {content: ''; top: 2px; left: 0; background: #333; position: absolute;
+width: 1px; height: 12px;}
+.footer ul li:first-child::before { content: none;}
+.footer .w3c { margin-top: 15px;}
 
 
 
