@@ -11,13 +11,13 @@
 #footer {border: 1px solid #eee;}
 
 /* 컨텐츠 레이아웃 */
-#cont_nav {background: #f6fdff;}
+#cont_nav {background: #f6fdff; display: none;}
 #cont_tit {background: #EAF7FD;}
 #cont_ban {background: #dceff7;}
 #cont_cont {background: #f6fdff;}
 
 /* 컨테이너 */
-.container {width: 990px; margin: 0 auto; height: inherit; background: rgba(255,255,255,0.3);}
+.container {width: 990px; margin: 0 auto; height: inherit;}
 
 
 /* 헤더탭 */
@@ -58,13 +58,14 @@
 .tit h2 {font-size: 40px; text-align: center; padding: 5px 0;letter-spacing: 2px ;color: #2c94c4; font-family: 'Nanum Brush Script', cursive;}
 .tit .btn {position: absolute; top: 5px; right: 0; width: 60px; height: 60px;
 background: url(../img/icon.png) no-repeat 0 -600px;}
+.tit .btn.on {background-position: 0 -660px;}
 
 
 
 /* 배너 */
-.ban {position: relative; padding: 24px 0 20px;} 
+ /* .ban {position: relative; padding: 24px 0 20px;}  */
 /* 이미지는 기본 아래여백이 있어서 위아래 차이가 필요 */
-.ban .prev {position: absolute; left: -80px; top: 60px; width: 43px; height: 43px;
+/* .ban .prev {position: absolute; left: -80px; top: 60px; width: 43px; height: 43px;
 background: url(../img/icon.png) no-repeat -150px 0;}
 .ban .next {position: absolute; right:-80px; top: 60px; width: 43px; height: 43px;
 background: url(../img/icon.png) no-repeat -150px -43px;}
@@ -77,7 +78,25 @@ background: url(../img/icon.png) no-repeat -150px -43px;}
 .ban ul li.ban_img2 {text-align: center;}
 .ban ul li.ban_img3 {text-align: right;}
 .ban ul li img {border: 4px solid #dcdcdc;}
-.ban ul li img:hover {border-color: #98bcdc;}
+.ban ul li img:hover {border-color: #98bcdc;} */
+
+
+/* 슬릭 배너 */
+.ban {position: relative; padding-bottom: 30px;}
+.ban .slick-prev {position: absolute; left: -70px; top: 35px; width: 43px; height: 43px;
+    background: url(../img/icon.png) no-repeat -150px 0; font-size: 0;}
+.ban .slick-prev:hover {background-position: -193px 0;}
+.ban .slick-next {position: absolute; right: -70px; top: 35px; width: 43px; height: 43px;
+    background: url(../img/icon.png) no-repeat -150px -43px; font-size: 0;}
+.ban .slick-next:hover {background-position: -193px -43px;}
+.ban img {border: 4px solid #dcdcdc;}
+.ban img:hover {border-color: #98bcdc;}
+.ban .slick-list { margin: 10px; padding-left: 15px;}
+.ban .slick-dots {position: absolute; display: block; text-align: center; width: 100%; bottom: 10px;}
+.ban .slick-dots li {display: inline-block; width: 15px;height: 15px;margin: 5px; }
+.ban .slick-dots li button {font-size: 0; display: block; width: 15px; height: 15px; background: #5dbfeb; border-radius: 50%; margin: 0 2px 0 2px;
+cursor: pointer;} 
+.ban .slick-dots .slick-active button {background: #2b91c8;}
 
 
 
