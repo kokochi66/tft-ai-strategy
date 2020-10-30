@@ -335,14 +335,14 @@
                                       </ul>
                                   </li>
                                   <li> <a href="#">공지사항 2</a>
-                                    <ul style="display: none">
+                                    <ul>
                                           <li><a href="#">공지사항 2에대한 탭메뉴 내용입니다.</a></li>
                                           <li><a href="#">공지사항 2에대한 탭메뉴 내용입니다.</a></li>
                                           <li><a href="#">공지사항 2에대한 탭메뉴 내용입니다.</a></li>
                                     </ul>
                                 </li>
                                 <li> <a href="#">공지사항 3</a>
-                                    <ul style="display: none">
+                                    <ul>
                                           <li><a href="#">공지사항 3에대한 탭메뉴 내용입니다.</a></li>
                                           <li><a href="#">공지사항 3에대한 탭메뉴 내용입니다.</a></li>
                                           <li><a href="#">공지사항 3에대한 탭메뉴 내용입니다.</a></li>
@@ -372,21 +372,30 @@
                           <div class="gallery">
                               <h4>포트폴리오</h4>
                               <div class="gallery_btn">
-                                <ul>
+                                <!-- <ul>
                                     <li class="gal_icon1"><a href="#"><span class="ir_pm">시작</span></a></li>
                                     <li class="gal_icon2"><a href="#"><span class="ir_pm">정지</span></a></li>
                                     <li class="gal_icon3"><a href="#"><span class="ir_pm">이전이미지</span></a></li>
                                     <li class="gal_icon4"><a href="#"><span class="ir_pm">다음이미지</span></a></li>
-                                </ul>
+                                </ul> -->
+                                <button class="gal_icon1 play"><span class="ir_pm">시작</span></button>
+                                <button class="gal_icon2 pause"><span class="ir_pm">정지</span></button>
+                                <button class="gal_icon3 prev"><span class="ir_pm">이전이미지</span></button>
+                                <button class="gal_icon4 next"><span class="ir_pm">다음이미지</span></button>
                               </div>
                               <div class="gallery_img">
-                                  <ul>
+                                  <!-- <ul>
                                       <li><a href="#"><img src="img/gallery01.jpg" alt="갤러리1"></a></li>
                                       <li><a href="#"><img src="img/gallery02.jpg" alt="갤러리2"></a></li>
                                       <li><a href="#"><img src="img/gallery03.jpg" alt="갤러리3"></a></li>
                                       <li><a href="#"><img src="img/gallery04.jpg" alt="갤러리4"></a></li>
                                       <li><a href="#"><img src="img/gallery05.jpg" alt="갤러리5"></a></li>
-                                  </ul>
+                                  </ul> -->
+                                  <div><a href="#"><img src="img/gallery01.jpg" alt="갤러리1"></a></div>
+                                  <div><a href="#"><img src="img/gallery02.jpg" alt="갤러리2"></a></div>
+                                  <div><a href="#"><img src="img/gallery03.jpg" alt="갤러리3"></a></div>
+                                  <div><a href="#"><img src="img/gallery04.jpg" alt="갤러리4"></a></div>
+                                  <div><a href="#"><img src="img/gallery05.jpg" alt="갤러리5"></a></div>
                               </div>
                           </div>
                        </div>
@@ -426,7 +435,7 @@
                </div>
            </div>
        </div>
-<!--       //footer-->
+    <!--//footer-->
    </div>
 <!--   //wrap-->
     <!-- Java Script-->
@@ -434,7 +443,38 @@
     <script src="js/slick.min.js"></script>
     <!-- JQuery 스크립트-->
     <script>
-        // 배너
+        // 탭메뉴 설정 (.tab_menu1)
+        var $tabMenuList = $(".tab_menu1");
+        $tabMenuList.find("ul ul").hide();
+        $tabMenuList.find("ul .active_tab ul").show();
+        function tabMenuSight(e){
+            e.preventDefault();
+            var $Button = $(this);
+            $Button.next("ul").show().parent("li").addClass("active_tab").siblings("li").removeClass("active_tab").find(">ul").hide();
+            $Button.parent("li").siblings("li").find("a").removeClass("active_tab_a");
+            $Button.addClass("active_tab_a");
+        }
+        $tabMenuList.find("ul li a").click(tabMenuSight).focus(tabMenuSight);
+
+        $(".gallery_img").slick({
+            arrows: false,
+            fade: true
+        });
+        $(".play").click(function() {
+            $(".gallery_img").slick("slickPlay");
+        })
+        $(".pause").click(function() {
+            $(".gallery_img").slick("slickPause");
+        })
+        $(".prev").click(function() {
+            $(".gallery_img").slick("slickPrev");
+        })
+        $(".next").click(function() {
+            $(".gallery_img").slick("slickNext");
+        })
+
+
+        // 배너 (.ban)
         // html 마크업 -> CSS 연동 -> JQuery연동 -> JQuery 호출
         $(".ban").slick({
             infinite : true,
@@ -443,6 +483,7 @@
             autoplay:true,
             autoScroll:2000,
             dots:true
+            
         });
 
         // 버튼을 클릭하면 전체 메뉴를 보이게 함

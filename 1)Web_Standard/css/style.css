@@ -82,11 +82,11 @@ background: url(../img/icon.png) no-repeat -150px -43px;}
 
 
 /* 슬릭 배너 */
-.ban {position: relative; padding-bottom: 30px;}
-.ban .slick-prev {position: absolute; left: -70px; top: 35px; width: 43px; height: 43px;
+.ban {position: relative; padding-bottom: 30px; padding-top: 15px;}
+.ban .slick-prev {position: absolute; left: -70px; top: 65px; width: 43px; height: 43px;
     background: url(../img/icon.png) no-repeat -150px 0; font-size: 0;}
 .ban .slick-prev:hover {background-position: -193px 0;}
-.ban .slick-next {position: absolute; right: -70px; top: 35px; width: 43px; height: 43px;
+.ban .slick-next {position: absolute; right: -70px; top: 65px; width: 43px; height: 43px;
     background: url(../img/icon.png) no-repeat -150px -43px; font-size: 0;}
 .ban .slick-next:hover {background-position: -193px -43px;}
 .ban img {border: 4px solid #dcdcdc;}
@@ -216,11 +216,12 @@ padding: 0 0 3px 0;}
 
 
 /* 갤러리 */
-.gallery {position: relative; border: 1px solid #333; overflow: hidden; height: 254px;}
-.gallery h4 {font-size: 14px; color: #0093bd; font-weight: bold; float: left; padding: 12px 8px 11px 11px;}
-.gallery .gallery_btn {position: absolute; top: 8px; right: 8px; }
-.gallery .gallery_btn li {float: left; margin-left: 5px;}
-.gallery .gallery_btn li a {display: block; height: 23px; width: 23px; background: url(../img/icon.png) no-repeat;}
+.gallery {position: relative; border: 1px solid #ccc; height: 255px; overflow: hidden;}
+.gallery h4 {font-size: 14px; color: #0093bd; border-bottom: 1px solid #ccc; padding: 10px 0 8px 11px; font-weight: bold;}
+.gallery .gallery_btn {position: absolute; right: 5px; top: 7px;}
+.gallery .gallery_btn ul {overflow: hidden;}
+.gallery .gallery_btn li {float: left; margin: 1px 2px;}
+.gallery .gallery_btn li a {display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;}
 .gallery .gallery_btn li.gal_icon1 a {background-position: -150px -120px;}
 .gallery .gallery_btn li.gal_icon2 a {background-position: -150px -143px;}
 .gallery .gallery_btn li.gal_icon3 a {background-position: -150px -166px;}
@@ -229,8 +230,19 @@ padding: 0 0 3px 0;}
 .gallery .gallery_btn li.gal_icon2 a:hover {background-position: -173px -143px;}
 .gallery .gallery_btn li.gal_icon3 a:hover {background-position: -173px -166px;}
 .gallery .gallery_btn li.gal_icon4 a:hover {background-position: -173px -189px;}
-.gallery .gallery_img img {width: 100%; height: inherit;}
+.gallery .gallery_img img {width: 100%;}
 
+/* 슬릭 갤러리 */
+.gallery .gallery_btn {overflow: hidden;}
+.gallery .gallery_btn button {float: left; margin: 1px 2px; display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;}
+.gallery .gallery_btn button.gal_icon1 {background-position: -150px -120px;}
+.gallery .gallery_btn button.gal_icon2 {background-position: -150px -143px;}
+.gallery .gallery_btn button.gal_icon3 {background-position: -150px -166px;}
+.gallery .gallery_btn button.gal_icon4 {background-position: -150px -189px;}
+.gallery .gallery_btn button.gal_icon1:hover {background-position: -173px -120px;}
+.gallery .gallery_btn button.gal_icon2:hover {background-position: -173px -143px;}
+.gallery .gallery_btn button.gal_icon3:hover {background-position: -173px -166px;}
+.gallery .gallery_btn button.gal_icon4:hover {background-position: -173px -189px;}
 
 /* 로그인 창 */
 #login_form {background: #f2f4f5; padding: 15px;}
