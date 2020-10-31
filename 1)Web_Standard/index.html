@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/lightgallery.css">
     
 <!--    웹폰트-->
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -257,9 +258,17 @@
                           <div class="popup">
                               <h4>Advertisement</h4>
                               <ul>
-                                  <li><a href="#"><img src="img/sban07.jpg" alt="이미지1"></a></li>
-                                  <li><a href="#"><img src="img/sban08.jpg" alt="이미지2"></a></li>
-                                  <li class="last"><a href="#"><img src="img/sban09.jpg" alt="이미지3"></a></li>
+                                  <li class="ViewPoP"><a href="#"><img src="img/sban07.jpg" alt="이미지1"></a></li>
+                                  <li class="ViewWinPoP"><a href="#"><img src="img/sban08.jpg" alt="이미지2"></a></li>
+                                  <li class="last lightgallery">
+                                      <a href="img/webstandard3.jpg"><img src="img/sban09.jpg" alt="이미지3"></a>
+                                      <a href="img/webstandard1.jpg" style="display: none;"><img src="img/sban09.jpg" alt="이미지3"></a>
+                                      <a href="img/webstandard2.jpg" style="display: none;"><img src="img/sban09.jpg" alt="이미지3"></a>
+                                      <a href="img/webstandard3.jpg" style="display: none;"><img src="img/sban09.jpg" alt="이미지3"></a>
+                                      <a href="img/webstandard1.jpg" style="display: none;"><img src="img/sban09.jpg" alt="이미지3"></a>
+                                      <a href="img/webstandard2.jpg" style="display: none;"><img src="img/sban09.jpg" alt="이미지3"></a>
+                                    </li>
+                                    <!-- //라이트갤러리 팝업-->
                               </ul>
                           </div>
                           <!-- // 팝업창-->
@@ -438,9 +447,20 @@
     <!--//footer-->
    </div>
 <!--   //wrap-->
+
+
+<!-- 레이어 팝업1-->
+<div id="layer">
+    <img src="img/webstandard1.jpg" alt="레이어이미지1">
+    <a href="#" class="closePOP">Close</a>
+</div>
+<!-- //레이어 팝업1-->
+
     <!-- Java Script-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/lightgallery.min.js"></script>
+    <script type="text/javascript" src="js/lightgallery-all.min.js"></script>
     <!-- JQuery 스크립트-->
     <script>
         // 탭메뉴 설정 (.tab_menu1)
@@ -473,6 +493,13 @@
             $(".gallery_img").slick("slickNext");
         })
 
+        // 라이트 갤러리 박스
+        $(".lightgallery").lightGallery({
+            thembnail: true,
+            autoplay: false,
+            progressBar: true
+        });
+
 
         // 배너 (.ban)
         // html 마크업 -> CSS 연동 -> JQuery연동 -> JQuery 호출
@@ -498,6 +525,26 @@
             $("#cont_nav").slideToggle(200);
             $(this).toggleClass("on");
         });
+
+        //레이어 팝업 띄우기
+        $(".ViewPoP").click(function(e){
+            e.preventDefault(); 
+            // $("#layer").css("display","block");
+            $("#layer").slideDown(250);
+        });
+        $(".closePOP").click(function (e) {  
+            e.preventDefault(); 
+            // $("#layer").fadeOut();
+            $("#layer").slideUp(250);
+        });
+
+        $(".ViewWinPoP").click(function(e) {
+            e.preventDefault();
+            // window.open("파일명","팝업이름","옵션설정")
+            // 종류 : left, top, width, height, status, toolbar, location , menubar, scrollbar, fullscreen
+            window.open("pop/winpop.html","winpop1","width=800, height=590, left=50, top=50, scrollbars=0, toolbar=0, menubar=0")
+        });
+
     </script>
     <!-- //Java Script-->
 </body>

@@ -284,4 +284,8 @@ width: 1px; height: 12px;}
 
 
 
-
+/*레이어 팝업*/
+#layer {display: none; position: fixed; width: 700px;top: 50px; left: 50px; border: 10px solid #dceff7; box-shadow: 3px 3px 10px rgba(0,0,0,0.3);}
+#layer img {width: 100%; display: block;}
+#layer .closePOP {position: absolute; top: 20px; right: 20px; background: #0093bd; padding: 5px 5px; color: #fff; font-weight: bold; border-radius: 30%;}
+#layer .closePOP:hover {text-decoration: underline;}
