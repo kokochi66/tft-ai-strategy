@@ -9,7 +9,7 @@ function tabMenuSight(e){
     $Button.parent("li").siblings("li").find("a").removeClass("active_tab_a");
     $Button.addClass("active_tab_a");
 }
-$tabMenuList.find("ul li a").click(tabMenuSight).focus(tabMenuSight);
+$tabMenuList.find("ul>li>a.tabClicked").click(tabMenuSight).focus(tabMenuSight);
 
 $(".gallery_img").slick({
     arrows: false,
