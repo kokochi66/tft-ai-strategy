@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+p {margin: 0;}
+
+/* 실습용 레이아웃 */
+.strawb {color: #fff; font-size: 40px; text-align: center;}
+.container {height: inherit; background: rgba(255,255,255,0.3);
+width: 1000px; margin: 0 auto;}
+
+#a {height: 100px;background: rgb(60, 117, 131);}
+#b {height: 100px;background: rgb(86, 138, 151);}
+#c {height: 600px;background: rgb(77, 158, 179);}
+#d {height: 100px;background: rgb(20, 79, 94);}
+#e {height: 100px;background: rgb(8, 68, 83);}
