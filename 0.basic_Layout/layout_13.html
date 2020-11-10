@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LayoutRes12</title>
+    <style>
+        * {margin: 0; padding: 0; font-size: 40px; text-align: center; font-weight: bold;}
+        body {background: #00bfa5;}
+        #wrap {width: 1200px; background: #1de9b6; margin: 0 auto;}
+        header {height: 150px; width: 100%;background: #64ffda; line-height: 150px;}
+        nav {height: 300px; width: 100%;background: #00b8d4;line-height: 300px;}
+        aside {height: 400px; width: 33%;background: #00e5ff; float: left;line-height: 400px;}
+        .content1 {height: 200px; width: 67%;background: #0091ea; float: left;line-height: 200px;}
+        .content2 {height: 200px; width: 67%;background: #00b0ff; float: left;line-height: 200px;}
+        .article1 {height: 250px; width: 33%;background: #40c4ff; float: left;line-height: 250px;}
+        .article2 {height: 250px; width: 33.5%;background: #26a69a; float: left;line-height: 250px;}
+        .article3 {height: 250px; width: 33.5%;background: #009688; float: left;line-height: 250px;}
+        section {background: #4caf50 ; clear: both; padding: 10%; overflow: hidden;}
+        section > div {height: 200px; width: 23%; margin: 1%; background: #cddc39 ;float: left; border-radius: 10%;
+            line-height: 200px;}
+        footer {height: 100px;width: 100%;background: #4dd0e1;clear: both;line-height: 100px;}
+        
+        @media (max-width: 1200px) {
+            #wrap {width: 100%;}
+            .article1 {width: 50%;}
+            .article2 {width: 50%;}
+            .article3 {display: none;}
+            section > div {width: 31.333%;}
+            section > div:nth-child(4) {display: none;}
+        }
+        @media (max-width: 768px) {
+            .article1 {width: 100%;}
+            .article2 {width: 100%;}
+            section > div {width: 31.333%; height: 150px; line-height: 150px;}
+            section > div:nth-child(4) {display: none;}
+        }
+        @media (max-width: 480px) {
+            aside {width: 100%;}
+            .content1 {width: 100%;}
+            .content2 {width: 100%;}
+            section > div {width: 94%; margin: 3%;}
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <nav>nav</nav>
+        <aside>aside</aside>
+        <div class="content1">content1</div>
+        <div class="content2">content2</div>
+        <article class="article1">article1</article>
+        <article class="article2">article2</article>
+        <article class="article3">article3</article>
+        <section>
+            <div>div1</div>
+            <div>div2</div>
+            <div>div3</div>
+            <div>div4</div>
+        </section>
+        <footer>footer</footer>
+        
+    </div>
+    <strong id="goBack"><a href="layout_sample_index.html">돌아가기</a></strong>
+    
+</body>
+</html>
