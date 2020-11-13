@@ -7,7 +7,7 @@
 #wrap {}
 
 /* 헤더 */
-/* 헤더 상단메뉴 */
+/* 헤더 상단메뉴(header menu) */
 header {height: 327px; background: url(../img/background2.jpg) repeat-x top;}
 header .container .header_menu {text-align: right;}
 header .container .header_menu a {color: rgb(54, 18, 18); font-weight: bold; padding: 6px 8px 8px 0;
@@ -15,22 +15,47 @@ display: inline-block; transition: color 0.5s ease; text-shadow: -1px 0 #fff, 0 
 font-family: "goldman-title";}
 header .header_menu a:hover {color: darkgoldenrod;}
 
-/* 헤더 타이틀 */
+/* 헤더 타이틀(header title) */
 header .header_tit {text-align: center; margin-top: 55px;}
 header .header_tit h1 {font-family: "yeonsung"; font-size: 40px; font-weight: bold;
 background-color: #f48fb1; display: inline-block; padding: 5px 30px 5px 30px; letter-spacing: 2px;
-transition: box-shadow 0.25s ease-in-out;}
+transition: box-shadow 0.4s ease-in-out;}
 header .header_tit h1:hover {
     box-shadow: 
     inset -9em 0 0 0 #f44336,
     inset 9em 0 0 0 #f44336;
 }
 header .header_tit a {font-size: 16px; color: #fce4ec; display: inline-block; padding:  2px 10px 2px 10px;
-background-color: #ec407a; margin-top: -1px; transition: box-shadow 0.25s ease-in-out;}
+background-color: #ec407a; margin-top: -1px; transition: box-shadow 0.25s ease-in-out; font-family: "goldman-title";}
 header .header_tit a:hover {
     box-shadow: 
     inset 0 0 0 5px #880e4f,   
     inset 0 0 0 100px #880e4f;
+}
+
+/* 헤더 아이콘(header icon) */
+header .header_icon {text-align: center; margin-top: 40px; padding-bottom: 45px;}
+header .header_icon li {margin: 0 10px; display: inline;}
+header .header_icon li a {color: #880e4f; font-size: 35px; position: relative; display: inline-block;
+    width: 60px; height: 60px;background-color: #ef9a9a; border-radius: 50%;transition: box-shadow 0.3s ease;}
+header .header_icon li a span {
+    position: absolute; left: 50%; top: -30px; padding: 0 3px 0 3px; transform: translate(-50%);
+    font-size: 12px; font-weight: bold; line-height: 1.6; font-family: "yeonsung";
+    background-color: #ef9a9a; border-radius: 6px 0; opacity: 0;
+    transition: all 0.3s ease;
+}
+header .header_icon li a span::before {
+    content: ''; position: absolute;
+    left: 50%; bottom: -5px; margin-left: -5px;
+    border-top: 5px solid #ef9a9a; border-left: 5px solid transparent; border-right: 5px solid transparent;
+}
+header .header_icon li a:hover span {
+    top: -33px; opacity: 1;
+}
+header .header_icon li a:hover {
+    box-shadow: 
+    inset 0 0 0 5px #e53935,
+    inset 0 0 0 100px #e53935;
 }
 /* //헤더 */
 
