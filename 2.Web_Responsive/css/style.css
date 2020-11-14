@@ -61,8 +61,23 @@ header .header_icon li a:hover {
 
 
 
+/* 내비 전체 메뉴 */
+nav {background: #fce4ec;}
+.nav {overflow: hidden;padding: 20px 0 20px 0;}
+.nav > div {float: left; width: 40%;}
+.nav > div:last-child { width: 20%;}
+.nav > div ol {overflow: hidden;}
+.nav > div li {float: left;width: 50%;}
+.nav > div:last-child li {width: 100%;}
+.anv > div li::before {
+    content: '';
+    width: 3px; height: 3px;
+    background: #25a2d0;
+    border-radius: 50%;
+    position: absolute; left: 0; top: 6px;
 
-nav {}
+}
+.nav > div h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px;}
 
 article {}
 
