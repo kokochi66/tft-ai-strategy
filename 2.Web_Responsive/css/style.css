@@ -1,14 +1,14 @@
 @charset "utf-8";
 
-
+#wrap { background: url(../img/background2.jpg) repeat-x top;}
 /* 컨테이너 초기화 */
-.container {width: 1200px; height: inherit; margin: 0 auto; background: rgba(255,255,255, 0.3);}
+.container {width: 1200px; height: inherit; margin: 0 auto;}
 
 #wrap {}
 
 /* 헤더 */
 /* 헤더 상단메뉴(header menu) */
-header {height: 327px; background: url(../img/background2.jpg) repeat-x top;}
+header {height: 327px;}
 header .container .header_menu {text-align: right;}
 header .container .header_menu a {color: rgb(54, 18, 18); font-weight: bold; padding: 6px 8px 8px 0;
 display: inline-block; transition: color 0.5s ease; text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
@@ -62,24 +62,27 @@ header .header_icon li a:hover {
 
 
 /* 내비 전체 메뉴 */
-nav {background: #fce4ec;}
-.nav {overflow: hidden;padding: 20px 0 20px 0;}
-.nav > div {float: left; width: 40%;}
-.nav > div:last-child { width: 20%;}
-.nav > div ol {overflow: hidden;}
-.nav > div li {float: left;width: 50%;}
-.nav > div:last-child li {width: 100%;}
-.anv > div li::before {
-    content: '';
-    width: 3px; height: 3px;
-    background: #25a2d0;
-    border-radius: 50%;
-    position: absolute; left: 0; top: 6px;
+nav {background: rgba(230, 208, 208, 0.9);}
+.nav { padding: 10px 0 10px 0;}
+.nav > div h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px; text-align: center;}
+.nav > div ol {overflow: hidden; text-align: center; padding: 0 194px 0 194px;
+height: 140px; margin-top: 10px;}
+.nav > div a {float: left;
+height: 124px; width: 124px; margin-right: 48px; margin-bottom: 20px; position: relative; overflow: hidden;}
+.nav > div a.last {margin-right: 0;}
+.nav > div a li {border-radius: 50%; border: 2px solid #7cb342; width: 120px; height: 120px;
+overflow: hidden; position: absolute; }
+.nav > div a .menu_img1 {background: url(../img/menu_baddiesel.png) no-repeat; background-size: contain;}
+.nav > div a .menu_img2 {background: url(../img/menu_FireWatch.png) no-repeat; background-size: contain;} 
+.nav > div a .menu_img3 {background: url(../img/menu_gardenstudio.png) no-repeat; background-size: contain;} 
+.nav > div a .menu_img4 {background: url(../img/menu_HelloMonday.png) no-repeat; background-size: contain;} 
+.nav > div a .menu_img5 {background: url(../img/menu_ToyFight.png) no-repeat; background-size: contain;}
 
-}
-.nav > div h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px;}
+.nav > div a li span {opacity: 0; transition: all 0.2s ease-in-out; background: rgba(90, 60, 60, 0.6); width: 0;  height: 50%; top: 25%;left: 50%;
+    position: absolute; font-size: 30px; color: #fff; font-family: "yeonsung"; text-align: center; line-height: 60px;}
+.nav > div a li:hover span {opacity: 1; width: 100%; left: 0;}
 
-article {}
+article {height: 600px; background: rgba(218, 226, 182, 0.9);}
 
 main {}
 main section {}
