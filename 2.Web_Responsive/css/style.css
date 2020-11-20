@@ -21,15 +21,15 @@ header .header_tit h1 {font-family: "yeonsung"; font-size: 40px; font-weight: bo
 background-color: #f48fb1; display: inline-block; padding: 5px 30px 5px 30px; letter-spacing: 2px;
 transition: box-shadow 0.4s ease-in-out;}
 header .header_tit h1:hover {
-    box-shadow: 
+    box-shadow:
     inset -9em 0 0 0 #f44336,
     inset 9em 0 0 0 #f44336;
 }
 header .header_tit a {font-size: 16px; color: #fce4ec; display: inline-block; padding:  2px 10px 2px 10px;
 background-color: #ec407a; margin-top: -1px; transition: box-shadow 0.25s ease-in-out; font-family: "goldman-title";}
 header .header_tit a:hover {
-    box-shadow: 
-    inset 0 0 0 5px #880e4f,   
+    box-shadow:
+    inset 0 0 0 5px #880e4f,
     inset 0 0 0 100px #880e4f;
 }
 
@@ -53,7 +53,7 @@ header .header_icon li a:hover span {
     top: -33px; opacity: 1;
 }
 header .header_icon li a:hover {
-    box-shadow: 
+    box-shadow:
     inset 0 0 0 5px #e53935,
     inset 0 0 0 100px #e53935;
 }
@@ -62,29 +62,110 @@ header .header_icon li a:hover {
 
 
 /* 내비 전체 메뉴 */
-nav {background: rgba(230, 208, 208, 0.9);}
-.nav { padding: 10px 0 10px 0;}
-.nav > div h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px; text-align: center;}
-.nav > div ol {overflow: hidden; text-align: center; padding: 0 194px 0 194px;
-height: 140px; margin-top: 10px;}
-.nav > div a {float: left;
-height: 124px; width: 124px; margin-right: 48px; margin-bottom: 20px; position: relative; overflow: hidden;}
-.nav > div a.last {margin-right: 0;}
-.nav > div a li {border-radius: 50%; border: 2px solid #7cb342; width: 120px; height: 120px;
-overflow: hidden; position: absolute; }
-.nav > div a .menu_img1 {background: url(../img/menu_baddiesel.png) no-repeat; background-size: contain;}
-.nav > div a .menu_img2 {background: url(../img/menu_FireWatch.png) no-repeat; background-size: contain;} 
-.nav > div a .menu_img3 {background: url(../img/menu_gardenstudio.png) no-repeat; background-size: contain;} 
-.nav > div a .menu_img4 {background: url(../img/menu_HelloMonday.png) no-repeat; background-size: contain;} 
-.nav > div a .menu_img5 {background: url(../img/menu_ToyFight.png) no-repeat; background-size: contain;}
+nav {background-color: rgba(158,158,158,0.7);}
+nav h3 {
+  color: #01579b;
+  font-size: 25px;
+  text-align: center;
+  font-family: "yeonsung";
+  font-weight: bold;
+}
+nav ol {
+  text-align: center;
+}
+nav ol li {
+  height: 120px;
+  width: 120px;
+  display: inline-block;
+  margin: 10px 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+nav ol li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
-.nav > div a li span {opacity: 0; transition: all 0.2s ease-in-out; background: rgba(90, 60, 60, 0.6); width: 0;  height: 50%; top: 25%;left: 50%;
-    position: absolute; font-size: 30px; color: #fff; font-family: "yeonsung"; text-align: center; line-height: 60px;}
-.nav > div a li:hover span {opacity: 1; width: 100%; left: 0;}
+.nav > div li.menu_img1 {background: url(../img/menu_baddiesel.png) no-repeat; background-size: contain;}
+.nav > div li.menu_img2 {background: url(../img/menu_FireWatch.png) no-repeat; background-size: contain;}
+.nav > div li.menu_img3 {background: url(../img/menu_gardenstudio.png) no-repeat; background-size: contain;}
+.nav > div li.menu_img4 {background: url(../img/menu_HelloMonday.png) no-repeat; background-size: contain;}
+.nav > div li.menu_img5 {background: url(../img/menu_ToyFight.png) no-repeat; background-size: contain;}
 
-article {height: 600px; background: rgba(218, 226, 182, 0.9);}
+.nav > div li  a span {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  background: rgba(90, 60, 60, 0.6);
+  width: 0;
+  height: 50%;
+  top: 25%;
+  left: 50%;
+  position: absolute;
+  font-size: 30px;
+  color: #fff;
+  font-family: "yeonsung";
+  text-align: center;
+  line-height: 60px;
+  overflow: hidden;
+}
+.nav > div li a:hover span {opacity: 1; width: 100%; left: 0;}
 
-main {}
+
+
+/* 메뉴열기 (서브타이틀) */
+#sub_tit {
+  background: rgba(224, 224, 224, 0.7);
+}
+#sub_tit .container {
+  position: relative;
+}
+#sub_tit h2
+{
+  text-align: center;
+  font-size: 50px;
+  font-family: "yeonsung";
+  padding: 15px 10px;
+  text-shadow: 0 3px 2px  #bdbdbd;
+}
+#sub_tit .button {
+  width: 65px;
+  height: 65px;
+  font-size: 50px;
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  background-color: #827717;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#sub_tit .button:hover {
+  box-shadow:
+  0 0 0 3px #33691e inset,
+  0 0 0 100px #689f38 inset;
+}
+#sub_tit .button i  {
+  position: absolute;
+  color: #e6ee9c;
+  top: 7px;
+  right: 9px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+main {height: 600px;  background-color: #fff;}
 main section {}
 
 footer {}
@@ -93,4 +174,16 @@ footer {}
 @media (max-width: 1220px){
     .container {width: 100%;}
     header .container .header_menu a {padding-right: 15px;}
+    .nav > div li.menu_img5 {display: none;}
+}
+@media (max-width: 768px){
+  header {height: 150px;}
+  header .header_tit {display: none;}
+  header .header_icon {display: none;}
+  .nav > div li.menu_img3 {display: none;}
+  .nav > div li.menu_img4 {display: none;}
+  #sub_tit .button {right: 20px;}
+}
+@media (max-width: 480px){
+  nav  {display: none;}
 }

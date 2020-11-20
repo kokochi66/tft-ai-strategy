@@ -6,7 +6,7 @@
     <meta name="description" content="반응형 사이트 따라하기">
     <meta name="keywords" content="반응형, HTML5, webs, github, webstoryboy">
     <title>꼬꼬치꼬치의 반응형 사이트 따라하기 실습</title>
-    
+
     <!-- here is Style -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -23,7 +23,7 @@
     <link rel="icon" href="icon/kebab-128.png" sizes="128x128">
 
     <!-- HTML5shiv-->
-    <!--[if lt IE 9]> 
+    <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
         <script type="text/javascript">
             alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
@@ -33,14 +33,11 @@
 <body>
     <div id="wrap">
         <header>
-            <div class="header_cont">
-
-            </div>
             <div class="container">
                 <div class="header_menu">
                     <a href="https://github.com/kokochi66">Github</a>
                     <a href="https://www.youtube.com/channel/UCsvQSv7EeCMHyYb9ENKAJZw">Webstoryboy</a>
-                    <a href="../1.Web_Standard/index.html">WebStandard</a>
+                    <a href="#">WebStandard</a>
                 </div>
                 <!-- //헤더메뉴(header_menu) -->
                 <div class="header_tit">
@@ -79,13 +76,11 @@
                         <div>
                             <h3>참고 할만한 사이트</h3>
                             <ol>
-                                <a href="http://bad.diesel.com/"><li class="menu_img1">
-                                    <span>이동</span>
-                                </li></a>
-                                <a href="http://www.firewatchgame.com/"><li class="menu_img2"><span>이동</span></li></a>
-                                <a href="https://gardenestudio.com.br/index.php"><li class="menu_img3"><span>이동</span></li></a>
-                                <a href="https://www.hellomonday.com/"><li class="menu_img4"><span>이동</span></li></a>
-                                <a href="https://toyfight.co/who/" class="last"><li class="menu_img5"><span>이동</span></li></a>
+                                <li class="menu_img1"><a href="http://bad.diesel.com/"><span>이동</span></a></li>
+                                <li class="menu_img2"><a href="http://www.firewatchgame.com/"><span>이동</span></a></li>
+                                <li class="menu_img3"><a href="https://gardenestudio.com.br/index.php"><span>이동</span></a></li>
+                                <li class="menu_img4"><a href="https://www.hellomonday.com/"><span>이동</span></a></li>
+                                <li class="menu_img5"><a href="https://toyfight.co/who/"><span>이동</span></a></li>
                             </ol>
                         </div>
                     </div>
@@ -93,8 +88,13 @@
             </div>
         </nav>
         <!--//내비메뉴(nav)-->
-        <article>
+        <article id="sub_tit">
+          <div class="container">
             <h2>서브 타이틀</h2>
+            <div class="button">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </div>
+          </div>
         </article>
         <main>
             <section>
@@ -123,6 +123,7 @@
             <h2>푸터</h2>
         </footer>
     </div>
+    <!-- //전체 wrap -->
 
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/modernizr-custom.js"></script>
