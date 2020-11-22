@@ -178,7 +178,7 @@ main {background-color: #e8eaf6;}
   border-right: 2px solid #888; border-left: 2px solid #888;}
 #contents .left {float: left; width: 250px;}
 #contents .center {
-    overflow: hidden; min-height: 1300px; margin-right: 250px;
+    overflow: hidden; min-height: 1800px; margin-right: 250px;
     border-right: 2px solid #888;
     border-left: 2px solid #888;
 }
@@ -187,7 +187,6 @@ main {background-color: #e8eaf6;}
 }
 
  #contents section {
-  text-align: center;
   font-family: 'Stylish', sans-serif;
 }
  #contents section .column {
@@ -259,9 +258,7 @@ main {background-color: #e8eaf6;}
   text-transform: uppercase;
   font-size: 15px;
 }
-#contents .left .column.col2 .more:hover {
-  color: #f48fb1;
-}
+#contents .left .column.col2 .more:hover {color: #f48fb1;}
 /* //왼쪽 컨텐츠2 :: 사이드 한줄효과 메뉴 작업 */
 
 /* 왼쪽 컨텐츠3 :: 사이드 두줄효과 메뉴 작업 */
@@ -294,8 +291,20 @@ main {background-color: #e8eaf6;}
   text-transform: uppercase;
   font-size: 15px;
 }
-#contents .left .column.col3 .more:hover {
-  color: #f48fb1;
+#contents .left .column.col3 .more:hover {color: #f48fb1;}
+/* //왼쪽 컨텐츠3 :: 사이드 두줄효과 메뉴 작업 */
+
+/* 왼쪽 컨텐츠4 :: 블로그 화면 - 고해상도 이미지 지원 */
+#contents .left .column.blog .blog1 {margin-top: 20px;}
+#contents .left .column.blog .blog2 {margin-top: 20px;}
+#contents .left .column.blog figure {margin: 0;}
+#contents .left .column.blog .img-retina {display: none;}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5),
+        only screen and (min-resolution: 1.5dppx) {
+        .blog1 .img-retina {display: initial;}
+        .blog1 .img-normal {display: none;}
 }
 
 
