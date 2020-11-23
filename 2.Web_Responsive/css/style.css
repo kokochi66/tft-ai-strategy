@@ -297,7 +297,6 @@ main {background-color: #e8eaf6;}
 /* 왼쪽 컨텐츠4 :: 블로그 화면 - 고해상도 이미지 지원 */
 #contents .left .column.blog .blog1 {margin-top: 20px;}
 #contents .left .column.blog figure {margin: 0;}
-#contents .left .column.blog .img-retina {display: none;}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (min-device-pixel-ratio: 1.5),
         only screen and (min-resolution: 1.5dppx) {
@@ -319,12 +318,12 @@ main {background-color: #e8eaf6;}
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-device-pixel-ratio: 2),
   only screen and (min-resoultion: 2dppx) {
-    .blog2 .img-retina {background-image: url(../img/blog4_@2.jpg);}
+    .blog2 .img_retina {background-image: url(../img/blog4_@2.jpg);}
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 3),
   only screen and (min-device-pixel-ratio: 3),
   only screen and (min-resoultion: 3dppx) {
-    .blog2 .img-retina {background-image: url(../img/blog4_@3.jpg);}
+    .blog2 .img_retina {background-image: url(../img/blog4_@3.jpg);}
 }
 
 
