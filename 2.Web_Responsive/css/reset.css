@@ -10,11 +10,14 @@ a:hover {color: #390;}
 
 /* 폰트 초기화 */
 body, input, textarea, select, button, table {
-            font-family:'Nanum Gothic', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; 
+            font-family:'Nanum Gothic', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
             color: #222; font-size: 13px; line-height: 1.5;}
 
 /* 폰트 스타일 초기화 */
 em, address { font-style: normal;}
+
+/* 버튼 초기화 */
+button {border: 0; outline: 0;}
 
 /* 불릿기호 초기화 */
 dl, ul, ol, li, menu {list-style: none;}
