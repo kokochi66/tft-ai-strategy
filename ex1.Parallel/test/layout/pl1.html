@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  /* reset */
+  * {margin: 0; padding: 0;}
+  a {text-decoration: none;}
+  li {list-style: none;}
+
+  /* 메인 컨텐츠 */
+      #wrap section {height: 100vh; font-size: 12vh; text-align: center;
+      line-height: 100vh; font-weight: bold;}
+      #sec1 {background-color: #f48fb1;}
+      #sec2 {background-color: #ef9a9a;}
+      #sec3 {background-color: #e57373;}
+      #sec4 {background-color: #ce93d8;}
+
+/* 사이드 메뉴바 기본값 작업*/
+      #sidebar {position: fixed; top: 0; left: -300px; background-color: rgba(0,0,0,0.6);
+      width: 300px; height: 100vh;}
+      #sidebar h1 {text-align: center; padding: 40px 40px 60px 40px; font-size: 40px;
+      color: #fff; text-shadow: 0 2px 2px #000;}
+      #sidebar ul li {border-left: 2px solid transparent;  cursor: pointer;
+      background-color: rgba(196, 121, 121, 0.4); margin-bottom: 10px;}
+      #sidebar ul li:hover {background-color: rgba(8, 237, 59, 0.2);}
+      #sidebar ul li.active {background-color: rgba(61, 174, 255, 0.2);}
+      #sidebar ul li a {text-transform: uppercase; color: #000; font-size: 25px; font-weight: bold;
+      text-shadow: 1px 2px 3px #fff; width: 100%; height: 100%;padding: 15px 40px; display: block;}
+      #sidebar #ONFBtn {position:absolute;  top: 10px; right: -70px; height: 60px; width: 60px;
+      background-color: rgba(134, 221, 227,0.4); border-radius: 50%; color: #000;
+    line-height: 60px;  text-align: center; font-weight: bold;}
+  </style>
+  <title>패럴렉스 레이아웃 연습1</title>
+</head>
+<body>
+
+  <div id="sidebar">
+    <h1>사이드 메뉴</h1>
+    <ul>
+      <li class="active"><a href="#sec1">menu1</a></li>
+      <li><a href="#sec2">menu2</a></li>
+      <li><a href="#sec3">menu3</a></li>
+      <li><a href="#sec4">menu4</a></li>
+    </ul>
+    <a href="#" id="ONFBtn">OPEN</a>
+  </div>
+  <div id="wrap">
+    <section id="sec1">sec1</section>
+    <section id="sec2">sec2</section>
+    <section id="sec3">sec3</section>
+    <section id="sec4">sec4</section>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    // 스크립트 부분
+
+//  1. 기본 메뉴설정 (클릭시 화면이동효과)
+    var button = $("#sidebar ul li");
+    var section = $("#wrap section");
+    var openside = false;
+    button.click(function(e){
+      e.preventDefault();
+      var Cbutton = $(this);
+      var index = Cbutton.index();
+      var offset = section.eq(index).offset();
+      $("html, body").animate({scrollTop: offset.top},600,"easeInOutQuint");
+      if(openside){
+        $("#sidebar").removeClass("on");
+        $("#sidebar").animate({"left":"-300px"},500,"easeInOutQuint");
+        $("#ONFBtn").text("OPEN");
+        openside = false;
+      }
+    });
+
+// 2. 사이드바 열고닫기 기능
+    var sidebutton = $("#sidebar #ONFBtn");
+    sidebutton.click(function(e){
+      e.preventDefault();
+      $("#sidebar").toggleClass("on");
+      if( $("#sidebar").hasClass("on")){
+        $("#sidebar").animate({"left":"0"},500,"easeInOutQuint");
+        $("#ONFBtn").text("CLOSE");
+        openside = true;
+      } else {
+        $("#sidebar").animate({"left":"-300px"},500,"easeInOutQuint");
+        $("#ONFBtn").text("OPEN");
+        openside = false;
+      }
+    });
+
+// 3. window값을 체크하고 사이드바의 위치체크하기
+    $(window).scroll(function() {
+        var CurrScroll = $(this).scrollTop();
+        if(CurrScroll >= section.eq(0).offset().top) {
+          button.removeClass("active");
+          button.eq(0).addClass("active");
+        }
+        if(CurrScroll >= section.eq(1).offset().top) {
+          button.removeClass("active");
+          button.eq(1).addClass("active");
+        }
+        if(CurrScroll >= section.eq(2).offset().top) {
+          button.removeClass("active");
+          button.eq(2).addClass("active");
+        }
+        if(CurrScroll >= section.eq(3).offset().top) {
+          button.removeClass("active");
+          button.eq(3).addClass("active");
+        }
+    });
+  </script>
+</body>
+</html>

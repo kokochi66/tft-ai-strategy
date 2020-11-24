@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* 폰트 초기화 */
+@font-face {
+    src: url(../font/Ubuntu-Bold.ttf);
+    font-family: "Ubuntu_B";
+}
+@font-face {
+    src: url(../font/Ubuntu-Light.ttf);
+    font-family: "Ubuntu_L";
+}
+@font-face {
+    src: url(../font/Ubuntu-Medium.ttf);
+    font-family: "Ubuntu_M";
+}
+@font-face {
+    src: url(../font/DoHyeon-Regular.ttf);
+    font-family: "DoHyeon";
+}

@@ -1,0 +1,64 @@
+@charset "utf-8";
+* {}
+#wrap {font-family: "DoHyeon";}
+
+
+/* 상단메뉴 레이아웃 정의 */
+#TOPnav {position: fixed; height: 10%;
+width: 100%; overflow: hidden;}
+#TOPnav .TOPnav {position: relative; margin-top: 15px;}
+#TOPnav .TOPnav .RESnav ul {margin: 0 auto; width: 50%;
+text-align: center;}
+#TOPnav .TOPnav .RESnav ul li {display: inline-block;
+margin-left: 8px; margin-right: 8px; cursor: pointer;}
+#TOPnav .TOPnav .RESnav ul li:hover a {color: #ba68c8;}
+#TOPnav .TOPnav .RESnav ul li.last {margin-right: 0;}
+#TOPnav .TOPnav .RESnav ul li a {font-size: 20px; font-weight: bold;
+text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;}
+
+/* 액티비티 효과 */
+#TOPnav .TOPnav .RESnav ul .active a {color: #902323;}
+
+/* 상단메뉴 반응형 레이아웃 (800px이하) */
+#TOPnav .TOPnav .Baricon {position: absolute; top: 0px; right: 2%;
+font-size: 60px; display: none;}
+#TOPnav .TOPnav .Baricon:hover {color: #f8bbd0;}
+#TOPnav .TOPnav .Baricon i {text-shadow: -2px 0 #ffcdd2, 0 2px #ffcdd2, 2px 0 #ffcdd2, 0 -2px #ffcdd2;}
+#TOPnav .TOPnav .Title {display: none;}
+#TOPnav .TOPnav .Title:hover {color: #f8bbd0;}
+#TOPnav .TOPnav .cancel {display: none;
+font-size: 50px; position: absolute; top: 2%; right: 3%;}
+#TOPnav .TOPnav .cancel:hover {color: #f8bbd0;}
+#TOPnav .TOPnav .cancel i {text-shadow: -2px 0 #ffcdd2, 0 2px #ffcdd2, 2px 0 #ffcdd2, 0 -2px #ffcdd2;}
+
+
+/* 메인 article 컨텐츠 정의 */
+.intro1 {text-align: center;}
+.intro1 > section {height: 100vh; line-height: 100vh; overflow: hidden;}
+.intro1 > section > h2 {font-size: 70px;font-weight: 100; text-transform: uppercase;color: #fff;
+    text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;}
+
+#sect_1 {background:radial-gradient(ellipse farthest-corner at center top, #8196EB 0%, #343C5E 100%); }
+#sect_2 {background:radial-gradient(ellipse farthest-corner at center top, #7D5A9E, #BB86EB); }
+#sect_3 {background:radial-gradient(ellipse farthest-corner at center bottom, #E2B9C6 0%, #9D5679 100%); }
+#sect_4 {background:radial-gradient(ellipse farthest-corner at center top, #44564A 0%, #508164 100%); }
+#sect_5 {background:radial-gradient(ellipse farthest-corner at center top, #81AAB3 0%, #D3E1E6 100%); }
+
+@media (max-width: 800px){
+    #TOPnav {height: 100%;}
+    #TOPnav .TOPnav {margin-right: 0; margin-top: 0;}
+    #TOPnav .TOPnav .RESnav {display: none;}
+    #TOPnav .TOPnav .Baricon {display: block;}
+
+    /* 반응형 탑메뉴 작업 */
+    #TOPnav .TOPnav .RESnav {
+        height: 90%;
+        background-color: rgb(148, 148, 148);
+        text-align: center;
+    }
+    #TOPnav .TOPnav .RESnav ul {padding: 10%;}
+    #TOPnav .TOPnav .RESnav ul li {display: block; margin: 0;
+    padding: 15px; background-color: rgba(0, 0, 0, 0.3); margin-bottom: 20px;}
+    #TOPnav .TOPnav .RESnav ul li:hover {background-color: #ffebee;}
+    #TOPnav .TOPnav .RESnav ul .active {background-color: rgba(219, 103, 103, 0.3);}
+}

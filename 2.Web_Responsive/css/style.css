@@ -327,9 +327,7 @@ main {background-color: #e8eaf6;}
 }
 
 /* 중앙 컨텐츠1 :: Slick 이미지 슬라이드 효과 */
-.slider figure {
-  position: relative;
-}
+.slider figure {position: relative;}
 .slider figcaption {
   position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
   box-sizing: border-box;
@@ -383,6 +381,37 @@ main {background-color: #e8eaf6;}
   text-indent: 0; font-size: 20px;
   left: 11px; top: 8px; position: absolute;
 }
+/* //중앙 컨텐츠1 :: Slick 이미지 슬라이드 효과 */
+
+/* 중앙 컨텐츠2 :: lightGallery를 이용한 Blend Effect 효과 */
+.square a {
+  position: relative;
+  float: left; width: 19%;
+  margin: 0.5%; overflow:hidden;}
+.square a img {width: 100%; display: block;
+transition: all 0.3s ease;}
+.square a em {
+  background: rgba(0,0,0,0.77); color: #fff; width: 100%;
+  text-align: center; position: absolute; left: 0; bottom: -30px; opacity: 1;
+  transition: all 0.3s ease;
+}
+.square a:hover em {bottom: 0; background: rgba(0,0,0,0.57);}
+.square a:nth-child(1):hover img {filter: blur(2px);}
+.square a:nth-child(2):hover img {filter: brightness(50%);}
+.square a:nth-child(3):hover img {filter: contrast(30%);}
+.square a:nth-child(4):hover img {filter: grayscale(100%);}
+.square a:nth-child(5):hover img {filter: hue-rotate(120deg);}
+.square a:nth-child(6):hover img {filter: invert(100%);}
+.square a:nth-child(7):hover img {filter: opacity(20%);}
+.square a:nth-child(8):hover img {filter: saturate(5%);}
+.square a:nth-child(9):hover img {filter: sepia(120%);}
+.square a:nth-child(10):hover img {filter: hue-rotate(120deg) sepia(8%); }
+/* //중앙 컨텐츠2 :: lightGallery를 이용한 Blend Effect 효과 */
+
+/* 중앙 컨텐츠3 :: 유튜브 비디오 */
+.video {position: relative; width: 100%; padding-bottom: 56.25%;}
+.video iframe {position: absolute; width: 100%; height: 100%;}
+/* //중앙 컨텐츠3 :: 유튜브 비디오 */
 
 /*
 main #contents .center {
@@ -444,6 +473,8 @@ footer {height: 150px; background-color: #fff;
     width: 100%;
     border-top: 2px solid #888;
   }
+  .square a {width: 24%;}
+  .square a:nth-child(5n) {display: none;}
   /* // 반응형 메인 컨텐츠 작업 */
 }
 @media (max-width: 768px){
@@ -462,6 +493,8 @@ footer {height: 150px; background-color: #fff;
     position: static;
     width: 100%;
   }
+  .square a {width: 32.33333%;}
+  .square a:nth-child(5) {display: block;}
   /* // 반응형 메인 컨텐츠 작업 768 */
 
   .slider figcaption {padding: 10px;}
@@ -484,4 +517,7 @@ footer {height: 150px; background-color: #fff;
   #contents .left .col1 ul li a:hover {box-shadow:inset 100px 0 0 0 #ffc107;}
   /* //반응형 왼쪽 컨텐츠 작업(타이틀 빼주기) */
 
+  .square a {width: 49%;}
+  .square a:nth-child(5) {display: none;}
+  /* // 반응형 메인 컨텐츠 작업 480 */
 }
