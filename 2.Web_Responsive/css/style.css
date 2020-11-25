@@ -96,6 +96,7 @@ nav ol li a {
   display: block;
 }
 
+.nav {display: none;}
 .nav > div li.menu_img1 {background: url(../img/menu_baddiesel.png) no-repeat; background-size: contain;}
 .nav > div li.menu_img2 {background: url(../img/menu_FireWatch.png) no-repeat; background-size: contain;}
 .nav > div li.menu_img3 {background: url(../img/menu_gardenstudio.png) no-repeat; background-size: contain;}
@@ -413,29 +414,15 @@ transition: all 0.3s ease;}
 .video iframe {position: absolute; width: 100%; height: 100%;}
 /* //중앙 컨텐츠3 :: 유튜브 비디오 */
 
-/*
-main #contents .center {
-  width: 100%;
+.footer {text-align: center; padding: 30px 50px;}
+.footer li {display: inline; padding: 0 8px; white-space: nowrap;
+position: relative;}
+.footer li::before {
+  content: ''; width: 1px; height: 12px; background-color: #777;
+  position: absolute; left: 0; top: 3px;
 }
-main #contents .center .mainContainer {
-  margin: 0 302px;
-  background-color: #e8eaf6;
-  border-bottom: 2px solid #666;
-  border-top: 2px solid #666;
-  display: block;
-}
-
-main #contents .right {
-  width: 300px;
-  top: 0; right: 0;
-  position: absolute;
-  border: 2px solid #666;
-}
-
-
-footer {height: 150px; background-color: #fff;
-  clear: both;
-}
+.footer li:first-child::before {content: none;}
+.footer address {padding-top: 15px;}
 
 
 
@@ -471,11 +458,17 @@ footer {height: 150px; background-color: #fff;
   main #contents .right {
     position: static;
     width: 100%;
-    border-top: 2px solid #888;
+    border-top: 1px solid #888;
   }
   .square a {width: 24%;}
   .square a:nth-child(5n) {display: none;}
   /* // 반응형 메인 컨텐츠 작업 */
+
+  #contents .right {overflow: hidden;}
+  #contents .right .column {float: left; width: 33.3333%; box-sizing: border-box;}
+  #contents .right .column.col7 {border-right: 2px solid #dbdbdb; border-bottom: 0;}
+  #contents .right .column.col8 {border-right: 2px solid #dbdbdb; border-bottom: 0;}
+  /* // 반응형 우측 사이드 이미지 작업 */
 }
 @media (max-width: 768px){
   header {height: 50px;}
@@ -484,7 +477,7 @@ footer {height: 150px; background-color: #fff;
   /* //반응형 헤더 작업 768 */
   .nav > div li.menu_img3 {display: none;}
   .nav > div li.menu_img4 {display: none;}
-  #sub_tit .button {right: 20px;}
+  #sub_tit .button {display: none;}
   /* //반응형 서브타이틀 작업 768 */
   main #contents .center {
     border-top: 2px solid #888;
@@ -500,6 +493,12 @@ footer {height: 150px; background-color: #fff;
   .slider figcaption {padding: 10px;}
   .slider figcaption em {font-size: 15px;}
   .slider figcaption span {font-size: 12px;}
+  /* // 반응형 메인 슬라이더 작업 */
+
+  #contents .right .column {width: 50%;}
+  #contents .right .column.col9 {border-right: 0;}
+  #contents .right .column.col9 {display: none;}
+  /* // 반응형 우측 이미지 작업 */
 }
 @media (max-width: 480px){
   nav  {display: none;}
