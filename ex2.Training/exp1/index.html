@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>강의용 기업 사이트 만들기 1편</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div class="container">
+        <div id="top">
+          <div class="left">
+            <a href="#">추가정보</a>
+            <a class="last" href="#">기타</a>
+            <form action="" method="post">
+              <input class="insert" type="text" name="asda" value="입력창">
+              <div class="button">
+                <input type="submit" name="asfasf" value="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </div>
+            </form>
+            <!-- //헤더 탑의 입력창 -->
+          </div>
+          <!-- //헤더의 탑의 왼쪽 -->
+          <div class="right">
+            <div class="rbox">
+              <a class="active" href="#">KOR</a>
+              <a href="#">ENG</a>
+              <a class="last" href="#">JPN</a>
+            </div>
+          </div>
+          <!-- //헤더의 탑의 오른쪽 -->
+        </div>
+        <!-- //헤더의 탑 -->
+        <div id="bottom">
+          <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+            <li><a href="#">메뉴6</a></li>
+          </ul>
+          <h3>타이틀</h3>
+        </div>
+        <!-- //헤더의 바텀 -->
+      </div>
+    </div>
+    <!-- //헤더 -->
+    <div id="content">
+      <div id="visual"></div>
+      <!-- //비주얼 -->
+      <div class="container">
+        <div id="main">
+          <div class="Notice1">
+            <h3>게시판 제목1</h3>
+            <div class="left">left</div>
+            <!-- //노티스1 좌측 -->
+            <div class="col center">
+              <div class="top">top</div>
+              <div class="bottom">bottom</div>
+            </div>
+            <!-- //노티스1 센터 -->
+            <div class="col right">
+              <div class="top">top</div>
+              <div class="bottom">bottom</div>
+            </div>
+            <!-- //노티스1 우측 -->
+          </div>
+          <!-- //노티스1 -->
+          <h3>게시판 제목2</h3>
+          <div class="Notice2">
+            <div class="left">left</div>
+            <div class="center">center</div>
+            <div class="right">right</div>
+          </div>
+          <!-- //노티스2 -->
+          <h3>게시판 제목3</h3>
+          <div class="Notice3">Notice3</div>
+          <!-- //노티스3 -->
+        </div>
+        <!-- //메인 -->
+      </div>
+      <!-- 메인의 컨테이너 -->
+    </div>
+    <!-- //컨텐츠 -->
+    <div id="footer">
+      <div class="container">footer</div>
+    </div>
+    <!-- 푸터 -->
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    var TopMenuLanguageButton = $("#top .right .rbox a");
+    TopMenuLanguageButton.click(function(e){
+      e.preventDefault();
+      var CurrButton = $(this);
+      $("#top .right .rbox a").removeClass("active");
+      CurrButton.addClass("active");
+    });
+  </script>
+</body>
+</html>
