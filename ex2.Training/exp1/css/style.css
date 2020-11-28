@@ -72,13 +72,33 @@ height: 23.5px;}
 /* //컨텐츠 비주얼 제작부분 */
 
 /* 컨텐츠 메인 게시판 제작부분 */
-#main {}
-/* 컨텐츠 메인 노티스1 게시판 제작 */
-#main .Notice1 {height: 300px;}
-#main .Notice1 .left {
-  width: 500px; background-color: rgb(232, 145, 133);
-  height: 100%; float: left;
+#main h3 {
+  font-size: 25px; font-weight: bold;
+  margin-top: 30px;
 }
+/* 컨텐츠 메인 노티스1 게시판 제작 */
+#main .Notice1 {height: 180px;}
+/* 컨텐트 메인 노티스1 좌측 게시판 제작 */
+#main .Notice1 .left {width: 500px;height: 100%; float: left;}
+#main .Notice1 .left ul {margin-right: 30px;border-top: 1px solid #888;}
+#main .Notice1 .left ul li {
+  position: relative; margin-top: 8px; margin-right: 10px;
+  font-size: 15px;
+}
+#main .Notice1 .left ul li.active {font-weight: bold;}
+#main .Notice1 .left ul li::before {
+  width: 3px; height: 3px; background-color: #034295; content: '';
+  position: absolute; top: 8px; left: 5px; border-radius: 50%;
+}
+#main .Notice1 .left ul li a {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  width: 70%; display: block; margin-left: 12px;
+}
+#main .Notice1 .left ul li em {
+  position: absolute; top: 0; right: 0;
+}
+/* //컨텐트 메인 노티스1 좌측 게시판 제작 */
+
 #main .Notice1 .col {width: 350px; height: 100%; float: left;}
 #main .Notice1 .col .top {height: 50%; background-color: rgba(0,0,0,0.3);}
 #main .Notice1 .col .bottom {height: 50%; background-color: rgba(0,0,0,0.3);}

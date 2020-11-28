@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@font-face {
+  src: url(../fonts/Gugi-Regular.ttf);
+  font-family: "Gugi";
+}
+@font-face {
+  src: url(../fonts/SansitaSwashed-VariableFont_wght.ttf);
+  font-family: "Sansit";
+}
+* {font-family: 'Gugi';}
+
+/* 레이아웃 */
+/* 헤더영역 레이아웃 */
+#header {width: 100%; border-bottom: 1px solid #c6c6c6;}
+.container {width: 1280px; position: relative; margin: 0 auto;}
+.row {padding: 0 24px;}
+.header h1 {float: left;}
+.header h1 a em {padding: 8px 8px; display: inline-block;}
+.header h1 a em img {width: 155px; height: 100%; margin-top: 10px;}
+.header h1 a strong {overflow: hidden; display: inline-block;}
+.header h1 a strong img {width: 126px;height: 100%;}
+.header .nav {float: right;}
+.header .nav ul {border-left: 1px solid #c6c6c6;}
+.header .nav ul li {float: left; width: 103px; text-align: center;
+border-right: 1px solid #c6c6c6;}
+.header .nav ul li a {
+  padding: 20px 10px; font-size: 18px; display: block;
+  color: rgb(62, 26, 113);
+}
+/* //헤더영역 레이아웃 */
+
+/* //레이아웃 */
