@@ -100,9 +100,15 @@ height: 23.5px;}
 /* //컨텐트 메인 노티스1 좌측 게시판 제작 */
 
 #main .Notice1 .col {width: 350px; height: 100%; float: left;}
-#main .Notice1 .col .top {height: 50%; background-color: rgba(0,0,0,0.3);}
+#main .Notice1 .col .top {height: 50%;}
 #main .Notice1 .col .bottom {height: 50%; background-color: rgba(0,0,0,0.3);}
-#main .Notice1 .center {background-color: rgb(168, 215, 115);}
+#main .Notice1 .center {}
+#main .Notice1 .center .top {margin-right: 60px; border-bottom: 1px solid #888;}
+#main .Notice1 .center h4 {font-size: 25px; margin-left: 20px;}
+#main .Notice1 .center span {
+  font-size: 30px; font-weight: bold; text-shadow: 0 1px 2px #bababa;
+  color: rgb(0, 125, 43); margin-left: 120px;
+}
 #main .Notice1 .right {background-color: rgb(128, 231, 222);}
 /* //컨텐츠 메인 노티스1 게시판 제작 */
 

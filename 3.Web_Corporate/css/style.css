@@ -12,7 +12,8 @@
 /* 레이아웃 */
 /* 헤더영역 레이아웃 */
 #header {width: 100%; border-bottom: 1px solid #c6c6c6;}
-.container {width: 1280px; position: relative; margin: 0 auto;}
+.container {width: 1280px; position: relative; margin: 0 auto;
+overflow: hidden;}
 .row {padding: 0 24px;}
 .header h1 {float: left;}
 .header h1 a em {padding: 8px 8px; display: inline-block;}
@@ -28,5 +29,75 @@ border-right: 1px solid #c6c6c6;}
   color: rgb(62, 26, 113);
 }
 /* //헤더영역 레이아웃 */
+
+/* 배너영역 레이아웃 */
+#banner {position: relative;}
+.menu {
+  position: absolute;top: 20px;  left: 0; width: 100%; height: 100px;
+}
+.menu a {color: #fff; font-size: 16px; transition: all 0.3s;}
+.menu a:hover {color: #c1c1c1; font-size: 16px;}
+.menu .left {float: left;}
+.menu .left ul {padding-top: 7px;}
+.menu .left ul li {
+  display: inline-block; margin-right: 30px; position: relative;
+  text-shadow: 1px 1px 0 #000;
+}
+.menu .left ul li.total {margin-right: 20px;}
+.menu .left ul li.total a {
+  font-size: 14px; padding: 3px 10px;
+  display: inline-block;border: 1px solid #fff;
+  transition: all 0.3s;
+}
+.menu .left ul li.total a:hover {
+  background-color: #fff; border-color: #000; color: #000;
+}
+.menu .right {float: right; overflow: hidden;}
+.menu .right ul {float: left;}
+.menu .right ul:first-child {padding-top: 7px;}
+.menu .right ul li {display: inline-block; text-align: center; margin-right: 20px;
+position: relative; text-shadow: 1px 1px 0 #000;}
+.menu .right ul li.line {}
+.menu li.line::after {
+  content: ''; width: 1px; height: 14px; background-color: #fff; position: absolute;
+  right: -18px; top: 2px;
+}
+.menu .right li.white {margin-right: 10px;}
+.menu .right li.white a {width: 80px; background-color: #fff; color: #3a0e6a;
+padding: 7px 30px 9px 30px; border: 1px solid #fff; display: inline-block;}
+.menu .right li.purple {margin-right: 0;}
+.menu .right li.purple a {width: 80px; background-color: #3a0e6a; color: #fff;
+padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
+/* //배너영역 레이아웃 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* //레이아웃 */
