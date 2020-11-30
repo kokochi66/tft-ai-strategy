@@ -14,7 +14,7 @@
 #header {width: 100%; border-bottom: 1px solid #c6c6c6;}
 .container {width: 1280px; position: relative; margin: 0 auto;
 overflow: hidden;}
-.row {padding: 0 24px;}
+.row {padding: 0 28px;}
 .header h1 {float: left;}
 .header h1 a em {padding: 8px 8px; display: inline-block;}
 .header h1 a em img {width: 155px; height: 100%; margin-top: 10px;}
@@ -29,6 +29,29 @@ border-right: 1px solid #c6c6c6;}
   color: rgb(62, 26, 113);
 }
 /* //헤더영역 레이아웃 */
+
+/* 모바일용 내비 */
+#mob_nav {
+  position: absolute; top: 15px; right: 14px;
+  display: none;
+}
+#mob_nav .ham {
+  display: block; width: 25px; height: 23px;
+  padding: 8px 10px;
+}
+#mob_nav .ham span {
+  display: block; width: 25px; height: 4px; background-color: #3a0e6a;
+  position: relative; margin-top: 8px;
+}
+#mob_nav .ham span::before {
+  content: ''; position: absolute; bottom: -7px;
+  display: block; width: 25px; height: 4px; background-color: #3a0e6a;
+}
+#mob_nav .ham span::after {
+  content: ''; position: absolute; top: -7px;
+  display: block; width: 25px; height: 4px; background-color: #3a0e6a;
+}
+/* // */
 
 /* 배너영역 레이아웃 */
 #banner {position: relative;}
@@ -101,3 +124,68 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
 
 /* //레이아웃 */
+
+
+/* 미디어쿼라 */
+@media (max-width: 1290px) {
+  .container {width: 100%;}
+  .header .nav ul li {width: 85px;}
+  .header .nav ul li a {padding: 18px 8px;}
+  /* // 헤더-내비 */
+}
+@media (max-width: 1024px) {
+  .row {padding: 0 24px;}
+  .header h1 {float: none; text-align: center;}
+  .header h1 strong {left: 24px; position: absolute; top: 23px;}
+  .header .nav {display: none;}
+  #mob_nav {display: block;}
+  /* //헤더-내비 */
+
+}
+@media (max-width: 960px) {
+
+}
+@media (max-width: 768px) {
+  .row {padding: 0 8;}
+  .header h1 {text-align: left;}
+  .header h1 a strong {display: none;}
+
+}
+@media (max-width: 480px) {
+
+}
+@media (max-width: 320px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //미디어쿼리 */
