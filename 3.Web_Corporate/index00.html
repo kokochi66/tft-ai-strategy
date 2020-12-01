@@ -9,6 +9,7 @@
     <meta name="keywords" content="메가박스, 유투브, 영화, 최신영화, 영화관, CGV, 롯데시네마,사이트 만들기, 따라하기">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.css">
     <title>꼬꼬치꼬치의 메가박스 사이트 따라하기 실습</title>
 
     <link rel="shortcut" href="icon/kebab-128.png">
@@ -106,7 +107,17 @@
     </div>
     <!-- //menu -->
     <div class="slider">
-      <img src="img/main_slider02_2000.jpg" alt="인피니티워" width="100%" height="100%">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide ss1">Slide1</div>
+          <div class="swiper-slide ss2">Slide2</div>
+          <div class="swiper-slide ss3">Slide3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <!-- <img src="img/main_slider02_2000.jpg" alt="인피니티워" width="100%" height="100%"> -->
     </div>
     <!-- //slider -->
   </section>
@@ -115,5 +126,7 @@
   <script src="js/jquery.min_1.12.4.js"></script>
   <script src="js/modernizr-custom.js"></script>
   <script src="js/ie-checker.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
