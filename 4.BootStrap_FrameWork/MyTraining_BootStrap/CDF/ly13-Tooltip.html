@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
+  <style>
+  p {margin: 0; padding: 0;}
+  .con1 {
+    margin-top: 10px; padding-bottom: 15px;
+    background-color: rgb(223, 222, 237); padding: 20px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Tooltips</h2>
+        <span data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+          Tooltip top</span>
+        <span data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+          Tooltip left</span>
+        <span data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+          Tooltip bottom</span>
+        <span data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+          Tooltip right</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+</body>
+</html>
