@@ -48,3 +48,12 @@ img, fieldset {border:0 none;}
   content: ''; line-height: 0;
 }
 .clearfix:after {clear:both;}
+
+
+/* 아이콘 이미지 최적화 작업 */
+.icon {background-image: url(../img/icon.png);}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+      only screen and (min-device-pixel-ratio:1.5),
+      only screen and (min-resolution:1.5dppx){
+        .icon{background-image: url(../img/icon@2.png); background-size: 500px;}
+      }

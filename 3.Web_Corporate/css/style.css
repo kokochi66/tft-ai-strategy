@@ -133,6 +133,70 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
 
 
+/* 메인 무비 */
+#movie {padding: 100px 0;}
+#main {}
+#main .title {margin-bottom: 50px;}
+#main .title ul {overflow: hidden; width: 848px; margin: 0 auto;}
+#main .title ul li {
+  float: left; width: 210px; text-align: center; border: 1px solid #000;
+  margin-right: -1px;
+}
+#main .title ul li a {
+  display: block; padding: 5px 15px; font-size: 18px; font-weight: 700;
+}
+#main .title ul li.active a {
+  background-color: #666; color: #fff;
+}
+#main .chart {}
+/* 무비-메인-차트-> chart_cont1 - col작업 */
+.chart_cont1 {}
+.chart_cont1 .col  {
+  display: inline-block; width: 292px; height: 592px;
+}
+.chart_cont1 .col .poster  {position: relative;}
+.chart_cont1 .col .poster figure {}
+.chart_cont1 .col .poster figure img {}
+.chart_cont1 .col .poster .rank {
+  position: absolute; top: 17px; left: 0; width: 58px; height: 58px; line-height: 58px;
+  background-color: #38116a; text-align: center;
+}
+.chart_cont1 .col .poster .rank strong {
+  color: #fff;
+}
+.chart_cont1 .col .poster .mx {position: absolute; top: 17px; right: 17px;}
+.chart_cont1 .col .poster .mx span {
+  width: 103px; height: 25px; display: block;
+}
+.chart_cont1 .col .poster .mx .m {
+  background-position: 0 -75px;
+}
+.chart_cont1 .col .poster .mx .B {
+  background-position: 0 -100px;
+}
+
+.chart_cont1 .col .info  {background-color: #fff; padding: 17px; border: 1px solid #000;}
+.chart_cont1 .col .info h3  {color:#333; font-size: 30px;font-weight: 700; margin-bottom: 20px;}
+.chart_cont1 .col .info h3 span  {
+  width: 29px; height: 29px; display: inline-block; margin-top: 9px;
+}
+.chart_cont1 .col .info h3 span.all  {background-position: -87px -125px;}
+.chart_cont1 .col .info h3 span.a12  {background-position: 0px -125px;}
+.chart_cont1 .col .info h3 span.a15  {background-position: -29px -125px;}
+.chart_cont1 .col .info h3 span.a19  {background-position: -58px -125px;}
+.chart_cont1 .col .info .btn  {
+  display: inline-block; background: #f2f2f2; font-size: 18px;
+  padding: 15px 30px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
