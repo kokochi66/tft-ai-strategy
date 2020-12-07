@@ -135,7 +135,7 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
 /* 메인 무비 */
 #movie {padding: 100px 0;}
-#main {}
+#main {overflow: hidden;}
 #main .title {margin-bottom: 50px;}
 #main .title ul {overflow: hidden; width: 848px; margin: 0 auto;}
 #main .title ul li {
@@ -153,8 +153,6 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   display: inline-block; width: 292px; height: 592px;
 }
 .chart_cont .col .poster  {position: relative;}
-.chart_cont .col .poster figure {}
-.chart_cont .col .poster figure img {}
 .chart_cont .col .poster .rank {
   position: absolute; top: 17px; left: 0; width: 58px; height: 58px; line-height: 58px;
   background-color: #38116a; text-align: center; font-size: 22px; box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
@@ -173,7 +171,9 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   background-position: 0 -100px;
 }
 
-.chart_cont .col .info  {background-color: #fff; padding: 13px 17px; border: 1px solid #000;}
+.chart_cont .col .info  {
+  background-color: #fff; padding: 13px 17px; border: 1px solid #000;
+}
 .chart_cont .col .info h3  {color:#333; font-size: 30px;font-weight: 700; margin-bottom: 20px;}
 .chart_cont .col .info h3 span  {
   width: 29px; height: 29px; display: inline-block; margin-top: 9px;

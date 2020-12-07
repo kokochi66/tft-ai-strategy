@@ -9,7 +9,20 @@ var mySwiper = new Swiper('.swiper-container',{
     delay: 5000,
   },
 });
-// 스와이퍼
+// 메인 비주얼 스와이퍼
+//
+var mySwiper = new Swiper('.swiper-container2',{
+  slidesPerView:4,
+  spaceBetween:24,
+  mousewheel:{
+    invert: true,
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+});
+// 영화 차트 스와이퍼
 
 
 var movBtn = $(".title > ul li");
