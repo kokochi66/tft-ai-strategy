@@ -149,27 +149,18 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   background-color: #666; color: #fff;
 }
 /* 무비-메인-차트-> chart_cont1 - col작업 */
-.chart_cont .col  {
-  display: inline-block; width: 292px; height: 592px;
-}
+.swiper-container2 {transition: all 0.3s ease;}
+.chart_cont .col  {display: inline-block; width: 292px;}
 .chart_cont .col .poster  {position: relative;}
 .chart_cont .col .poster .rank {
   position: absolute; top: 17px; left: 0; width: 58px; height: 58px; line-height: 58px;
   background-color: #38116a; text-align: center; font-size: 22px; box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
 }
-.chart_cont .col .poster .rank strong {
-  color: #fff; box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-}
+.chart_cont .col .poster .rank strong {color: #fff; box-shadow: 2px 2px 3px rgba(0,0,0,0.5);}
 .chart_cont .col .poster .mx {position: absolute; top: 17px; right: 17px;}
-.chart_cont .col .poster .mx span {
-  width: 103px; height: 25px; display: block;
-}
-.chart_cont .col .poster .mx .m {
-  background-position: 0 -75px;
-}
-.chart_cont .col .poster .mx .B {
-  background-position: 0 -100px;
-}
+.chart_cont .col .poster .mx span {width: 103px; height: 25px; display: block;}
+.chart_cont .col .poster .mx .m {background-position: 0 -75px;}
+.chart_cont .col .poster .mx .B {background-position: 0 -100px;}
 
 .chart_cont .col .info  {
   background-color: #fff; padding: 13px 17px; border: 1px solid #000;
@@ -186,7 +177,7 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   display: inline-block; background: #f2f2f2; font-size: 18px;
   padding: 15px 30px;
 }
-
+/* //무비-메인-차트-> chart_cont1 - col작업 */
 
 
 
@@ -247,12 +238,46 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
     float: left; pointer-events: all;
   }
   /* //배너 */
+
+
+  #main .title ul {width: auto;}
+  #main .title ul li {width: 25%; box-sizing: border-box;}
+  /* //메인 차트 타이틀 */
 }
 @media (max-width: 768px) {
   .row {padding: 0 8;}
   .header h1 {text-align: left;}
   .header h1 a strong {display: none;}
   /* // 헤더 */
+
+  body { background-color: #e2e2e2;}
+  #movie .row {background-color: #fff; padding: 30px 30px; margin: 0 30px;}
+  #movie .ir_su {
+    position: static; width: auto; height: auto; line-height: normal;
+    text-indent: 0; font-size: 24px; font-weight: bold; padding-bottom: 20px;
+   }
+  #movie .title {}
+  #movie .title ul {position: relative; padding: 10px;}
+  #movie .title ul::before {
+    content: ''; position: absolute; z-index: 1; left: 0; bottom: 0;
+    width: 100%; height: 2px; background-color: #bbbbbb;
+  }
+  #movie .title ul li {width: auto; border: 0;}
+  #movie .title ul li a {
+    font-size: 18px; color: #666; font-weight: 400; padding: 0; margin-right: 35px;
+  }
+  #movie .title ul li.active a {
+    background-color: transparent; color: #666;
+    position: relative; transition: all 0.3s ease;
+  }
+  #movie .title ul li.active a::before {
+    content: ''; position: absolute; z-index: 2; left: 0; bottom: -10px;
+    width: 100%; height: 2px; background-color: #a72c2c;
+    transition: all 0.3s ease;
+  }
+  #movie .chart {margin-top: -20px;}
+
+  /* //메인 차트 타이틀 */
 
 }
 @media (max-width: 480px) {

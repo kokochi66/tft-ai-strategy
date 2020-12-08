@@ -21,6 +21,20 @@ var mySwiper = new Swiper('.swiper-container2',{
     enabled: true,
     onlyInViewport: false,
   },
+  breakpoints: {
+    600: {
+      slidesPerView: 1.4,
+      spaceBetween: 24
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 24
+    },
+    960: {
+      slidesPerView: 3,
+      spaceBetween: 24
+    },
+  }
 });
 // 영화 차트 스와이퍼
 
