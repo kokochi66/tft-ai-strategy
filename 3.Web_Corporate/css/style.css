@@ -173,9 +173,9 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 .chart_cont .col .info h3 span.a12  {background-position: 0px -125px;}
 .chart_cont .col .info h3 span.a15  {background-position: -29px -125px;}
 .chart_cont .col .info h3 span.a19  {background-position: -58px -125px;}
-.chart_cont .col .info .btn  {
-  display: inline-block; background: #f2f2f2; font-size: 18px;
-  padding: 15px 30px;
+.chart_cont .col .info .btn a  {
+  display: inline-block; background: #afafaf; font-size: 18px;
+  width: 35%; text-align: center; padding: 10px 15px;
 }
 /* //무비-메인-차트-> chart_cont1 - col작업 */
 
@@ -214,6 +214,9 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   .header .nav ul li {width: 85px;}
   .header .nav ul li a {padding: 18px 8px;}
   /* // 헤더-내비 */
+  .chart_cont .col .info .btn a {font-size: 15px; padding: 8px 10px;}
+  .chart_cont .col .info {padding: 13px 10px;}
+  /* //메인 차트 */
 }
 @media (max-width: 1024px) {
   .row {padding: 0 24px;}
@@ -226,6 +229,9 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   .menu .left ul {display: none;}
   .menu .right ul:first-child {display: none;}
   /* // 배너 */
+
+  .chart_cont .col .info {padding: 13px 10px;}
+  /* //메인 차트 */
 }
 @media (max-width: 960px) {
   #banner .container {pointer-events: none;}
@@ -276,9 +282,26 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
     transition: all 0.3s ease;
   }
   #movie .chart {margin-top: -20px;}
+  .chart_cont .col .info h3 {padding: 5px;}
+  .chart_cont .col .info h3 strong {
+    display: block; font-size: 19px; color: #222; font-weight: 300;
+    text-align: center;
+  }
+  .chart_cont .col .info h3 span {display: none;}
+  .chart_cont .col .info {padding: 13px 10px;}
+  .chart_cont .col .info .btn a {font-size: 17px; padding: 8px 13px;}
+
 
   /* //메인 차트 타이틀 */
 
+}
+
+@media (max-width: 600px) {
+  #movie .title ul li a {font-size: 15px; margin-right: 25px;}
+  #movie .row {margin: 0; padding-right: 0 ;}
+  .chart_cont .col .info {padding: 13px 20px;}
+  .chart_cont .col .info .btn a {padding: 8px 15px; font-size: 20px;}
+  /* // 메인 차트 */
 }
 @media (max-width: 480px) {
   .slider {height: 300px;}
@@ -294,6 +317,8 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
     font-size: 15px; color: #663888; border-color: #663888;
     text-shadow: 1px 1px 0 #000000;
   }
+  /* //배너작업 */
+
 }
 @media (max-width: 320px) {
 
