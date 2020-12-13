@@ -210,9 +210,8 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 /* 오프닝 */
 #opening {
   background: url(../img/bg01.jpg) no-repeat center top; background-size: cover;
-  text-align: center; padding: 100px 0;
+  text-align: center; padding: 100px 0; margin-bottom: 100px;
 }
-#opening .top {}
 #opening .top h2 span {background-position: 0 -175px; width: 330px; height: 50px; display: inline-block;}
 #opening .top .date {background-position: 0 -225px; display: inline-block; width: 260px; height: 45px;}
 #opening .top .cont {
@@ -226,23 +225,47 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 }
 #opening .bottom .open-set:last-child {margin-right: 0;}
 #opening .bottom .open-set h3 {
-    color: #fff;
-    font-weight: 300;
-    border: 1px solid #6e3abb;
-    margin-top: -24px;
-    font-size: 19px;
-    display: inline-block;
-    padding: 10px 20px;
-    background: #551e9b;
+    color: #fff; font-weight: 300;
+    border: 1px solid #6e3abb;  margin-top: -24px;
+    font-size: 19px; display: inline-block;
+    padding: 10px 20px; background: #551e9b;
 }
 
-#opening .bottom .open-set p {
-  font-size: 20px; color: #fff; font-weight: 700;
-  padding: 25px;
-}
+#opening .bottom .open-set p { font-size: 20px; color: #fff; font-weight: 700; padding: 25px;}
 #opening .bottom .open-set p strong {display: block;}
 #opening .bottom .open-set p em {display: block;}
 /* //오프닝 */
+
+
+
+
+
+
+
+
+/* 새로운 영화영역 - newUpdate */
+#newUpdate {margin-bottom: 100px;}
+#newUpdate h2 {font-size: 30px; font-weight: 500; margin-bottom: 20px;}
+#newUpdate .container {position: relative;}
+#newUpdate .left {width: 100%;}
+#newUpdate .left .L_video {
+  background: #ccc url(../img/new01.jpg) center center;
+  background-size: cover;
+  margin-right: 400px; position: relative;
+  display: block; height: 500px;
+}
+#newUpdate .left .L_video .play  {
+  width: 120px; height: 120px; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+#newUpdate .left .L_video .play .st0 {fill: #fff;opacity: 20%;}
+#newUpdate .left .L_video .play .st1 {fill: #fff;}
+#newUpdate .right {
+  width: 400px; background-color: #afe695;
+  position: absolute; bottom: 0; right: 0;
+  height: 500px;
+}
+
 
 
 
