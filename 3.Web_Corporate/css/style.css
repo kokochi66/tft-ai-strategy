@@ -261,10 +261,35 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 #newUpdate .left .L_video .play .st0 {fill: #fff;opacity: 20%;}
 #newUpdate .left .L_video .play .st1 {fill: #fff;}
 #newUpdate .right {
-  width: 400px; background-color: #afe695;
+  width: 380px; background-color: #ebebeb;
   position: absolute; bottom: 0; right: 0;
-  height: 500px;
+  height: 500px; box-sizing: border-box; padding: 34px;
+  margin-left: 20px;
 }
+#newUpdate .right .title {font-size: 25px; font-weight: 600;}
+#newUpdate .right .release {font-size: 15px; color: #333;}
+#newUpdate .right .grade {padding: 10px 0;}
+#newUpdate .right .grade strong {font-size: 16px; display: inline-block; margin-left: 15px;}
+#newUpdate .right .star {display: inline-block;width: 20px; height: 20px; vertical-align: -3px}
+#newUpdate .right .star0 {background-position: -374px 0; }
+#newUpdate .right .star1 {background-position: -412px 0;}
+#newUpdate .right .star2 {background-position: -393px 0;}
+#newUpdate .right .summary {padding-bottom: 20px;}
+#newUpdate .right .summary .genre {padding-bottom: 5px;}
+#newUpdate .right .summary .age {padding-bottom: 10px;}
+#newUpdate .right .summary .desc {
+  overflow: hidden;
+  text-overflow: ellipsis; display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+#newUpdate .right .select {overflow: hidden;}
+#newUpdate .right .select .date {width: 49%; float: left; margin-right: 2%;}
+#newUpdate .right .select .time {width: 49%; float: left;}
+#newUpdate .right .select .address {}
+#newUpdate .right .button {}
+/* //새로운 영화영역 - newUpdate */
+
 
 
 
