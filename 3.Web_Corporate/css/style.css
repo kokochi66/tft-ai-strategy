@@ -286,8 +286,14 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 #newUpdate .right .select {overflow: hidden;}
 #newUpdate .right .select .date {width: 49%; float: left; margin-right: 2%;}
 #newUpdate .right .select .time {width: 49%; float: left;}
-#newUpdate .right .select .address {}
-#newUpdate .right .button {}
+#newUpdate .right .select .address {clear: both; padding-top: 8px;}
+#newUpdate .right .button {overflow: hidden; margin-top: 2%;}
+#newUpdate .right .button a {
+  float: left; width: 49%; box-sizing: border-box;
+  display: block; text-align: center; padding: 10px 30px;
+}
+#newUpdate .right .button a.white {background-color: #fff; margin-right: 2%; color: #3a0e6a; border: 1px solid #3a0e6a;}
+#newUpdate .right .button a.purple {background-color: #3a0e6a; color: #fff; border: 1px solid #6340c4;}
 /* //새로운 영화영역 - newUpdate */
 
 
@@ -358,6 +364,11 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   #main .title ul {width: auto;}
   #main .title ul li {width: 25%; box-sizing: border-box;}
   /* //메인 차트 타이틀 */
+
+
+  #newUpdate .left .L_video {margin-right: 0;}
+  #newUpdate .right {width: 100%; position: static; margin-left: 0;}
+  /* //새로운 영화영역 */
 }
 @media (max-width: 768px) {
   .row {padding: 0 8;}
@@ -446,6 +457,13 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   .chart_cont .col .info .btn a {width: 52%; margin-left: 24%;}
   .chart_cont .col .info .btn a:last-child {display: none;}
   /* //메인차트 */
+
+
+  #newUpdate .left .L_video {height: 300px;}
+  #newUpdate .right {height: 500px; padding: 15px;}
+  #newUpdate .right .title {font-size: 18px;}
+  #newUpdate .right .release {font-size: 12px;}
+  /* //새로운 영화영역 */
 }
 @media (max-width: 320px) {
 
