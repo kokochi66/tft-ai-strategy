@@ -39,6 +39,18 @@ var mySwiper = new Swiper('.swiper-container2',{
 // 영화 차트 스와이퍼
 
 
+var help_box_btn = $("#help .box .notice .top li a");
+var help_box_content = $("#help .box .notice .top li ul");
+help_box_btn.click(function(e) {
+  e.preventDefault();
+  var target = $(this).siblings("ul");
+  help_box_content.hide();
+  target.show();
+});
+
+// // help 공지사항 버튼 스크립트
+
+
 var movBtn = $(".title > ul li");
 var movContents = $(".chart_cont");
 movContents.hide();
