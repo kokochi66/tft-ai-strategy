@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>꼬꼬치꼬치의 부트스트랩 프레임워크 실습 연습용 - 앨범 따라하기</title>
+  <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="album.css">
+</head>
+<body>
+  <header>
+    <div class="collapse bg-dark" id="navHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">text-muted 속성을 이용해서 흐린 색을 적용한 글자입니다.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">text-white로 하얀 글자색을 칠한 unstyled를 적용한 리스트입니다.</a></li>
+              <li><a href="#" class="text-white">text-white로 하얀 글자색을 칠한 unstyled를 적용한 리스트입니다.</a></li>
+              <li><a href="#" class="text-white">text-white로 하얀 글자색을 칠한 unstyled를 적용한 리스트입니다.</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-lg">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <strong>Album 예제 따라하기</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navHeader" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- //header -->
+
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>메인 화면</h1>
+        <p class="lead text-muted">
+          jumbotron을 이용한 메인 화면으로, text-center클래스로 중앙정렬을 이용하였고, lead 글씨체 적용한 내용글씨임.</p>
+        <a href="#" class="btn btn-primary my-2">btn btn-primary</a>
+        <a href="#" class="btn btn-secondary my-2">btn btn-secondary</a>
+      </div>
+    </section>
+    <!-- //jumbotron -->
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+              <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">card-text를 이용한 card내용 :: card-body적용을 통해서 카드 상세 바디적용</p>
+              <div class="align-items-center d-flex justify-content-between">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-outline</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">btn-group</a>
+                </div>
+                <small class="text-muted">small태그</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  <!-- //main -->
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">float-right로 바로 오른쪽 정렬가능</a>
+      </p>
+      <p>본 페이지는 부트스트랩 홈페이지에서 제공하는 예제를 따라해보는 실습 페이지입니다.</p>
+      <p><a href="https://getbootstrap.com/docs/5.0/examples/" target="_blank">모든 페이지</a>를 따라해보기를 해볼 예정에 있습니다.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
