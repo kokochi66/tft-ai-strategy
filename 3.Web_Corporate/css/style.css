@@ -305,6 +305,7 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
 
 /* help 영역 */
+/* help - box1 */
 #help {margin-bottom: 50px;}
 #help .box {float: left; width: 32%; margin-right: 2%;}
 #help .box:last-child {margin-right: 0;}
@@ -330,6 +331,19 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 }
 #help .box .notice .top li ul li:last-child {border-bottom: 0;}
 #help .box .notice .top li ul li dd {margin: 0;}
+/* // help - box1 */
+
+/* help - box2 */
+#help .box2 {}
+#help .box2 .card {border: 1px solid #000; height: 290px; padding: 10px;}
+#help .box2 .card ul {}
+#help .box2 .card ul li  {padding: 10px; border: 1px solid #000; margin-bottom: 8px;}
+#help .box2 .card ul li a {height: 100%; display: block;}
+#help .box2 .card ul li a span {display: block; float: left;}
+#help .box2 .card ul li a span.info {padding: 8px 15px; box-sizing: border-box;}
+#help .box2 .card ul li a strong {display: block; font-size: 18px;}
+#help .box2 .card ul li a em {display: block; font-size: 14px;}
+/* //help - box2 */
 
 
 
