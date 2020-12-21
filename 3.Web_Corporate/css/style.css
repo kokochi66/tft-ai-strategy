@@ -335,11 +335,13 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
 /* help - box2 */
 #help .box2 .card {border: 1px solid #999; height: 290px; padding: 10px;}
-#help .box2 .card ul li  {padding: 8px; border: 1px solid #999; margin-bottom: 11px;}
+#help .box2 .card ul li  {padding: 8px; border: 1px solid #999; margin-bottom: 6px; height: 75px;}
 #help .box2 .card ul li a {height: 100%; display: block;}
-#help .box2 .card ul li a span {display: block; float: left;}
-#help .box2 .card ul li a span.info {padding: 8px 15px; box-sizing: border-box;}
+#help .box2 .card ul li a span {display: block; float: left; width: auto;}
+#help .box2 .card ul li a span img {width: auto; height: 72px;}
+#help .box2 .card ul li a span.info {padding-left:15px; box-sizing: border-box; width: 60%;}
 #help .box2 .card ul li a strong {display: block; font-size: 18px;}
+#help .box2 .card ul li a:hover strong {color: #222;}
 #help .box2 .card ul li a em {display: block; font-size: 14px;}
 /* //help - box2 */
 
@@ -355,10 +357,50 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 #help .box3 .service ul li a svg {width: 110px; height: 110px; margin: 10px auto 0 auto; display: block;}
 #help .box3 .service ul li a strong {text-align: center; display: block; color: #555;}
 /* //help - box3 */
+/* //help */
 
 
 
-#footer {height: 200px; background-color: #c7a2ec;}
+
+
+
+
+
+
+/* footer */
+#footer {position: relative; background-color: #211f1f; padding: 50px 0;}
+#footer .container {}
+#footer .left {}
+#footer .left h2 {}
+#footer .left h2 img {width: 150px;}
+#footer .left ul {padding: 15px 0;}
+#footer .left ul li {display: inline-block; padding-right: 16px; position: relative;}
+#footer .left ul li::after {
+  content: ''; position: absolute; background-color: #8f8f8f; top: 4px; right: 6px;
+  width: 1px; height: 12px;
+}
+#footer .left ul li:last-child::after {content: none;}
+#footer .left ul li a {color: #8f8f8f;}
+#footer .left .address {color: #8f8f8f; padding-bottom: 15px;}
+#footer .left .Copyright {color: #8f8f8f; padding-bottom: 15px;}
+
+#footer .right {position: absolute; top: 0; right: 0;}
+#footer .right ul .icon {width: 36px; height: 36px; display: inline-block;cursor: pointer; margin-left: 4px;}
+#footer .right ul .icon.i1 {background-position: 0 -375px;}
+#footer .right ul .icon.i2 {background-position: -36px -375px;}
+#footer .right ul .icon.i3 {background-position: -72px -375px;}
+#footer .right ul .icon.i4 {background-position: -108px -375px;}
+#footer .right ul .icon.i5 {background-position: -144px -375px;}
+#footer .right ul .icon.i1:hover {background-position: 0 -411px;}
+#footer .right ul .icon.i2:hover {background-position: -36px -411px;}
+#footer .right ul .icon.i3:hover {background-position: -72px -411px;}
+#footer .right ul .icon.i4:hover {background-position: -108px -411px;}
+#footer .right ul .icon.i5:hover {background-position: -144px -411px;}
+#footer .right .phone-num {float: right;}
+#footer .right .phone-num {font-size: 21px; color: #8f8f8f;}
+#footer .right .phone-num strong {color: #dedede;}
+
+/* //footer */
 
 
 
@@ -405,6 +447,19 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
   .chart_cont .col .info {padding: 13px 10px;}
   /* //메인 차트 */
+
+  #help .container {padding: 0 20px; width: auto;}
+
+  #help .box {width: 49%;}
+  #help .box.box2 {margin-right: 0; margin-bottom: 20px;}
+  #help .box.box3 { width: 100%;}
+  #help .box.box3 h3 {display: none;}
+  #help .box3 .service {height: auto;}
+  #help .box3 .service ul li {width: 25%; border-right: 1px solid #999;}
+  #help .box3 .service ul li:nth-child(1) {border-bottom: 0;}
+  #help .box3 .service ul li:nth-child(2) {border-bottom: 0;}
+  #help .box3 .service ul li a strong {padding-bottom: 20px;}
+  /* //공지사항 */
 }
 @media (max-width: 960px) {
   #banner .container {pointer-events: none;}
@@ -427,6 +482,14 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   #newUpdate .left .L_video {margin-right: 0;}
   #newUpdate .right {width: 100%; position: static; margin-left: 0;}
   /* //새로운 영화영역 */
+
+  #footer {padding: 0;}
+  #footer .left {margin-top: 80px; padding: 50px 0; text-align: center;}
+  #footer .right {width: 100%; background-color: #352c2c; text-align: center; padding: 15px 0;}
+  #footer .right ul {text-align: center; }
+  #footer .right ul .icon {display: inline-block;}
+  #footer .right .phone-num {display: none;}
+  /* //footer */
 }
 @media (max-width: 768px) {
   .row {padding: 0 8;}
@@ -476,10 +539,16 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
   #event .right {display: none;}
   /* //이벤트 */
 
+  #newUpdate {padding: 0 20px; box-sizing: border-box;}
+  #newUpdate .container {padding: 20px; box-sizing: border-box; background-color: #fff;}
+  /* //새로운 영화영역 */
+
   #opening .bottom {display: none;}
   #opening .top .cont {font-size: 20px;}
   /* //오프닝 */
 
+  #help .box {width: 100%; box-sizing: border-box; padding: 20px; background-color: #fff; margin-bottom: 30px;}
+  /* //공지사항 */
 }
 
 @media (max-width: 600px) {
@@ -494,6 +563,19 @@ padding: 7px 30px 9px 30px; border: 1px solid #6240c4; display: inline-block;}
 
   #opening {padding: 50px 0;}
   /* //오프닝 */
+
+  #newUpdate .left .L_video {height: 200px;}
+  #newUpdate .right .select .date {width: 100%; margin-right: 0; padding-bottom: 8px;}
+  #newUpdate .right .select .time {width: 100%; margin-right: 0;}
+  /* //새로운 영화영역 */
+
+  #help .box .service {border: none;}
+  #help .box3 {padding: 0;}
+  #help .box3 .service ul li {width: 50%;}
+  #help .box3 .service ul li:nth-child(2n) {border-right: none;}
+  #help .box3 .service ul li:nth-child(1) {border-bottom: 1px solid #999;}
+  #help .box3 .service ul li:nth-child(2) {border-bottom: 1px solid #999;}
+  /* //공지사항 */
 }
 @media (max-width: 480px) {
   .slider {height: 300px;}
