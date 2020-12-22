@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="style.css">
-  <title>패럴랙스 레이아웃 예제 3</title>
+  <title>패럴랙스 레이아웃 예제 4</title>
 </head>
 <body>
   <nav id="nav">
@@ -45,10 +45,61 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script>
     var NavOpenBtn = $("#nav .menuIcon");
-
     NavOpenBtn.click(function(e){
-      if($("nav").hasClass("active")) $("nav").removeClass("active");
-      else $("nav").addClass("active");
+      $("#nav").toggleClass("active");
+      if($("#nav").hasClass("active")) {
+        $("#nav").animate({"left":"0"},300,"easeInOutSine");
+        NavOpenBtn.text("Close");
+      }
+      else {
+        $("#nav").animate({"left":"-300"},300,"easeInOutSine");
+        NavOpenBtn.text("Open");
+      }
+    });
+    // Nav-Toggle-Button
+
+    var NavMenu = $("#nav ul li");
+    var cont = $("#contents section");
+    var ActiveNumber = -1;
+
+    NavMenu.click(function(e){
+      var index = $(this).index();
+      ActiveNumber = index;
+      var offset = cont.eq(index).offset().top;
+      $("html, body").animate({scrollTop:offset},500,"easeInOutSine");
+    });
+    $(window).scroll(function(e){
+      var sc = $(this).scrollTop();
+      if(sc >= cont.eq(0).offset().top && sc < cont.eq(1).offset().top &&
+    (ActiveNumber == -1 || ActiveNumber == 0)) {
+      NavMenu.removeClass("active");
+      NavMenu.eq(0).addClass("active");
+      ActiveNumber = -1;
+    }
+      if(sc >= cont.eq(1).offset().top && sc < cont.eq(2).offset().top &&
+    (ActiveNumber == -1 || ActiveNumber == 1)) {
+      NavMenu.removeClass("active");
+      NavMenu.eq(1).addClass("active");
+      ActiveNumber = -1;
+    }
+      if(sc >= cont.eq(2).offset().top && sc < cont.eq(3).offset().top &&
+    (ActiveNumber == -1 || ActiveNumber == 2)) {
+      NavMenu.removeClass("active");
+      NavMenu.eq(2).addClass("active");
+      ActiveNumber = -1;
+    }
+      if(sc >= cont.eq(3).offset().top && sc < cont.eq(4).offset().top &&
+    (ActiveNumber == -1 || ActiveNumber == 3)) {
+      NavMenu.removeClass("active");
+      NavMenu.eq(3).addClass("active");
+      ActiveNumber = -1;
+    }
+      if(sc >= cont.eq(4).offset().top &&
+    (ActiveNumber == -1 || ActiveNumber == 4)) {
+      NavMenu.removeClass("active");
+      NavMenu.eq(4).addClass("active");
+      ActiveNumber = -1;
+    }
     });
   </script>
 </body>
