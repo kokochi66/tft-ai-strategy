@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#nav {position: fixed; background-color: rgba(255,255,255,0.3); width: 100%;}
+#nav h2 {font-size: 30px; font-weight: 600; padding: 5px 20px; display: inline-block; user-select: none;}
+#nav ul {display: inline-block; line-height: 55px; float: right; user-select: none;}
+#nav ul li {display: inline; cursor: pointer;}
+#nav ul li a {font-size: 18px; font-weight: 600; color: #555; padding: 10px 20px;}
+#nav ul li a:hover {
+  color: #ffffff; background-color: rgba(0,0,0,0.3);
+}
+
+
+#contents section {height: 100vh; user-select: none;}
+#contents section h2 {line-height: 100vh; text-align: center; font-size: 10vh; font-weight: 600;}
+#contents section#sec1 {background-color: #edaeae;}
+#contents section#sec2 {background-color: #ecaeed;}
+#contents section#sec3 {background-color: #d1edae;}
+#contents section#sec4 {background-color: #aeedc6;}
+#contents section#sec5 {background-color: #aed1ed;}
