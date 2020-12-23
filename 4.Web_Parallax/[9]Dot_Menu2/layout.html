@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="style.css">
+  <title>패럴랙스 레이아웃 예제 9</title>
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav">
+      <h2>TITLE</h2>
+    </div>
+    <ul>
+      <li class="active"><em></em></li>
+      <li><em></em></li>
+      <li><em></em></li>
+      <li><em></em></li>
+      <li><em></em></li>
+    </ul>
+  </nav>
+
+  <div id="contents">
+    <section id="sec1">
+      <h2>Section1</h2>
+    </section>
+    <section id="sec2">
+      <h2>Section2</h2>
+    </section>
+    <section id="sec3">
+      <h2>Section3</h2>
+    </section>
+    <section id="sec4">
+      <h2>Section4</h2>
+    </section>
+    <section id="sec5">
+      <h2>Section5</h2>
+    </section>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    var MenuBtn = $("#nav ul li");
+    var cont = $("#contents section");
+    var ActiveMenu = -1;
+    MenuBtn.click(function(e){
+      var index = $(this).index();
+      ActiveMenu = index;
+      var offset = cont.eq(index).offset().top;
+      $("html, body").animate({scrollTop:offset},550,"easeInOutExpo");
+    });
+    $(window).scroll(function(e){
+      var sc = $(this).scrollTop();
+      if(sc < cont.eq(1).offset().top && (ActiveMenu == -1 || ActiveMenu == 0)){
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(0).addClass("active");
+        ActiveMenu = -1;
+      }
+      if(sc >= cont.eq(1).offset().top && sc < cont.eq(2).offset().top && (ActiveMenu == -1 || ActiveMenu == 1)){
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(1).addClass("active");
+        ActiveMenu = -1;
+      }
+      if(sc >= cont.eq(2).offset().top && sc < cont.eq(3).offset().top && (ActiveMenu == -1 || ActiveMenu == 2)){
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(2).addClass("active");
+        ActiveMenu = -1;
+      }
+      if(sc >= cont.eq(3).offset().top && sc < cont.eq(4).offset().top && (ActiveMenu == -1 || ActiveMenu == 3)){
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(3).addClass("active");
+        ActiveMenu = -1;
+      }
+      if(sc >= cont.eq(4).offset().top && (ActiveMenu == -1 || ActiveMenu == 4)){
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(4).addClass("active");
+        ActiveMenu = -1;
+      }
+    })
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // -->

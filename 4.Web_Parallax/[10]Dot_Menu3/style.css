@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+#nav {width: 100%; height: 100%; position: fixed;}
+#nav .nav {width: 100%; user-select: none; background-color: rgba(255, 255, 255, 0.3); position: absolute; top: 0; left: 0;}
+#nav .nav h2 {font-size: 30px; font-weight: bold; padding: 5px 25px; text-shadow: 2px 2px 0 #dbdbdb; color: #000000;}
+#nav ul {position: absolute; top: 50%; right: 0; margin-right: 20px; transform: translate(0,-50%);}
+#nav ul li {
+  width: 20px; height: 20px; background-color: rgba(255,255,255,0.1); border-radius: 50%;
+  margin-top: 15px; border: 2px solid rgba(255,255,255,0.8); cursor: pointer; position: relative;
+}
+#nav ul li em {
+  width: 50px; height: 50px; background-color: rgba(255,255,255,0.8);
+  display: block; border-radius: 50%; position: absolute; top: -15px; left: -15px;
+  transition: all 0.3s ease; opacity: 0;
+}
+#nav ul li.active em {opacity: 1; width: 20px; height: 20px; top: 0; left: 0;
+transition: all 0.3s ease;}
+
+
+#contents {}
+#contents section {height: 100vh; line-height: 100vh;}
+#contents section h2 {font-size: 8vw; text-shadow: 0.5vw 0.5vw 0 #000; color: #fff; text-align: center;}
+#contents #sec1 {background:radial-gradient(#ccb58c, #4f3405);}
+#contents #sec2 {background:radial-gradient(closest-side , #e2df9e, #5d5a0d 75%,  #d7d597 75%);}
+#contents #sec3 {background:radial-gradient(circle at 100%, #7cc6a4, #046238 75%, #98dfbf 75%);}
+#contents #sec4 {background:radial-gradient(farthest-side at 50% 50%, #006fa6, #9dcbe2, #35586a);}
+#contents #sec5 {background:radial-gradient(farthest-corner at 50% 50%, #1d007d, #7867b0 25%, #3802e8 90%);}
+
+
+
+
+
+/* // */

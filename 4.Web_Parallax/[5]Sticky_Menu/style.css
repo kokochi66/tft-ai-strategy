@@ -19,7 +19,7 @@ transition-timing-function: ease;}
   text-shadow: 0 2px 2px #fff;
 }
 
-#contents section {height: 100vh; line-height: 100vh;}
+#contents section {height: 100vh; line-height: 100vh; user-select: none;}
 #contents section h2 {font-size: 7vw; text-align: center; color: #fff; text-shadow: 0px 10px 5px #333;}
 #contents #sec1 {background:radial-gradient(ellipse farthest-corner at center top, #9d0909 0%, #df5656 100%);}
 #contents #sec2 {background:radial-gradient(ellipse farthest-corner at left top, #a5c36d 0%, #587c15 100%);}
