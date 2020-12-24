@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+* {margin: 0; border: 0; box-sizing: border-box;}
+:root {font-size: 16px;}
+body {
+  --color-h1: #dc6e25;
+  --color-title: #fff;
+  --color-sub: #999;
+  --color-link: #000;
+  --color-bg: #111;
+  --image-widMax: 500px;
+  --aspect-ratio: 32/17;
+  color: var(--color-title);
+  background-color: var(--color-bg);
+}
+#wrap h1 {
+  font-size: 8vw; padding: 5vw; color: var(--color-h1);
+  text-transform: uppercase; font-weight: 700;
+}
+#wrap h1 em {display: block; padding-left: 20vw; font-weight: 100;}
+
+.cont_it {
+  width: calc(var(--image-widMax) * var(--aspect-ratio));
+  margin: 10vh 0 45vh; max-width: 90vw; position: relative;
+}
+.cont_it .cont_it_num {
+  font-size: 23vw; opacity: 0.04; line-height: 1; font-weight: 100;
+  color: var(--color-title); top: -13vw; right: -10vw; position: absolute;
+}
+.cont_it .cont_it_tit {
+  text-align: right; font-weight: 300; text-transform: capitalize;
+  color: var(--color-sub); padding-bottom: 0.8vw; font-size: 1.5rem;
+}
+.cont_it .cont_it_imgwrap {
+  --width: 100%;
+  width: var(--width); padding-bottom: calc(var(--width)/(var(--aspect-ratio)));
+  will-change: transform; position: relative; overflow: hidden; z-index: 10;
+}
+.cont_it .cont_it_imgwrap .cont_it_img {
+  width: var(--width); background-size: cover;
+  background-position: 50% 0;
+  --overflow: 40px; height: calc(100% + (2 * var(--overflow)));
+  position: absolute; top: calc(-1 * var(--overflow));
+  will-change: transform; background-image: url(../img1.jpg);
+  filter: grayscale(100%); z-index: 10;
+}
+.cont_it .cont_it_desc {
+  font-size: 4vw; line-height: 1.2; font-weight: 600;
+  text-transform: uppercase; color: var(--color-title);
+  text-align: right; word-break: keep-all; margin-top: -8vw;
+  margin-right: -5vw; position: relative; z-index: 20; text-shadow: 0.3vw 0.3vw 0 #222;
+  padding-left: 10vw;
+}
+.cont_it:nth-child(2n+1) {margin-left: auto;}
+.cont_it:nth-child(2n+1) .cont_it_num {right: auto; left: -7vw;}
+.cont_it:nth-child(2n+1) .cont_it_tit {text-align: left;}
+.cont_it:nth-child(2n+1) .cont_it_desc {
+  text-align: left; margin-right: 0; margin-left: -5vw;
+  padding-left: 0; padding-right: 10vw;
+}
+
+
+
+
+/* // */
