@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <title>패럴랙스 레이아웃 예제 12</title>
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav">
+      <h2>TITLE</h2>
+    </div>
+    <ul>
+      <li class="active "><em></em></li>
+      <li><em></em></li>
+      <li><em></em></li>
+      <li><em></em></li>
+      <li><em></em></li>
+    </ul>
+  </nav>
+
+  <div id="contents">
+    <section id="sec1">
+      <h2>Section1</h2>
+    </section>
+    <section id="sec2">
+      <h2>Section2</h2>
+    </section>
+    <section id="sec3">
+      <h2>Section3</h2>
+    </section>
+    <section id="sec4">
+      <h2>Section4</h2>
+    </section>
+    <section id="sec5">
+      <h2>Section5</h2>
+    </section>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    var MenuBtn = $("#nav ul li");
+    var cont = $("#contents section");
+    var Coffset = [];
+    var winHeight = $(window).height()/3;
+    cont.eq(0).addClass("show");
+    for(var i = 0 ; i < 5 ; i++) Coffset[i] = cont.eq(i).offset().top;
+    var MenuActive = -1;
+    MenuBtn.click(function(e){
+      var index = $(this).index();
+      MenuActive = index;
+      var offset = cont.eq(index).offset().top;
+      $("html, body").animate({scrollTop:offset},550,"easeInOutExpo");
+    });
+    $(window).scroll(function(e){
+      var sc = $(this).scrollTop();
+      if(sc < Coffset[1] && (MenuActive == -1 || MenuActive == 0)) {
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(0).addClass("active");
+        MenuActive = -1;
+      }
+      if(sc >= Coffset[1]-winHeight && sc < Coffset[2]-winHeight && (MenuActive == -1 || MenuActive == 1)) {
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(1).addClass("active");
+        cont.eq(1).addClass("show");
+        MenuActive = -1;
+      }
+      if(sc >= Coffset[2]-winHeight && sc < Coffset[3]-winHeight && (MenuActive == -1 || MenuActive == 2)) {
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(2).addClass("active");
+        cont.eq(2).addClass("show");
+        MenuActive = -1;
+      }
+      if(sc >= Coffset[3]-winHeight && sc < Coffset[4]-winHeight && (MenuActive == -1 || MenuActive == 3)) {
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(3).addClass("active");
+        cont.eq(3).addClass("show");
+        MenuActive = -1;
+      }
+      if(sc >= Coffset[4]-winHeight && (MenuActive == -1 || MenuActive == 4)) {
+        MenuBtn.removeClass("active");
+        MenuBtn.eq(4).addClass("active");
+        cont.eq(4).addClass("show");
+        MenuActive = -1;
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // -->
