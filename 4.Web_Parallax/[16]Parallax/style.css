@@ -21,7 +21,7 @@ body {
   position: fixed; top: 25px; right: 25px; background-color: rgba(255,255,255,0.5);
   color: #333; padding: 10px; border-radius: 10px; z-index: 30;
 }
-#wrap .info strong {transition: all 0.3s ease;}
+#wrap .info strong {transi}
 #wrap .info strong.active {color: #c30101;}
 #cont {width: 100%; padding: 35vh 0 40vh; overflow: hidden;}
 #cont .cont_it {

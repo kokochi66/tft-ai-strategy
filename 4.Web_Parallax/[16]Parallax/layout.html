@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <title>패럴랙스 레이아웃 예제 16</title>
+  <title>패럴랙스 레이아웃 예제 15</title>
 </head>
 <body>
   <div id="wrap">
-    <h1>Parallax <em>LayoutExample(4)</em></h1>
+    <h1>Parallax <em>LayoutExample(3)</em></h1>
     <div class="info">
       <span>scrollTop() : <strong class="scrollTop">0</strong>px</span><br>
       <span>#section1 offset : <strong class="num1OT">0</strong>px</span><br>
@@ -56,35 +56,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script>
-    var infoArr = [];
-    var secArr = [];
-    var offsetArr = [];
-    for(var i = 0; i < 5 ; i++) {
-      infoArr[i] = $("#wrap .info span").eq(i);
-      if(i == 0) infoArr[i].find("strong").text(parseInt($(window).scrollTop() + $(window).height()/2));
-      else {
-        secArr[i-1] = $("#cont .cont_it").eq(i-1);
-        offsetArr[i-1] = parseInt(secArr[i-1].offset().top);
-        infoArr[i].find("strong").text(offsetArr[i-1]);
-      }
-    }
+    var secArr = []
+    var OTArr = []
+    for(var i=0;i<4;i++) secArr[i] = $("#cont section").eq(i);
+    for(var i=0;i<5;i++) OTArr[i] = $("#wrap .info span").eq(i);
     $(window).scroll(function(e){
       const sc = parseInt($(window).scrollTop() + $(window).height()/2);
-      for(var i = 0; i < 5; i++) {
-        if(i == 0) infoArr[i].find("strong").text(sc);
-        else {
-          if(sc >= offsetArr[i-1]) {
-            secArr[i-1].addClass("show");
-            secArr[i-1].removeClass("close");
-            infoArr[i].find("strong").addClass("active");
-          }
-          else if(secArr[i-1].hasClass("show")) {
-            secArr[i-1].addClass("close");
-            secArr[i-1].removeClass("show");
-            infoArr[i].find("strong").removeClass("active");
-          }
-        }
+      OTArr[0].find("strong").text(sc);
+      for(var i=1;i<5;i++) {
+        OTArr[i].find("strong").text(parseInt(secArr[i-1].offset().top));
+        if(sc > parseInt(secArr[i-1].offset().top)) OTArr[i].find("strong").css("color","red");
+        else OTArr[i].find("strong").css("color","black");
       }
+      $("#cont .cont_it").each(function(e){
+        if(sc > $(this).offset().top) $(this).addClass("show");
+        else $(this).removeClass("show");
+      });
     });
   </script>
 </body>
