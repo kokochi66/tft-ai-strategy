@@ -17,14 +17,13 @@
   padding-top: 60px; font-size: 15px; font-weight: 600; color: #fff; text-shadow: 1px 1px 0 #4f4d4d;
   cursor: pointer; transition: all 0.3s ease;
 }
-#contents #sec1 span:hover {opacity: 0.5;}
+#contents .sections span:hover {opacity: 0.5;}
 #contents #sec1 span em {
   border-right: 2px solid #fff; border-bottom: 2px solid #fff;
   box-shadow: 1px 1px 0 #343434; transform: rotate(45deg);
   width: 25px; height: 25px; margin: auto;
   position: absolute; top: -60px; left: 0; right: 0; bottom: 0;
 }
-#contents #sec2 span:hover {opacity: 0.5;}
 #contents #sec2 span em {
   border:2px solid #fff; border-radius: 50%; position: absolute; box-shadow: 1px 1px 0 #343434;
   width: 40px; height: 40px; left: 50%; transform: translate(-50%,0); top: 0;
@@ -34,7 +33,6 @@
   top: -5px; left: 0; right: 0; bottom: 0; margin: auto; box-shadow: 1px 1px 0 #343434;
   transform: rotate(45deg);  border-right: 2px solid #fff; border-bottom: 2px solid #fff;
 }
-#contents #sec3 span:hover {opacity: 0.5;}
 #contents #sec3 span em {
   border:2px solid #fff; border-radius: 50%; position: absolute; box-shadow: 1px 1px 0 #343434;
   width: 40px; height: 40px; left: 50%; transform: translate(-50%,0); top: 0;
@@ -55,7 +53,6 @@
   60% {box-shadow: 0 0 0 60px rgba(255,255,255,0.2); opacity: 0;}
   100% {opacity: 0;}
 }
-#contents #sec4 span:hover {opacity: 0.5;}
 #contents #sec4 span em {
   width: 25px; height: 25px; position: absolute;
   left: 0; top: -60px; bottom: 0; right: 0; margin: auto;
@@ -68,7 +65,6 @@
   50% {transform: translate(0,0) rotate(45deg);}
   100% {transform: translate(0) rotate(45deg);}
 }
-#contents #sec5 span:hover {opacity: 0.5;}
 #contents #sec5 span em {
   width: 25px; height: 25px; position: absolute;
   left: 0; top: -60px; bottom: 0; right: 0; margin: auto;
@@ -80,48 +76,54 @@
   50% {opacity: 1;}
   100% {transform: rotateY(720deg) rotateZ(-45deg) translate(-20px,20px); opacity: 0;}
 }
+#contents #sec6 span em {
+  width: 25px; height: 25px; position: absolute;
+  left: 0; top: -100px; bottom: 0; right: 0; margin: auto;
+  transform: rotate(-45deg); border-bottom: 2px solid #fff; border-left: 2px solid #fff;
+  box-shadow: 0 1px 0 #333; animation: ani6 2s infinite; opacity: 0;
+}
+#contents #sec6 span em:nth-of-type(2) {top: -70px; animation-delay: .25s;}
+#contents #sec6 span em:nth-of-type(3) {top: -40px; animation-delay: .5s;}
+@keyframes ani6 {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+#contents #sec7 span em {
+  width: 25px; height: 50px; position: absolute;
+  left: 0; top: -50px; bottom: 0; right: 0; margin: auto;
+  border-radius: 50px; border: 2px solid  #fff;
+}
+#contents #sec7 span em::before {
+  content: ''; position: absolute; border-radius: 50%;
+  left: 0; top: -25px; right: 0; bottom: 0; margin: auto;
+  width: 7px; height: 7px; background-color: #fff;
+}
+#contents #sec8 span em {
+  width: 25px; height: 50px; position: absolute;
+  left: 0; top: -50px; bottom: 0; right: 0; margin: auto;
+  border-radius: 50px; border: 2px solid  #fff;
+}
+#contents #sec8 span em::before {
+  content: ''; position: absolute; border-radius: 50%;
+  left: 0; top: -25px; right: 0; bottom: 0; margin: auto;
+  width: 7px; height: 7px; background-color: #fff;
+  animation: ani8 1.5s infinite;
+}
+@keyframes ani8 {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {transform: translate(0,25px); opacity: 0;}
+}
 
 #contents #sec1 {background:radial-gradient(ellipse farthest-corner at 20% 80%, #b95858, #aa2727);}
 #contents #sec2 {background:radial-gradient(ellipse farthest-corner at 30% 70%, #aec37a, #8ebf14);}
 #contents #sec3 {background:radial-gradient(ellipse farthest-corner at 80% 50%, #6b8ae4, #1648d9);}
-#contents #sec4 {background:radial-gradient(ellipse farthest-corner at 85% 85%, #cc70c8, #da25d2);}
+#contents #sec4 {background:radial-gradient(ellipse farthest-corner at 85% 85%, #cc70c8, #731586);}
 #contents #sec5 {background:radial-gradient(ellipse farthest-corner at 50% 90%, #80dede, #0d7575);}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#contents #sec6 {background:radial-gradient(ellipse farthest-corner at 10% 50%, #deb580, #95de80);}
+#contents #sec7 {background:radial-gradient(ellipse farthest-corner at 60% 30%, #3cb896, #3c6ab8);}
+#contents #sec8 {background:radial-gradient(ellipse farthest-corner at 60% 30%, #49b83c, #8c3cb8);}
 
 
 
