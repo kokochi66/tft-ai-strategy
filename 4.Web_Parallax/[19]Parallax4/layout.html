@@ -19,6 +19,7 @@
       </ul>
     </div>
   </nav>
+
   <section id="contents">
     <div id="sec1" class="sections">
       <h2>패럴랙스&nbsp;레이아웃&nbsp;컨텐츠&nbsp;요소&nbsp;#1</h2>
@@ -56,7 +57,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script>
-
+    var DownBtn = $("#contents .sections span");
+    var cont = $("#contents .sections");
+    DownBtn.click(function(e){
+      var index = $(this).parent().index()+1 > 7 ? 0 : $(this).parent().index()+1;
+      var offset = cont.eq(index).offset().top;
+      $("html, body").animate({scrollTop:offset},550,"easeInOutExpo");
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <title>패럴랙스 레이아웃 예제 20</title>
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav">
+      <h2>TITLE</h2>
+    </div>
+  </nav>
+
+  <div id="contents">
+    <div class="container">
+      <h3>패럴랙스 스크롤 이미지 기울어짐 효과</h3>
+      <div id="imgWrap">
+        <div id="img1" class="img"></div>
+        <div id="img2" class="img"></div>
+        <div id="img3" class="img"></div>
+        <div id="img4" class="img"></div>
+        <div id="img5" class="img"></div>
+        <div id="img6" class="img"></div>
+        <div id="img7" class="img"></div>
+        <div id="img8" class="img"></div>
+        <div id="img9" class="img"></div>
+        <div id="img10" class="img"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script>
+  // const app = document.getElementById('imgWrap');
+  //     let pageYOffset = window.pageYOffset
+  //
+  //     const render = () => {
+  //         const newPageOffset = window.pageYOffset
+  //         const diff = newPageOffset - pageYOffset
+  //
+  //         TweenMax.to(app, .3, {
+  //             // skewX: -diff * 0.03,
+  //             skewY: diff * 0.3,
+  //             ease: Power4.ease
+  //         })
+  //
+  //         pageYOffset = newPageOffset
+  //         requestAnimationFrame(render)
+  //     }
+  //
+  //     render();
+
+    const app = document.getElementById('imgWrap');
+    let pageYOffset = window.pageYOffset
+    const render = () => {
+      const newPageOffset = window.pageYOffset
+      const diff = newPageOffset - pageYOffset
+      TweenMax.to(app, .3, {
+        skewY: diff * 0.3,
+        ease: Power4.ease
+      })
+      pageYOffset = newPageOffset
+      requestAnimationFrame(render);
+    }
+    render();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // -->
