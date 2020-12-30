@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <title>패럴랙스 레이아웃 예제 21</title>
+</head>
+<body>
+  <div id="wrap">
+    <div id="nav">
+      <div class="nav">
+        <h2>TITLE</h2>
+      </div>
+    </div>
+
+    <div id="contents">
+      <div class="container">
+        <h2>TweenMax를 이용한 이미지 스크롤 효과 복습용 리트라이</h2>
+        <div id="imgWrap">
+          <div class="img_box">
+            <div class="img" id="img1"></div>
+            <div class="text">blur 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img2"></div>
+            <div class="text">brightness 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img3"></div>
+            <div class="text">contrast 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img4"></div>
+            <div class="text">drop-shadow 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img5"></div>
+            <div class="text">grayscale 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img6"></div>
+            <div class="text">hue-rotate 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img7"></div>
+            <div class="text">invert 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img8"></div>
+            <div class="text">opacity 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img9"></div>
+            <div class="text">saturate 필터</div>
+          </div>
+          <div class="img_box">
+            <div class="img" id="img10"></div>
+            <div class="text">sepia 필터</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script>
+    const app = document.getElementById('imgWrap');
+    let offset = window.pageYOffset;
+
+        const render = () => {
+            const NewOffset = window.pageYOffset;
+            const dif = NewOffset - offset;
+
+            TweenMax.to(app, .3, {
+                skewX: -dif * 0.03,
+                skewY: dif * 0.3,
+                ease: Power4.ease
+            })
+            offset = NewOffset;
+            requestAnimationFrame(render);
+        }
+
+        render();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // -->
