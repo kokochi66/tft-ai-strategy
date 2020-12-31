@@ -19,7 +19,7 @@
 
     <div id="contents">
       <div class="container">
-        <h2>TweenMax를 이용한 이미지 스크롤 효과 복습용 리트라이</h2>
+        <h2>TweenMax를 이용한 이미지 스크롤 효과 복습용 21</h2>
         <div id="imgWrap">
           <div class="img_box">
             <div class="img" id="img1"></div>
@@ -75,8 +75,8 @@
             const NewOffset = window.pageYOffset;
             const dif = NewOffset - offset;
 
-            TweenMax.to(app, .3, {
-                skewX: -dif * 0.03,
+            TweenMax.to(app, 0.3, {
+                skewX: -dif * 0.02,
                 skewY: dif * 0.3,
                 ease: Power4.ease
             })

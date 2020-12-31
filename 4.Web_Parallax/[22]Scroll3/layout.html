@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <title>패럴랙스 레이아웃 예제 22</title>
+</head>
+<body>
+  <div id="wrap">
+    <div id="nav">
+      <div class="nav">
+        <h2>TITLE</h2>
+      </div>
+    </div>
+    <div id="contents">
+      <div class="container">
+        <h2>패럴랙스 레이아웃 TweenMax를 이용한 스크롤 효과 22</h2>
+        <div id="imgWrap">
+          <div class="img-box" id="box1">
+            <div class="img"></div>
+            <div class="text">blur 필터</div>
+          </div>
+          <div class="img-box" id="box2">
+            <div class="img"></div>
+            <div class="text">brightness 필터</div>
+          </div>
+          <div class="img-box" id="box3">
+            <div class="img"></div>
+            <div class="text">contrast 필터</div>
+          </div>
+          <div class="img-box" id="box4">
+            <div class="img"></div>
+            <div class="text">drop-shadow 필터</div>
+          </div>
+          <div class="img-box" id="box5">
+            <div class="img"></div>
+            <div class="text">grayscale 필터</div>
+          </div>
+          <div class="img-box" id="box6">
+            <div class="img"></div>
+            <div class="text">hue-rotate 필터</div>
+          </div>
+          <div class="img-box" id="box7">
+            <div class="img"></div>
+            <div class="text">invert 필터</div>
+          </div>
+          <div class="img-box" id="box8">
+            <div class="img"></div>
+            <div class="text">opacity 필터</div>
+          </div>
+          <div class="img-box" id="box9">
+            <div class="img"></div>
+            <div class="text">sepia 필터</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script>
+    var html = document.documentElement;
+    var body = document.body;
+    var scroller = {
+      target: document.querySelector('#imgWrap'),
+      ease: 0.02,
+      endY: 0,
+      y: 0,
+      resizeRequest: 1,
+      scrollRequest: 0,
+    };
+    var requestId = null;
+
+        TweenLite.set(scroller.target, {
+            rotation: 0.01,
+            force3D: true
+        });
+
+        window.addEventListener("load", onLoad);
+
+        function onLoad() {
+            updateScroller();
+            window.focus();
+            window.addEventListener("resize", onResize);
+            document.addEventListener("scroll", onScroll);
+        }
+
+
+    function updateScroller() {
+      var resized = scroller.resizeRequest > 0;
+      if(resized) {
+        body.style.height = scroller.target.clientHeight+"px";
+        scroller.resizeRequest = 0;
+      }
+
+      var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+
+      scroller.endY = scrollY;
+      scroller.y += (scrollY - scroller.y) * scroller.ease;
+
+      if(Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+        scroller.y = scrollY;
+        scroller.scrollerRequest = 0;
+      }
+      TweenLite.set(scroller.target, {
+                y: -scroller.y
+            });
+      requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+    }
+
+    function onResize() {
+      scroller.resizeRequest++;
+      if(!requestId) requestAnimationFrame(updateScroller);
+    }
+    function onScroll() {
+      scroller.scrollRequest++;
+      if(!requestId) requestAnimationFrame(updateScroller);
+    }
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // -->
