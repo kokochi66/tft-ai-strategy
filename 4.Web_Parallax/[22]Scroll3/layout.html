@@ -14,6 +14,10 @@
     <div id="nav">
       <div class="nav">
         <h2>TITLE</h2>
+        <div class="info">
+          <span>i : <em class="ic">0</em></span>
+          <span>j : <em class="jc">0</em></span>
+        </div>
       </div>
     </div>
     <div id="contents">
@@ -67,35 +71,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script>
     var html = document.documentElement;
-    var body = document.body;
+    var body = document.body
     var scroller = {
       target: document.querySelector('#imgWrap'),
-      ease: 0.02,
+      ease: 0.03,
       endY: 0,
       y: 0,
       resizeRequest: 1,
       scrollRequest: 0,
     };
     var requestId = null;
+    TweenLite.set(scroller.target, {
+      rotation: 0.01,
+      force3D: true,
+    });
+    window.addEventListener("load",onLoad);
 
-        TweenLite.set(scroller.target, {
-            rotation: 0.01,
-            force3D: true
-        });
-
-        window.addEventListener("load", onLoad);
-
-        function onLoad() {
-            updateScroller();
-            window.focus();
-            window.addEventListener("resize", onResize);
-            document.addEventListener("scroll", onScroll);
-        }
+    function onLoad() {
+      updateScroller();
+      window.focus();
+      window.addEventListener("resize",onResize);
+      document.addEventListener("scroll", onScroll);
+    }
 
 
     function updateScroller() {
-      var resized = scroller.resizeRequest > 0;
-      if(resized) {
+      if(scroller.resizeRequest != 0) {
         body.style.height = scroller.target.clientHeight+"px";
         scroller.resizeRequest = 0;
       }
@@ -105,7 +106,7 @@
       scroller.endY = scrollY;
       scroller.y += (scrollY - scroller.y) * scroller.ease;
 
-      if(Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+      if(Math.abs(scrollY - scroller.y) < 0.05 || scroller.resizeRequest != 0) {
         scroller.y = scrollY;
         scroller.scrollerRequest = 0;
       }

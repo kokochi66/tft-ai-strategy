@@ -9,7 +9,13 @@
 #nav h2 {
   font-size: 35px; text-shadow: 2px 2px 0 #535353;
   color: #fff; padding: 5px 30px; font-weight: bold;
+  display: inline;
 }
+#nav .info {
+  display: inline-block; float: right;
+  font-size: 20px; padding: 10px;
+}
+#nav .info span {margin-right: 20px;}
 
 #contents {flex-direction: column; display: flex;}
 #contents .container {width: 1200px; margin: 0 auto;}

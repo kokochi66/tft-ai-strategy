@@ -1,0 +1,52 @@
+@charset "UTF-8";
+:root {
+  --base: 1vh;
+  --move: 1rem;
+}
+
+body {background-color: #1e2626;}
+#nav {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background-color: rgba(255,255,255,0.6); z-index: 1000;}
+#nav h2 {
+  text-shadow: 2px 2px 0 #acacac; font-size: 35px; font-weight: 600;
+  padding: 5px 30px;
+}
+#contents .section {position: relative; height: 100vh;}
+#contents .section .cent {
+  width: 50rem; height: 50rem;
+  position: absolute; top: calc(50% - 25rem); left: calc(50% - 25rem); overflow: hidden;
+}
+#contents .section .cent .r {}
+#contents .section .cent .g {}
+#contents .section .cent .b {}
+#contents .section #cen-1 .r, #contents .section #cen-1 .g, #contents .section #cen-1 .b
+{background-image: url(../img3.jpg);}
+#contents .section #cen-2 .r, #contents .section #cen-2 .g, #contents .section #cen-2 .b
+{background-image: url(../img4.jpg);}
+#contents .section #cen-3 .r, #contents .section #cen-3 .g, #contents .section #cen-3 .b
+{background-image: url(../img5.jpg);}
+
+.r , .g, .b {
+  position: absolute; top: calc(var(--move)*-1); left: calc(var(--move)*-1);
+  width: calc(var(--move) * 2 + 100%); height: calc(var(--move) * 2 + 100%);
+  background-size: cover; mix-blend-mode: screen; background-blend-mode: darken;
+}
+.r {background-color: red;}
+.g {background-color: lime;}
+.b {background-color: blue;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // */

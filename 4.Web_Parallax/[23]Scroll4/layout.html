@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <title>패럴랙스 레이아웃 예제 23</title>
+</head>
+<body>
+  <div id="nav">
+    <h2>TITLE</h2>
+  </div>
+
+  <div id="contents">
+    <div class="section">
+      <div class="cent" id="cen-1">
+        <div class="r"></div>
+        <div class="g"></div>
+        <div class="b"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="cent" id="cen-2">
+        <div class="r"></div>
+        <div class="g"></div>
+        <div class="b"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="cent" id="cen-3">
+        <div class="r"></div>
+        <div class="g"></div>
+        <div class="b"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script>
+  let speed = 200;
+  let amount = 40;
+  let scroll = 0;
+  let smooth = 0;
+  let diff = 0;
+  document.addEventListener('scroll', (event) => {
+    scroll = window.scrollY;
+    console.log(scroll);
+  })
+
+  let oldTime = null;
+  let delta = 0;
+  const animate = (t) => {
+    if(oldTime) delta = t - oldTime;
+    smooth += (scroll - smooth) * delta / speed;
+    diff = scroll - smooth;
+
+    let tranC = diff * -2 / amount;
+    let tranR = diff * -1 / amount;
+    let tranG = diff * 2 / amount;
+    let tranB = diff * 1 / amount;
+    const cs = document.querySelectorAll('.cent');
+    const rs = document.querySelectorAll('.r');
+    const gs = document.querySelectorAll('.g');
+    const bs = document.querySelectorAll('.b');
+
+    cs.forEach((image) => {
+      image.style.transform = `translateY(${tranC})px`;
+    })
+    rs.forEach((image) => {
+      image.style.transform = `translateY(${tranR}px)`;
+    })
+    gs.forEach((image) => {
+      image.style.transform = `translateY(${tranG}px)`;
+    })
+    bs.forEach((image) => {
+      image.style.transform = `translateY(${tranB}px)`;
+    })
+    oldTime = t;
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // -->
