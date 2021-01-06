@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>스크립트 마우스효과 JavaScript 예제 05</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    em {font-style: normal;}
+    ul, li {list-style: none;}
+    body {overflow: hidden;}
+
+    #cursor {
+      position: absolute; top: -20px; left: -20px;
+      width: 20px; height: 20px; background-color: #000;
+      border-radius: 50%; user-select: none; pointer-events: none;
+      z-index: 10; transition: opacity .1s;
+    }
+    #main {
+      width: 100vw; height: 100vh; position: relative; z-index: 1;
+      background: url(../img5.jpg) no-repeat center center; background-size: cover;
+    }
+    #main::before {
+      content: '';  width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
+      background-color: #1a251d; opacity: .8; z-index: 2;
+    }
+    #contents {
+      --x: 0; --y:0; --d:20; cursor: none;
+      z-index: 5; width: 50vw; height: 30vw; position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1);
+      transition: transform .2s; overflow: hidden; border-radius: 15px;
+    }
+    #contents:hover {transform: translate(-50%, -50%) scale(1.05);}
+    #contents .img {
+      width: 110%; height: 110%; background: url(../img5-l.jpg) no-repeat center center;
+      background-size: cover; transform: translate(calc(var(--x)/var(--d)*1px), calc(var(--y)/var(--d)*1px));
+    }
+    #contents .text {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      padding: 1vw 0; box-sizing: content-box; display: block; width: 60%;
+      background-color: rgba(255,255,255,.3); border-radius: 15px;
+    }
+    #contents .text p {
+      font-size: 1.5vw; text-shadow: .1vw .1vw 0 #000;
+      font-weight: 600; color: #fff; text-align: center;
+    }
+    #info {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; user-select: none;
+    }
+    #info .left {
+      position: absolute; top: 2vh; left: 2vw; font-size: 18px;
+      z-index: 3; padding: 1vw; background-color: rgba(255,255,255,.3);
+      border-radius: 15px; font-weight: 600; text-shadow: 2px 2px 0 #989898;
+    }
+    #info .right {
+      position: absolute; top: 2vh; right: 2vw;
+      z-index: 3; padding: 1vw; background-color: rgba(255,255,255,.3);
+      border-radius: 15px; font-weight: 600;
+    }
+    #info .right ul li em {
+      width: 25px; height: 25px; display: inline-block;
+      margin-bottom: 10px; margin-left: 8px; text-align: center;
+      line-height: 21px; border: 2px dashed #1c3320; color: #1c3320;
+      background-color: #fff; border-radius: 50%; opacity: .8;
+      transition: background-color .3s, border-color .3s, color .3s;
+    }
+    #info .right ul li em:hover {
+      background-color: #000; color: #b5e9bd; border-color: #b5e9bd;
+    }
+    #info .bottom {
+      position: absolute; bottom: 2vh; left: 2vw;
+      z-index: 3; padding: 1vw; background-color: rgba(255,255,255,.3);
+      border-radius: 15px; font-weight: 600; color: #b5e9bd; text-shadow: 2px 2px 0 #000000;
+    }
+    #info .bottom ul li {transition: color .3s, text-shadow .3s;}
+    #info .bottom ul li:hover {color: #1c3320; text-shadow: 2px 2px 0 #fff;}
+
+
+
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="cursor"></div>
+    <div id="contents">
+      <div class="img"></div>
+      <div class="text">
+        <p>JavaScript gsap을 이용한 마우스효과</p>
+        <p>이미지 내부에 효과를 추가</p>
+      </div>
+    </div>
+  </div>
+  <div id="info">
+    <div class="left">
+      <h2>JavaScript Mosue Effect 04</h2>
+    </div>
+    <div class="right">
+      <ul>
+        <li><em>1</em><em>1</em></li>
+        <li><em>2</em><em>2</em></li>
+        <li><em>3</em><em>3</em></li>
+        <li><em>4</em><em>4</em></li>
+        <li><em>5</em><em>5</em></li>
+        <li><em>6</em><em>6</em></li>
+        <li><em>7</em><em>7</em></li>
+        <li><em>8</em><em>8</em></li>
+        <li><em>9</em><em>9</em></li>
+        <li><em>10</em><em>10</em></li>
+      </ul>
+    </div>
+    <div class="bottom">
+      <ul>
+        <li>mouseX : <em class="translateX">0</em></li>
+        <li>mouseY : <em class="translateY">0</em></li>
+        <li>clientX : <em class="clientX">0</em></li>
+        <li>clientY : <em class="clientY">0</em></li>
+        <li>imgX : <em class="imgX">0</em></li>
+        <li>imgY : <em class="imgY">0</em></li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  <script>
+    const cursor = document.querySelector("#cursor");
+    const cont = document.querySelector("#contents");
+    let x=0, y=0,
+      imgX=0, imgY=0,
+      contWid=0, contHei=0;
+    cont.addEventListener("mousemove", function(e) {
+      const rect = this.getBoundingClientRect();
+      x = e.clientX - (imgX + contWid);
+      y = e.clientY - (imgY + contHei);
+      imgX = rect.left;
+      imgY = rect.top;
+      contWid = Math.round(rect.width/2);
+      contHei = Math.round(rect.height/2);
+      this.style.setProperty("--x", e.clientX - (imgX + contWid));
+      this.style.setProperty("--y", e.clientY - (imgY + contHei));
+      cursor.style.setProperty("opacity",0.8);
+    });
+    cont.addEventListener("mouseleave", function(){
+      x = 0;
+      y = 0;
+      this.style.setProperty("--x", 0);
+      this.style.setProperty("--y", 0);
+      cursor.style.setProperty("opacity",0);
+    });
+
+    document.addEventListener("mousemove", function(e){
+      gsap.to(cursor, {duration:.3, left: e.clientX - 10, top: e.clientY - 10});
+      document.querySelector(".translateX").textContent = Math.round(x);
+      document.querySelector(".translateY").textContent = Math.round(y);
+      document.querySelector(".clientX").textContent = e.clientX;
+      document.querySelector(".clientY").textContent = e.clientY;
+      document.querySelector(".imgY").textContent = Math.round(imgY);
+      document.querySelector(".imgX").textContent = Math.round(imgX);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
