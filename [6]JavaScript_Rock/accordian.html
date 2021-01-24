@@ -10,22 +10,27 @@
     .container {width: 1200px; margin: 0 auto;}
     #accordian {position: relative;}
     #accordian h2 {text-align: center; padding: 30px 0;}
-    #accordian .collapse {
+    #accordian #collapse {
       position: absolute; top: 20px; right: 100px; display: inline-block;
       border: 1px solid #000; padding: 5px; background-color: #dfdfdf; cursor: pointer;
     }
-    #accordian .banner {border: 1px solid #888; margin-bottom: 20px; overflow: hidden;}
-    #accordian .banner .head {text-align: center; background-color: #000000; color: #fff; cursor: pointer;}
-    #accordian .banner .body {text-align: center; display: none;}
-    #accordian .banner.active .body {display: block;}
+    #accordian .banner { margin-bottom: 20px; position: relative; overflow: hidden; border: 1px solid #888;}
+    #accordian .banner .head {
+      text-align: center; background-color: #000000; color: #fff; cursor: pointer;
+      position: relative; z-index: 5;
+    }
+    #accordian .banner .body {
+      text-align: center; padding: 10px 50px; position: relative; top: 0; left: 0;
+      transition: margin-bottom .4s;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div id="accordian">
       <h2>Accordian</h2>
-      <div class="collapse">Collapse All</div>
-      <div class="banner active">
+      <div id="collapse">Collapse All</div>
+      <div class="banner">
         <div class="head">벚꽃사중주</div>
         <div class="body">색채의 마을, 사쿠라신마치를 무대로 벌어지는 꽃과 환상 기담 <br>
           인간과 요괴가 공존하면서 갈수록 혼돈이 깊어지는 벚꽃마을 사쿠라신마치. 이곳에서 벌어지는 괴기 사건은 전부 ‘히이즈미생활상담사무소’ 멤버들이 해결한다! <br>
@@ -43,6 +48,41 @@
       </div>
     </div>
   </div>
+  <script>
+    var Btn_collapse = document.getElementById('collapse'),
+        banner = document.querySelectorAll('banner'),
+        ban_head = document.querySelectorAll('.banner .head'),
+        ban_body = document.querySelectorAll('.banner .body'),
+        ban_height = [];
+    getBannerHeight();
+    collapseAll();
+    Btn_collapse.addEventListener('click', () => {
+      collapseAll();
+    });
+    ban_head.forEach(elem => {
+      elem.addEventListener('click', () => {
+        if(elem.parentNode.classList.contains('active')) {
+          elem.parentNode.classList.remove('active');
+          elem.nextSibling.nextSibling.style.marginBottom = -1 * (elem.nextSibling.nextSibling.offsetHeight) + "px";
+        } else {
+          elem.parentNode.classList.add('active');
+          elem.nextSibling.nextSibling.style.marginBottom = 0;
+        }
+      });
+    });
 
+    function getBannerHeight() {
+      for(var i =0;i<ban_body.length;i++) {
+        ban_height[i] = ban_body[i].offsetHeight;
+      }
+    }
+    function collapseAll() {
+      ban_body.forEach(elem => {
+        elem.parentNode.classList.remove('active');
+        elem.style.marginBottom  = -1 * (elem.offsetHeight) + "px";
+      });
+    }
+
+  </script>
 </body>
 </html>
