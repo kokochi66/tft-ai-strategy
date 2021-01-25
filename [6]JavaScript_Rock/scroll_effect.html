@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>자바스크립트를 이용한 스크롤 효과 예제</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    #container {width: 1200px; margin: 0 auto;}
+    .char {padding: 50px; margin: 500px 0; opacity: 0; transition: opacity .5s;}
+    .char.visible {opacity: 1;}
+    .name {font-size: 30px; font-weight: 600;}
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="char">
+      <div class="name">호리 쿄코</div>
+      <div class="inst">
+        밝고 외향적인 성격에 성적도 우수해서 인기가 많은 소녀이지만 초S 성향이다. <br>
+        집을 비우는 시간이 잦은 부모를 대신해 어린 남동생을 돌보는 가정적인 면도 있다. <br>
+        덕분에 또래들 처럼 자주 놀러다닐 수 없고, 그에 대한 반동인지 학교에서는 늘 화장하고 화려하며 약간 허영스러운 타입으로 행동한다. <br>
+        학교와 집에서의 갭이 심하여 집안일 버전으로 차려입으면 제일 친한 친구가 길에서 스쳐지나가도 알아보지 못 할 정도. <br>
+        이러한 부분이 미야무라의 피어스와 문신의 비밀을 서로 지켜주게 되는 중요한 설정이었지만 갈수록 흐지부지하게 된다.
+      </div>
+    </div>
+    <div class="char">
+      <div class="name">미야무라 이즈미</div>
+      <div class="inst">
+        여름에도 늘 동복을 입고 긴 머리와 안경으로 어두운 분위기를 풍기는 소년. <br>
+        이런 인상착의는 피어스와 문신을 가리기 위한 것이다. <br>
+        성격도 내성적이다. 문신은 작중 시점에서도 늘려서 허벅지 아래까지 갔다고 한다. <br>
+        쿄코와 사귀기 시작하며 피어싱과 문신은 그만 두었다.
+      </div>
+    </div>
+    <div class="char">
+      <div class="name">이시카와 토오루</div>
+      <div class="inst">
+        삐죽한 보라색 머리가 특징. 리메이크 판에서는 스트레이한 머리로 나온다. <br>
+        작중 제일의 상식인이자 대인배다. 본인은 아무 잘못이 없는 데도 이리저리 사건에 치이는, 말 그대로 죄 없이 불행한 자. <br>
+        호리를 짝사랑하는 남학생으로 첫 등장. 호리와 친하게 지내는 미야무라를 떠보다가 친구가 된다. <br>
+        호리에게 고백하지만 당연하게도 차여버리는데, 안타깝게도 미야무라가 토오루를 신경 쓴다는 이유로 호리에게 더 비호감을 산다(...) 그리고 이 때부터 불쌍한 캐릭터 확정.
+      </div>
+    </div>
+    <div class="char">
+      <div class="name">요시카와 유키</div>
+      <div class="inst">
+        호리의 절친한 친구. 위에 미대생인 언니가 있다. 미야무라의 사복 차림을 보고 호감을 보였지만 내용이 전개되면서 잊혀진 설정이 된듯하다. <br>
+        호리의 절친이지만 호리의 집안에서의 모습을 보고도 알아채지 못한다(...) <br>
+        중반쯤 학교 지정 스웨터를 잃어버려 언니가 입던 소매가 긴 큰 스웨터를 입고 다니는데 이후 손을 다 덮고도 남는 긴 소매가 트레이드 마크가 되었다. <br>
+        리메이크 판에서는 처음부터 소매가 긴 스웨터를 입고 있다. <br>
+        언제나 밝은 모습으로 사람들에게 호감을 받지만, 사실은 괴로운 일이 있어도 무리해서 웃는 타입. <br>
+        우유부단한 기질이 있으며 진심으로 좋아하는 것에는 소극적이다. <br>
+      </div>
+    </div>
+  </div>
+  <script>
+    var charPosition = [],
+        chars = document.querySelectorAll('#container .char');
+    getCharPosition();
+    document.addEventListener('scroll', function(e){
+      var scrollValue = document.documentElement.scrollTop;
+      for(var i = 0; i < charPosition.length; i++) {
+        if(scrollValue >= charPosition[i]-(document.body.offsetHeight/5)) {
+          chars[i].classList.add('visible');
+        } else chars[i].classList.remove('visible');
+      }
+    });
+    function getCharPosition() {
+      for(var i = 0; i< chars.length; i++) {
+        var rect = chars[i].getBoundingClientRect();
+        charPosition[i] = rect.top;
+        console.log(charPosition[i]);
+      }
+    }
+
+
+  </script>
+</body>
+</html>
