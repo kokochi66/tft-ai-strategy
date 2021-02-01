@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>자바스크립트를 이용한 스크롤 메뉴 예제</title>
+</head>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+  a {text-decoration: none; color: #000;}
+  #menu {position: fixed; top: 0; left: 0; right: 0; background-color: #c1eddc; padding: 0 20px; border-bottom: 1px solid #000;}
+  #menu li {display: inline-block; margin-right: 10px; font-size: 20px; padding: 30px 10px;}
+  #menu li.on {font-weight: bold; color: rgb(88, 28, 1);}
+  #contents {}
+  #contents li {
+    height: 100vh; width: 100vw; line-height: 100vh; font-size: 8vw; text-align: center;
+  }
+  #contents li:nth-child(1) {background-color: #80d5de;}
+  #contents li:nth-child(2) {background-color: #8d80de;}
+  #contents li:nth-child(3) {background-color: #dc80de;}
+</style>
+<body>
+  <ul id="menu">
+    <li><a href="#">menu1</a> </li>
+    <li><a href="#">menu2</a> </li>
+    <li><a href="#">menu3</a> </li>
+  </ul>
+  <ul id="contents">
+    <li>page1</li>
+    <li>page2</li>
+    <li>page3</li>
+  </ul>
+  <script>
+
+  </script>
+</body>
+</html>
