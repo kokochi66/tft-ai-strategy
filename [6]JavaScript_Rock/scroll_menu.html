@@ -22,7 +22,7 @@
 </style>
 <body>
   <ul id="menu">
-    <li><a href="#">menu1</a> </li>
+    <li><a href="#" data-num="1">menu1</a> </li>
     <li><a href="#">menu2</a> </li>
     <li><a href="#">menu3</a> </li>
   </ul>
@@ -32,7 +32,43 @@
     <li>page3</li>
   </ul>
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var menu = document.querySelectorAll('#menu li'),
+          contents = document.querySelectorAll('#contents li'),
+          workClear = true;
+      // 변수 선언
+      console.log(menu);
+      menu.forEach(elem => {
+        elem.addEventListener('click', function(e) {
+          e.preventDefault();
+          var idx = index(elem),
+              top = contents[idx].offsetTop,
+              lastPos = 0;
+          if(workClear) {
+            var scrollInterval = setInterval(function() {
+              if(Math.abs(top - window.pageYOffset) > 50) {
+                console.log(workClear);
+                workClear = false;
+                if(top > window.pageYOffset) window.scrollBy(0,10);
+                else window.scrollBy(0,-10);
+              } else {
+                console.log("메소드 종료");
+                window.scrollTo(0,top);
+                lastPos = top;
+                workClear = true;
+                clearInterval(scrollInterval);
+              }
+            }); // scrollInterval
+          } else {
+            console.log("이미 동작중");
+          }
+        }); // click EventListener
+      }); // menu forEach
+    }); // DOMContentLoaded
 
+    function index(elem) {
+      return [].indexOf.call(elem.parentNode.children, elem);
+    } // 배열의 인덱스를 구하는 함수
   </script>
 </body>
 </html>
