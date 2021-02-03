@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @font-face {
-    src: url(../font/TmonMonsori.ttf);
+    src: url(../fonts/TmonMonsori.ttf);
     font-family: 'TmonMonsori';
 }
 @font-face {
-    src: url(../font/KoPubWorld.ttf);
+    src: url(../fonts/KoPubWorld.ttf);
     font-family: 'KoPubWorld';
 }
 @font-face {
-    src: url(../font/GyeongGi.ttf);
+    src: url(../fonts/GyeongGi.ttf);
     font-family: 'GyeongGi';
 }
