@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+body {background-color: #4e4e4e;}
+:root {
+
+}
+* {font-family: 'GyeongGi'}
+/* #wrap */
+#wrap {width: 100%;}
+
+/* #header */
+#header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  padding: 48px 45px 0 45px; box-sizing: border-box;
+  transition: all .3s;
+}
+#header.hover {background-color: #fff; padding: 20px 45px 250px 45px;}
+#header .header {position: relative;}
+
+  /* title */
+#header .title {
+  display: inline-block; font-size: 22px; color: #c53131;
+  font-weight: 600;
+}
+  /* //title */
+
+  /* menu */
+#header .menu {
+  display: inline-block; position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%); width: 702px;
+}
+#header .menu li {
+  display: inline-block; float: left; margin-left: 65px;
+  position: relative;
+}
+#header .menu li a {color: #fff; font-size: 18px;}
+#header .menu li ul {
+  display: none; position: absolute; top: 40px; left: 50%;
+  transform: translateX(-50%); width: 100px;
+}
+#header .menu li ul li {
+  display: block; float: none; margin-left: 0;
+  cursor: pointer; text-align: center; margin-bottom: 7px; font-size: 14px;
+}
+#header.hover .menu li a {color: #000;}
+#header.hover .menu li ul {display: block;}
+  /* //menu */
+
+  /* util */
+#header .util {
+  display: inline-block; position: absolute; top: 0; right: 0;
+}
+#header .util a {color: #fff;}
+#header.hover .util a {color: #000;}
+#header .util .btn1 {}
+#header .util .btn2 {
+  padding-left: 19px; margin-left: 19px; position: relative;
+}
+#header .util .btn2::after {
+  content: ''; position: absolute; width: 5px; height: 5px;
+  background-color: #fff; border-radius: 50%; top: 50%; left: 0;
+  transform: translateY(-50%);
+}
+#header.hover .util .btn2::after {background-color: #000;}
+#header .util .btn3 {
+  margin-left: 32px; color: #ea2525; padding: 13px 18px;
+  background-color: #fff; border-radius: 30px;
+}
+#header.hover  .util .btn3 {color: #fff; background-color: #ea2525; }
+  /* //util */
+
+/* //#header */
+
+/* #contents */
+#contents {}
+/* //#contents */
+
+/* #footer */
+#footer {}
+/* //#footer */
+
+/* #banner */
+#banner {}
+/* //#banner */
