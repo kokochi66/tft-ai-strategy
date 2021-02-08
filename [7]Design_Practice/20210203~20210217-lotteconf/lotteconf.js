@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   menu_item.forEach(elem => {elem.addEventListener('mouseenter', headerAdd);}); // 상단메뉴 오버
   header.addEventListener('mouseleave', headerRemove); // 상단메뉴 리브
-  document.addEventListener('scroll', function(e){
-    if(window.scrollY != 0) {
-      header.classList.add('scroll');
-    } else header.classList.remove('scroll');
-  });
 
 
   var contents = document.getElementById('contents'),
@@ -115,5 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
+  var cont02 = document.querySelector('#contents .cont02');
+  document.addEventListener('scroll', function(e){
+    if(window.scrollY != 0) {
+      header.classList.add('scroll');
+    } else header.classList.remove('scroll');
+    if(window.scrollY >= cont01.getBoundingClientRect().top) cont01.classList.add('display');
+    if(window.scrollY >= cont02.getBoundingClientRect().top) cont02.classList.add('display');
+  }); // 스크롤 이벤트
 });
