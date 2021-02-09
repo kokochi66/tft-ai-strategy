@@ -14,7 +14,7 @@ body {background-color: #ffffff;}
   padding: 48px 45px 0 45px; box-sizing: border-box;
   transition: all .3s; z-index: 300;
 }
-#header.hover, #header.scroll.hover {background-color: #fff; padding: 20px 45px 250px 45px;}
+#header.hover, #header.scroll.hover {background-color: #fff; padding: 20px 45px 300px 45px;}
 #header .header {position: relative; line-height: 33px;}
 #header.hover .header {
   border-bottom: 1px solid #cbcbcb; padding-bottom: 10px;
@@ -35,7 +35,7 @@ body {background-color: #ffffff;}
 }
 #header .menu li {
   display: inline-block; float: left; margin-left: 65px;
-  position: relative;
+  position: relative; transition: all .5s;
 }
 #header .menu li a {color: #fff; font-size: 18px;}
 #header .menu li ul {
@@ -59,6 +59,7 @@ body {background-color: #ffffff;}
 #header .util .btn1 {}
 #header .util .btn2 {
   padding-left: 19px; margin-left: 19px; position: relative;
+  transition: all .5s;
 }
 #header .util .btn2::after {
   content: ''; position: absolute; width: 5px; height: 5px;
@@ -68,10 +69,17 @@ body {background-color: #ffffff;}
 #header.hover .util .btn2::after, #header.scroll .util .btn2::after {background-color: #000;}
 #header .util .btn3 {
   margin-left: 32px; color: #ea2525; padding: 13px 18px;
-  background-color: #fff; border-radius: 30px;
+  background-color: #fff; border-radius: 30px; transition: all .5s;
 }
 #header.hover  .util .btn3, #header.scroll .util .btn3 {color: #fff; background-color: #ea2525; }
   /* //util */
+
+
+#header .menu-bar {
+  font-size: 40px; display: none; position: absolute;
+  top: 30px;  right: 40px; color: #fff; cursor: pointer; transition: all .5s;
+}
+#header.scroll .menu-bar {top: 10px; color: #000;}
 
 /* //#header */
 
@@ -117,14 +125,14 @@ body {background-color: #ffffff;}
   position: absolute; top: 50%; left: 60%; transform: translateY(-50%);
 }
 #contents .top-slider .slider .slides .text h2 {
-  color: #fff; font-weight: 600; font-size: 80px;
+  color: #fff; font-weight: 600; font-size: 5vw;
   text-shadow: 0 3px 3px #000; transform: translateY(10px); opacity: 0;
 }
 #contents .top-slider .slider .slides.active .text h2 {
   animation: top-text 1s forwards; animation-delay: .5s;
 }
 #contents .top-slider .slider .slides .text p {
-  font-size: 40px; color: #fff; text-shadow: 0 2px 2px #000;
+  font-size: 3vw; color: #fff; text-shadow: 0 2px 2px #000;
   transform: translateY(10px); opacity: 0;
 }
 #contents .top-slider .slider .slides.active .text p {
@@ -154,6 +162,7 @@ body {background-color: #ffffff;}
   position: absolute; bottom: -100%; left: 50%; width: 80%;
   transform: translateX(-50%); z-index: 200; height: 120px;
   animation: top-banner-on 1s forwards; animation-delay: 1s;
+  transition: all .5s;
 }
 #contents .top-slider .banner  .ban-item {
   float: left; width: 33.333%; height: 100%;

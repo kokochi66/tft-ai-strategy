@@ -3,10 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
       title = document.querySelector('#header .title'),
       menu = document.querySelector('#header .menu'),
       menu_item = document.querySelectorAll('#header .menu li'),
-      util = document.querySelector('#header .util');
+      util = document.querySelector('#header .util'),
+      menu_bar = document.querySelector('#header .menu-bar');
 
   menu_item.forEach(elem => {elem.addEventListener('mouseenter', headerAdd);}); // 상단메뉴 오버
   header.addEventListener('mouseleave', headerRemove); // 상단메뉴 리브
+  menu_bar.addEventListener('click', function(){
+    
+  });
 
 
   var contents = document.getElementById('contents'),

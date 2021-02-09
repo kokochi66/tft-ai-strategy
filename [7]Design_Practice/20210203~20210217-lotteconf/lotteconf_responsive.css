@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@media (max-width: 1280px){
+  #header .menu li {margin-left: 45px;}
+  #contents .top-slider .banner {width: 100%;}
+  #header .util .btn2 {padding-left: 15px; margin-left: 9px;}
+  #header .util .btn3 {margin-left: 9px;}
+}
+
+@media (max-width: 1024px){
+  #header .header {text-align: center;}
+  #header .title {font-size: 3vw;}
+  #header .menu {display: none;}
+  #header .util {display: none;}
+  #header .menu-bar {display: inline-block;}
+}
