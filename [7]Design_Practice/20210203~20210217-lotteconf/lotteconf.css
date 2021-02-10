@@ -15,7 +15,9 @@ body {background-color: #ffffff;}
   transition: all .3s; z-index: 300;
 }
 #header.hover, #header.scroll.hover {background-color: #fff; padding: 20px 45px 300px 45px;}
-#header .header {position: relative; line-height: 33px;}
+#header .header {
+  position: relative; line-height: 33px; height: 33px; float: left; width: 90%;
+}
 #header.hover .header {
   border-bottom: 1px solid #cbcbcb; padding-bottom: 10px;
 }
@@ -24,23 +26,24 @@ body {background-color: #ffffff;}
   /* title */
 #header .title {
   display: inline-block; font-size: 22px; color: #c53131;
-  font-weight: 600; cursor: pointer;
+  font-weight: 600; cursor: pointer; transition: all .5s; float: left;
 }
   /* //title */
 
   /* menu */
 #header .menu {
   display: inline-block; position: absolute; top: 0; left: 50%;
-  transform: translateX(-50%); width: 702px;
+  transform: translateX(-50%); width: 702px; transition: all .5s;
 }
 #header .menu li {
   display: inline-block; float: left; margin-left: 65px;
   position: relative; transition: all .5s;
 }
 #header .menu li a {color: #fff; font-size: 18px;}
+#header .menu li .down {display: none;}
 #header .menu li ul {
   display: none; position: absolute; top: 60px; left: 50%;
-  transform: translateX(-50%); width: 100px;
+  transform: translateX(-50%); width: 100px; transition: all .5s;
 }
 #header .menu li ul li {
   display: block; float: none; margin-left: 0;
@@ -58,8 +61,7 @@ body {background-color: #ffffff;}
 #header.hover .util a, #header.scroll .util a {color: #000;}
 #header .util .btn1 {}
 #header .util .btn2 {
-  padding-left: 19px; margin-left: 19px; position: relative;
-  transition: all .5s;
+  padding-left: 19px; margin-left: 19px; position: relative; transition: all .5s;
 }
 #header .util .btn2::after {
   content: ''; position: absolute; width: 5px; height: 5px;
@@ -71,15 +73,20 @@ body {background-color: #ffffff;}
   margin-left: 32px; color: #ea2525; padding: 13px 18px;
   background-color: #fff; border-radius: 30px; transition: all .5s;
 }
-#header.hover  .util .btn3, #header.scroll .util .btn3 {color: #fff; background-color: #ea2525; }
+#header.hover .util .btn3, #header.scroll .util .btn3 {color: #fff; background-color: #ea2525; }
   /* //util */
 
 
 #header .menu-bar {
   font-size: 40px; display: none; position: absolute;
-  top: 30px;  right: 40px; color: #fff; cursor: pointer; transition: all .5s;
+  top: 20px;  right: 60px; color: #fff; cursor: pointer; transition: all .5s;
 }
 #header.scroll .menu-bar {top: 10px; color: #000;}
+#header .menu-cancel {
+  font-size: 40px; display: none; position: absolute;
+  top: 20px; right: 60px; color: #000; cursor: pointer; transition: all .5s;
+}
+
 
 /* //#header */
 
@@ -98,28 +105,25 @@ body {background-color: #ffffff;}
 #contents .top-slider {
   height: 100vh; width: 100%; overflow: hidden; position: relative;
 }
-#contents .top-slider .slider {height: 100%; width: 100%; position: absolute; top: 0; left: 0;}
+#contents .top-slider .slider {height: 100%; width: 100%;}
 #contents .top-slider .slider .slides {
-  height: 100%; width: 100%; position: absolute; top: 0; left: 0; overflow: hidden;
-  transition: left 1s; z-index: 80;
+  height: 100%; width: 100%; overflow: hidden;
 }
-#contents .top-slider .slider .slides.active {z-index: 100;}
-#contents .top-slider .slider .slides.hidden {z-index: 0;}
 #contents .top-slider .slider .slides .img {
-  height: 100%; width: 100%; box-shadow: inset 0 0 15em black;
+  height: 100%; width: 100%; box-shadow: inset 0 0 15em black; transform: scale(1.2);
 }
-#contents .top-slider .slider .slides.active .img {animation: top-bg-ani 3s forwards;}
-#contents .top-slider .slider .slides:nth-child(1) .img {
-  background: url(img/bg-slide01.jpg); background-position: center center;
-  background-repeat: no-repeat; background-size: cover; transform: scale(1.2);
+#contents .top-slider .slider .slides.swiper-slide-active .img {animation: top-bg-ani 3s forwards;}
+#contents .top-slider .slider .slides .img-01 {
+  background-position: center center; background-repeat: no-repeat; background-size: cover;
+  background-image: url(img/bg-slide01.jpg);
 }
-#contents .top-slider .slider .slides:nth-child(2) .img {
-  background: url(img/bg-slide02.jpg); background-position: center center;
-  background-repeat: no-repeat; background-size: cover; transform: scale(1.2);
+#contents .top-slider .slider .slides .img-02 {
+  background-position: center center; background-repeat: no-repeat; background-size: cover;
+  background-image: url(img/bg-slide02.jpg);
 }
-#contents .top-slider .slider .slides:nth-child(3) .img {
-  background: url(img/bg-slide03.jpg); background-position: center center;
-  background-repeat: no-repeat; background-size: cover; transform: scale(1.2);
+#contents .top-slider .slider .slides .img-03{
+  background-position: center center; background-repeat: no-repeat; background-size: cover;
+  background-image: url(img/bg-slide03.jpg);
 }
 #contents .top-slider .slider .slides .text {
   position: absolute; top: 50%; left: 60%; transform: translateY(-50%);
@@ -128,14 +132,14 @@ body {background-color: #ffffff;}
   color: #fff; font-weight: 600; font-size: 5vw;
   text-shadow: 0 3px 3px #000; transform: translateY(10px); opacity: 0;
 }
-#contents .top-slider .slider .slides.active .text h2 {
+#contents .top-slider .slider .slides.swiper-slide-active .text h2 {
   animation: top-text 1s forwards; animation-delay: .5s;
 }
 #contents .top-slider .slider .slides .text p {
   font-size: 3vw; color: #fff; text-shadow: 0 2px 2px #000;
   transform: translateY(10px); opacity: 0;
 }
-#contents .top-slider .slider .slides.active .text p {
+#contents .top-slider .slider .slides.swiper-slide-active .text p {
   animation: top-text 1s forwards; animation-delay: .8s;
 }
 #contents .top-slider .prev {
@@ -149,6 +153,9 @@ body {background-color: #ffffff;}
 #contents .top-slider .progressbar {
   position: absolute; top: 80%; left: 50%;  transform: translate(-50%,-50%);
   width: 400px; height: 5px; background-color: #fff; z-index: 200;
+}
+#contents .top-slider .progressbar .swiper-pagination-progressbar-fill {
+  transition-duration: 2000ms;
 }
 #contents .top-slider .progressbar::after {
   content: ''; height: 100%; width: 0; background-color: #000;
@@ -242,11 +249,8 @@ body {background-color: #ffffff;}
 }
 .cont01 .right {height: 100%; width: 68%; float: left;}
 .cont01 .right .slider {
-  width: 100%; height: 100%; overflow: hidden; position: relative;
 }
 .cont01 .right .slider .slides {
-  width: 100%; height: 100%; overflow: hidden;
-  position: absolute; top: 0; left: 0; transition: left 1s; z-index: 50;
 }
 .cont01 .right .slider .slides.active {z-index: 100;}
 .cont01 .right .slider .slides.hidden {z-index: 0;}
