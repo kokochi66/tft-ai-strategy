@@ -32,7 +32,7 @@ body {background-color: #ffffff;}
 
   /* menu */
 #header .menu {
-  display: inline-block; position: absolute; top: 0; left: 50%;
+  display: inline-block; position: absolute; top: 0; left: 40%;
   transform: translateX(-50%); width: 702px; transition: all .5s;
 }
 #header .menu li {
@@ -233,7 +233,7 @@ body {background-color: #ffffff;}
 .cont01 .left .text {position: relative; width: 100%; height: 100%;}
 .cont01 .left .text .item {
   opacity: 0; font-size: 2.5vw; position: absolute; top: 10%; left: 50%;
-  text-align: center; transform: translate(-50%, 20px);
+  text-align: center; transform: translateY(-50%, 20px);
 }
 .cont01 .left .text .item span {font-size: 4vw; font-weight: 600;}
 .cont01 .left .text .item.active {
@@ -247,13 +247,7 @@ body {background-color: #ffffff;}
   font-size: 100px; position: absolute; top: 60%; left: 60%;
   transform: translate(-50%, -50%); cursor: pointer;
 }
-.cont01 .right {height: 100%; width: 68%; float: left;}
-.cont01 .right .slider {
-}
-.cont01 .right .slider .slides {
-}
-.cont01 .right .slider .slides.active {z-index: 100;}
-.cont01 .right .slider .slides.hidden {z-index: 0;}
+.cont01 .right {height: 100%; width: 68%; float: left; transition: all .5s;}
 .cont01 .right .slider .slides video {height: 100%;}
   /* //cont01 */
 
@@ -264,7 +258,7 @@ body {background-color: #ffffff;}
 
 
   /* cont02 */
-.cont02 {width: 100%; height: 100vh; margin-top: 10vh; position: relative; opacity: 0;}
+.cont02 {width: 100%; height: 100vh; margin-top: 10vh; position: relative; opacity: 0; overflow: hidden;} 
 .cont02.display {animation: display 1s forwards;}
 .cont02 .left {
   width: 30%; height: 50%; float: left; position: relative;

@@ -63,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cont01_right = document.querySelector('#contents .cont01 .swiper-container'),
       cont01_slider = document.querySelector('#contents .cont01 .right .slider'),
       cont01_slides = document.querySelectorAll('#contents .cont01 .right .slides'),
-      cont01_slides_index = 0,
-      cont01_slides_clear = true,
+      cont01_active_slide = document.querySelector('#contents .cont01 .right .slides .swiper-slide-active'),
       cont01_slides_video = document.querySelectorAll('#contents .cont01 .right .slides video');
 
   var cont01_swiper = new Swiper(cont01_right, {
@@ -72,37 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navigation: {
       nextEl: cont01_next,
       prevEl: cont01_prev,
-    }
-  });
-  // slide_initialize(cont01_slider,0);
-  // cont01_active(cont01_text_item, 0);
-  // cont01_video_play(cont01_slides_video,0);
-  // cont01_prev.addEventListener('click', () => {
-  //   if(cont01_slides_clear){
-  //     cont01_slides_clear = false; // 슬라이드 시간동안 버튼 잠김
-  //     slide_removeHidden(cont01_slides); // 숨김 z-index 초기화
-  //     slide_prev(cont01_slider,cont01_slides_index); // 슬라이드 이동
-  //     cont01_slides_index = cont01_slides_index-1 >= 0 ? cont01_slides_index-1 : cont01_slides.length-1; // 현재 슬라이드 index 적용
-  //     cont01_active(cont01_text_item,cont01_slides_index);
-  //     cont01_video_play(cont01_slides_video,cont01_slides_index);
-  //     setTimeout(function() {
-  //       cont01_slides_clear = true;
-  //     },1000); // 슬라이드 시간 후 버튼 잠김을 품
-  //   }
-  // });
-  // cont01_next.addEventListener('click', () => {
-  //   if(cont01_slides_clear){
-  //     cont01_slides_clear = false; // 슬라이드 시간동안 버튼 잠김
-  //     slide_removeHidden(cont01_slides); // 숨김 z-index 초기화
-  //     slide_next(cont01_slider,cont01_slides_index); // 슬라이드 이동
-  //     cont01_slides_index = cont01_slides_index+1 == cont01_slides.length ? 0 : cont01_slides_index+1; // 현재 슬라이드 index 적용
-  //     cont01_active(cont01_text_item,cont01_slides_index);
-  //     cont01_video_play(cont01_slides_video,cont01_slides_index);
-  //     setTimeout(function() {
-  //       cont01_slides_clear = true;
-  //     },1000); // 슬라이드 시간 후 버튼 잠김을 품
-  //   }
-  // });
+    },
+  }); // cont01의 Swiper
+  cont01_swiper.on('transitionEnd', function (e) {
+    cont01_active_slide = document.querySelector('#contents .cont01 .right .slider .swiper-slide-active');
+    var data_index = cont01_active_slide.getAttribute('data-swiper-slide-index');
+    cont01_text_item.forEach(elem => {
+      elem.classList.remove('active');
+    });
+    cont01_text_item[data_index].classList.add('active');
+  }); // 슬라이드가 움직일 때 마다 텍스트 변경효과
 
   var cont02 = document.querySelector('#contents .cont02');
   document.addEventListener('scroll', function(e){

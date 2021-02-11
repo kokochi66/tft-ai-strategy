@@ -95,12 +95,48 @@
   #contents .top-slider .slider .slides .text p {font-size: 3vw;}
   #contents .top-slider .prev {display: none;}
   #contents .top-slider .next {display: none;}
+
+
+
+
+  #contents .cont01 {height: auto;}
+  #contents .cont01 .left {width: 100%; height: 250px; float: none;}
+  #contents .cont01 .left .text .item {left: 13%; text-align: left; font-size: 3.5vw; transform: translate(0, 20px);}
+  #contents .cont01 .left .text .item span {font-size: 5vw;}
+  #contents .cont01 .left .prev {display: none;}
+  #contents .cont01 .left .next {display: none;}
+  #contents .cont01 .right {width: 100%; height: 700px; float: none;}
+
+
+
+
+  #contents .cont02 {margin-top: 100px; height: auto;}
+  #contents .cont02 .left {width: 100%; height: 150px;}
+  #contents .cont02 .left .text {left: 5%; top: 0; font-size: 40px;}
+  #contents .cont02 .center {width: 100%; height: 150px; margin-top: 50px;}
+  #contents .cont02 .center .text {left: 5%; top: 0;}
+  #contents .cont02 .right {width: 100%; height: 150px; margin-top: 50px;}
+  #contents .cont02 .right .text {left: 10%; top: 0; font-size: 50px;}
+  #contents .cont02 .video {height: 50vw;}
+ }
+
+@media (max-width: 800px){
+  #contents .cont01 .left {height: 200px;}
+  #contents .cont01 .right {height: 600px;}
 }
-
-
 
 @media (max-width: 480px){
   #header .menu-bar {right: 20px;}
+
+  #contents .cont01 .left {height: 150px;}
+  #contents .cont01 .right {height: 400px;}
+
+  #contents .cont02 {margin-top: 100px; height: auto;}
+  #contents .cont02 .left {height: 100px;}
+  #contents .cont02 .left .text {font-size: 30px;}
+  #contents .cont02 .center {height: 130px; margin-top: 20px;}
+  #contents .cont02 .right {height: 130px; margin-top: 20px;}
+  #contents .cont02 .right .text {font-size: 40px;}
 }
 
 
