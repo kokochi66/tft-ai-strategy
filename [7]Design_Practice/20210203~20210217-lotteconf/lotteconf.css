@@ -278,16 +278,24 @@ body {background-color: #ffffff;}
   font-size: 70px; font-weight: 600; color: #cccccc;
 }
 .cont02 .video {clear: both; width: 100%; height: 50%; background-color: #bf60b6; overflow: hidden;}
-.cont02 .video video {
-  width: 100%;
-}
+.cont02 .video video {width: 100%;}
   /* //cont02 */
 
-.cont03 {width: 100%; height: 100vh;}
-.cont03 .main-text {}
-.cont03 .main-text .text {}
-.cont03 #cont03-slider {}
+  /* cont03 */
+.cont03 {width: 100%; height: 100vh; position: relative; margin-top: 100px;}
+.cont03 .main-text {
+  position: absolute; width: 100%; top: 200px;
+
+
+}
+.cont03 .main-text .text {
+}
+.cont03 #cont03-slider {
+  background-color: #bb8383; width: 100%; height: 720px;
+  position: absolute; bottom: 0; left: 0;
+}
 .cont03 .banner {}
+  /* //cont03 */
 
 /* //#contents */
 
