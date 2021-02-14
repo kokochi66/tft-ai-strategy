@@ -90,4 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if(window.scrollY >= cont01.getBoundingClientRect().top) cont01.classList.add('display');
     if(window.scrollY >= cont02.getBoundingClientRect().top) cont02.classList.add('display');
   }); // 스크롤 이벤트
+
+  var cont03 = document.querySelector('#contents .cont03'),
+      cont03_slider = document.getElementById('cont03-slider'),
+      cont03_text = document.querySelectorAll('.cont03 .main-text .text'),
+      cont03_active_slide = document.querySelector('.cont03 .swiper-container .swiper-wrapper .swiper-slide-active'),
+      cont03_ban_item = document.querySelectorAll('.cont03 .banner .ban-item');
+  var cont03_swiper = new Swiper(cont03_slider, {
+    loop: true,
+  });
+  cont03_swiper.on('transitionEnd', function (e) {
+    cont03_active_slide = document.querySelector('.cont03 .swiper-container .swiper-wrapper .swiper-slide-active');
+    var data_index = cont03_active_slide.getAttribute('data-swiper-slide-index');
+    console.log(cont03_ban_item[data_index]);
+    cont03_text.forEach(elem => {
+      elem.classList.remove('active');
+    });
+    cont03_ban_item.forEach(elem => {
+      elem.classList.remove('active');
+    });
+    cont03_text[data_index].classList.add('active');
+    cont03_ban_item[data_index].classList.add('active');
+  }); // 슬라이드가 움직일 때 마다 텍스트 변경효과
+
+
 });
