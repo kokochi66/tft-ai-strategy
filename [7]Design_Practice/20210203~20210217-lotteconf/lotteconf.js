@@ -83,14 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }); // 슬라이드가 움직일 때 마다 텍스트 변경효과
 
   var cont02 = document.querySelector('#contents .cont02');
-  document.addEventListener('scroll', function(e){
-    if(window.scrollY != 0) {
-      header.classList.add('scroll');
-    } else header.classList.remove('scroll');
-    if(window.scrollY >= cont01.getBoundingClientRect().top) cont01.classList.add('display');
-    if(window.scrollY >= cont02.getBoundingClientRect().top) cont02.classList.add('display');
-  }); // 스크롤 이벤트
-
   var cont03 = document.querySelector('#contents .cont03'),
       cont03_slider = document.getElementById('cont03-slider'),
       cont03_text = document.querySelectorAll('.cont03 .main-text .text'),
@@ -113,5 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
     cont03_ban_item[data_index].classList.add('active');
   }); // 슬라이드가 움직일 때 마다 텍스트 변경효과
 
-
+  document.addEventListener('scroll', function(e){
+    if(window.scrollY != 0) {
+      header.classList.add('scroll');
+    } else header.classList.remove('scroll');
+    if(window.scrollY >= cont01.getBoundingClientRect().top+100) cont01.classList.add('display');
+    if(window.scrollY >= cont02.getBoundingClientRect().top+100) cont02.classList.add('display');
+    if(window.scrollY >= cont03.getBoundingClientRect().top+100) cont03.classList.add('display');
+  }); // 스크롤 이벤트
 });
