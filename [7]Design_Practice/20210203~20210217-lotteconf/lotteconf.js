@@ -105,6 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
     cont03_ban_item[data_index].classList.add('active');
   }); // 슬라이드가 움직일 때 마다 텍스트 변경효과
 
+  var cont04 = document.querySelector('#contents .cont04'),
+      cont04_slider = document.getElementById('cont04-slider'),
+      cont04_prev = document.querySelector('#contents #cont04-slider .prev'),
+      cont04_next = document.querySelector('#contents #cont04-slider .next');
+
+  var cont04_swiper = new Swiper(cont04_slider, {
+      navigation: {   // 버튼 사용자 지정
+      nextEl: cont04_next,
+      prevEl: cont04_prev,
+    },
+  });
   document.addEventListener('scroll', function(e){
     if(window.scrollY != 0) {
       header.classList.add('scroll');
