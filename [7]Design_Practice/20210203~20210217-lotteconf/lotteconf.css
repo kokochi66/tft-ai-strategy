@@ -462,8 +462,37 @@ body {background-color: #ffffff;}
 
 
 #footer {height: 190px; background-color: #151515; border-top: 1px solid #fff;}
-#footer .line {height: 75px; width: 100%; border-bottom: 1px solid #333;}
-#footer .copyright {height: 115px; width: 100%;}
+#footer .line {
+  height: 75px; width: 1600px; margin: 0 auto; position: relative;
+}
+#footer .line .title {
+  color: #fff; font-size: 25px; position: absolute; top: 50%; left: 20px;
+  transform: translateY(-50%);
+}
+#footer .line ul {
+  top: 50%; left: 50%; transform: translate(-50%,-50%); position: absolute;
+}
+#footer .line ul li {float: left; color: #fff; margin-right: 25px; font-size: 16px;}
+#footer .line ul li.trans {color: #8f8f8f;}
+#footer .line .family_site {
+  position: absolute; top: 50%; right: 20px; transform: translateY(-50%);
+  color: #fff; width: 216px; height: 100%; line-height: 75px;
+  border-left: 1px solid #333; border-right: 1px solid #333;
+  padding: 0 20px; box-sizing: border-box; font-size: 18px;
+}
+#footer .line .family_site .bar:nth-child(1) {
+  width: 15px; background-color: #fff; height: 1px; position: absolute;
+  top: 50%; right: 15px; transform: translateY(-50%);
+}
+#footer .line .family_site .bar:nth-child(2) {
+  width: 1px; background-color: #fff; height: 15px; position: absolute;
+  top: 50%; right: 22.5px; transform: translateY(-50%);
+}
+#footer .copyright {height: 115px; width: 100%; border-top: 1px solid #333;}
+#footer .copyright .text {
+  color: #333; position: absolute; left: 50%; transform: translateX(-50%);
+  top: 20px;
+}
 
 
 
