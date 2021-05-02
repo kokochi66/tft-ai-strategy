@@ -11,3 +11,11 @@
     src: url(../fonts/GyeongGi.ttf);
     font-family: 'GyeongGi';
 }
+@font-face {
+    src: url(../fonts/yanol_Bold.ttf);
+    font-family: 'yanol_bold';
+}
+@font-face {
+    src: url(../fonts/yanol_Regular.ttf);
+    font-family: 'yanold_reg';
+}
