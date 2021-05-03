@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-* {background-color: #fff; font-family: 'yanol_bold';}
+* {font-family: 'yanol_bold';}
 
 
 #wrap {}
@@ -11,8 +11,10 @@
 /* 헤더 */
 #header {
   position: fixed; width: 100%; background-color: transparent;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1); top: -105px; left: 0;
+  transition: top 1.5s;
 }
+#header.active {top: 0;}
 #header .header {width: 1080px; height: 105px; margin: 0 auto; position: relative;}
 #header .header > div {height: 100%;  float: left;  position: relative;}
 #header .header .title {width: 15%;}
@@ -37,7 +39,26 @@
   top: 50%; right: 0; transform: translateY(-50%);
 }
 #header .header .utils ul li {
-  float: left; margin-left: 20px; cursor: pointer;
+  float: left; margin-left: 35px; cursor: pointer; text-align: center;
+  position: relative;
+}
+#header .header .utils ul li i {font-size: 25px; display: block;}
+#header .header .utils ul li span {
+  display: block; position: absolute; top: 33px; left: 50%;
+  transform: translate(-50%, 5px); width: 50px; font-size: 14px;
+  background-color: #e8e8e8; color: #868686; border-radius: 10px;
+  opacity: 0;  transition: all .3s ease;
+}
+#header .header .utils ul li span::after {
+  content: ''; position: absolute; top: -5px; left: 50%;
+  transform: translateX(-50%);
+  border-top:0px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #e8e8e8;
+}
+#header .header .utils ul li:hover span {
+  opacity: 1; transform: translate(-50%, 0);
 }
 /* //헤더 */
 
