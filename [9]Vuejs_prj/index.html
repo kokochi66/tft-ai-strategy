@@ -38,6 +38,7 @@
                 <li class="sidebar-brand"><a href="#page-top">메인화면</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
                 <li class="sidebar-nav-item"><a href="#vue3-5">Vue.js 3-5</a></li>
+                <li class="sidebar-nav-item"><a href="#vue6-8">Vue.js 6-8</a></li>
                 <li class="sidebar-nav-item"><a href="#services">Services</a></li>
                 <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
                 <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
@@ -65,11 +66,11 @@
         </script>
 
         
-        <section class="content-section bg-light border-bottom" id="vue3-5">
+        <section class="content-section bg-light" id="vue3-5">
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <!-- 3강: 데이터 바인딩 https://www.youtube.com/watch?v=MQQGlUM0uKM&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=3 -->
-                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0 mb-md-10">
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0 mb-md-10 border-end border-2 border-md-0">
                         <h2 class="mb-5 fs-5">{{ vue3.title }}</h2>
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" 
@@ -78,22 +79,20 @@
                         </div>
                     </div>
                     <!-- 4강 이벤트 https://www.youtube.com/watch?v=tYBIdgZrUKM&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=4  
-                    이벤트 핸들링 : https://kr.vuejs.org/v2/guide/events.html-->
-                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
+                    이벤트 핸들링 : https://kr.vuejs.org/v2/guide/events.html  -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10 border-end border-2 border-md-0">
                         <h2 class="mb-5 fs-5">{{ vue4.title }}</h2>
                         <form v-on:submit.prevent="Vue4_submit">
                             <input type="text" class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" v-model="vue4.inputData">
                             <input type="submit" value="보내기" class="btn btn-secondary btn-lg">
                         </form>
-                        
                     </div>
+                    <!-- 5강 데이터 양방향 바인딩 https://www.youtube.com/watch?v=m4Y5xMM0j4M&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=5 
+                    폼 바인딩 : https://kr.vuejs.org/v2/guide/forms.html -->
                     <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
                         <h2 class="mb-5 fs-5">{{ vue5.title }}</h2>
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" 
-                            style="height: 100px" :value="vue5.inputData"></textarea>
-                            <label for="floatingTextarea2">Comments</label>
-                        </div>
+                        <input type="text" class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" v-model="vue5.inputData">
+                        <p class="lead">{{ vue5.inputData }}</p>
                     </div>
 
                     <a class="btn btn-dark btn-xl col-lg-3 mt-5" :href="nextLink">{{ next }}</a>
@@ -113,11 +112,11 @@
                         inputData : ''
                     },
                     vue5: {
-                        title:'b',
-                        inputData: 'b'
+                        title:'Vue.js  5강 데이터 양방향 바인딩',
+                        inputData: ''
                     },
                     next: '다음으로',
-                    nextLink: '#services'
+                    nextLink: '#vue6-8'
                 },
                 methods: {
                     Vue4_submit() {
@@ -127,8 +126,87 @@
             })
         </script>
 
+        <section class="content-section bg-info" id="vue6-8">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center ">
+                    <!-- 6강: Computed속성 https://www.youtube.com/watch?v=G9gKCPrCdVo&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=6 
+                    Computed와 Watch속성 : https://kr.vuejs.org/v2/guide/computed.html 
+                    이미 캐싱이 된채로 값이 적용되는 Computed 속성 (함수는 적용할때마다 새로 계산한다.) -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0 mb-md-10 border-md-0 border-end border-2">
+                        <h2 class="mb-5 fs-5">{{ vue6.title }}</h2>
+                        <p class="lead">{{ reverseString }}</p>
+                        <button @click="changeMessage" class="btn btn-secondary btn-lg">글자변환</button>
+                    </div>
+                    <!-- 7강 : Watch 속성 https://www.youtube.com/watch?v=aMfVABEHyQk&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=7-->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10 border-end border-2  border-md-0">
+                        <h2 class="mb-5 fs-5">{{ vue7.title }}</h2>
+                        <p class="lead">{{ vue7_inputData }}</p>
+                        <button @click="changeMessage2" class="btn btn-secondary btn-lg">글자변환</button>
+                    </div>
+                    <!-- 8강 클래스, 스타일 바인딩 https://www.youtube.com/watch?v=0OYoPxehX-4&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=8
+                    클래스와 스타일 바인딩 : https://kr.vuejs.org/v2/guide/class-and-style.html -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue8.title }}</h2>
+                        <p class="lead strong" :class="{ 'text-danger':vue8.isRed }"
+                        :style="{fontWeight: vue8.isBold ? 'bold' : '300'}">{{ vue8.inputData }}</p>
+                        <button @click="changeRed" class="btn btn-secondary btn-lg">색변환</button>
+                        <button @click="changeBold" class="btn btn-secondary btn-lg">굵기변환</button>
+                    </div>
+
+                    <a class="btn btn-dark btn-xl col-lg-3 mt-5" :href="nextLink">{{ next }}</a>
+                </div>
+            </div>
+        </section>
+        <script>
+            new Vue({
+                el: "#vue6-8",
+                data: {
+                    vue6: {
+                        title : 'Vue.js 6강 Computed 속성',
+                        inputData : 'korchi',
+                    },
+                    vue7: {
+                        title: 'Vue.js 7강 Watch 속성',
+                    },
+                    vue7_inputData: '쵸비',
+                    vue8: {
+                        title:'Vue.js 8강 클래스와 스타일 바인딩',
+                        inputData: 'kokochikochi',
+                        isRed: false,
+                        isBold: false
+                    },
+                    next: '다음으로',
+                    nextLink: '#services'
+                },
+                methods: {
+                    changeMessage() {
+                        this.vue6.inputData = this.vue6.inputData === 'korchi' ? '꼬꼬치꼬치' : 'korchi';
+                    },
+                    changeMessage2() {
+                        this.vue7_inputData = this.vue7_inputData === '쵸비' ? '쇼메이커' : '쵸비';
+                    },
+                    changeRed() {
+                        this.vue8.isRed = !this.vue8.isRed
+                    },
+                    changeBold() {
+                        this.vue8.isBold = !this.vue8.isBold
+                    }
+                },
+                computed: {
+                    reverseString() {
+                        return this.vue6.inputData.split('').reverse().join('')
+                    }
+                },
+                watch: {
+                    vue7_inputData: function(oldVal, newVal) {
+                        console.log(oldVal, newVal)
+                    }
+                }
+            })
+        </script>
+
         <!-- Services-->
-        <section class="content-section bg-primary text-white text-center" id="services">
+        <section class="content-section bg-success text-white text-center" id="services">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
                     <h3 class="text-secondary mb-0">Services</h3>
