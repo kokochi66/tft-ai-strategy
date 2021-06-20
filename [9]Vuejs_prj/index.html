@@ -37,7 +37,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">메인화면</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                <li class="sidebar-nav-item"><a href="#vue3-5">Vue.js 3-5</a></li>
                 <li class="sidebar-nav-item"><a href="#services">Services</a></li>
                 <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
                 <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
@@ -48,7 +48,7 @@
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1"> {{ title }} </h1>
                 <h3 class="mb-5"><em>{{ subTitle }}</em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">{{ moreBtn }}</a>
+                <a class="btn btn-primary btn-xl" v-bind:href="next">{{ moreBtn }}</a>
             </div>
         </header>
         <!-- .masthead 부분의 타이틀 내용 Vue.js의 데이터로 처리하기 -->
@@ -58,27 +58,75 @@
                 data: {
                     title: 'Vue.js StudyFilm for kokochi',
                     subTitle: '부트스트랩  무료 탬플릿에서 Vue.js 예제 작성하기',
-                    moreBtn: '다음으로'
+                    moreBtn: '다음으로',
+                    next: '#vue3-5'
                 }
             });
         </script>
 
-        <!-- About-->
-        <section class="content-section bg-light" id="about">
+        
+        <section class="content-section bg-light border-bottom" id="vue3-5">
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10">
-                        <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                        <p class="lead mb-5">
-                            This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-                            <a href="https://unsplash.com/">Unsplash</a>
-                            !
-                        </p>
-                        <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+                    <!-- 3강: 데이터 바인딩 https://www.youtube.com/watch?v=MQQGlUM0uKM&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=3 -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0 mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue3.title }}</h2>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" 
+                            style="height: 100px" :value="vue3.inputData"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                        </div>
                     </div>
+                    <!-- 4강 이벤트 https://www.youtube.com/watch?v=tYBIdgZrUKM&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=4  
+                    이벤트 핸들링 : https://kr.vuejs.org/v2/guide/events.html-->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue4.title }}</h2>
+                        <form v-on:submit.prevent="Vue4_submit">
+                            <input type="text" class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" v-model="vue4.inputData">
+                            <input type="submit" value="보내기" class="btn btn-secondary btn-lg">
+                        </form>
+                        
+                    </div>
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue5.title }}</h2>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" 
+                            style="height: 100px" :value="vue5.inputData"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-dark btn-xl col-lg-3 mt-5" :href="nextLink">{{ next }}</a>
                 </div>
             </div>
         </section>
+        <script>
+            new Vue({
+                el: "#vue3-5",
+                data: {
+                    vue3: {
+                        title : 'Vue.js 3강 데이터 바인딩',
+                        inputData : 'input value 안에 원하는 값을 data binding을 이용해서 넣어준다.  v-bind:나, :만 넣어줘도  적용된다.',
+                    },
+                    vue4: {
+                        title: 'Vue.js 4강 이벤트 ',
+                        inputData : ''
+                    },
+                    vue5: {
+                        title:'b',
+                        inputData: 'b'
+                    },
+                    next: '다음으로',
+                    nextLink: '#services'
+                },
+                methods: {
+                    Vue4_submit() {
+                        alert(this.vue4.inputData)
+                    }
+                }
+            })
+        </script>
+
         <!-- Services-->
         <section class="content-section bg-primary text-white text-center" id="services">
             <div class="container px-4 px-lg-5">
