@@ -65,7 +65,7 @@
             });
         </script>
 
-        
+        <!-- vue3-5 -->
         <section class="content-section bg-light" id="vue3-5">
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -126,6 +126,7 @@
             })
         </script>
 
+        <!-- vue6-8 -->
         <section class="content-section bg-info" id="vue6-8">
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center ">
@@ -176,7 +177,7 @@
                         isBold: false
                     },
                     next: '다음으로',
-                    nextLink: '#services'
+                    nextLink: '#vue9-11'
                 },
                 methods: {
                     changeMessage() {
@@ -205,8 +206,117 @@
             })
         </script>
 
+        <!-- vue9-12 -->
+        <section class="content-section bg-success" id="vue9-11">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center ">
+                    <!-- 9강 v-if와 v-show https://www.youtube.com/watch?v=1L4Du55Albs&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=9 -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0 mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue9.title }}</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="lead mb-3" v-if="vue9.ifValue === 0">젠지</div>
+                                <div class="lead mb-3" v-else-if="vue9.ifValue === 1">담원기아</div>
+                                <div class="lead mb-3" v-else-if="vue9.ifValue === 2">농심</div>
+                                <div class="lead mb-3" v-else-if="vue9.ifValue === 3">아프리카</div>
+                                <div class="lead mb-3" v-else>T1</div>
+                                <button @click="vue9_addValue" class="btn btn-lg btn-light">increase</button>
+                            </div>
+                            <div class="col-6">
+                                <div class="lead mb-3" v-show="vue9.show">The Data Showon</div>
+                                <button @click="vue9_show" class="btn btn-lg btn-info">Show</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 10강 v-for 리스트 렌더링 https://www.youtube.com/watch?v=HAegTAEW1Y0&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=10 -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue10.title }}</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <div v-for="(person, index) in vue10.people" :key="person.id">
+                                    {{ person.name }} {{ index }}
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div v-for="(person, index) in vue10.people" :key="person.id">
+                                    {{ person.age }} {{ index }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 12강 Vue 컴포넌트 https://www.youtube.com/watch?v=CfJhtoeyi4E&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=12 
+                    컴포넌트 : https://kr.vuejs.org/v2/guide/components.html -->
+                    <div class="col-lg-4 col-md-10 mb-5 mb-lg-0  mb-md-10">
+                        <h2 class="mb-5 fs-5">{{ vue12.title }}</h2>
+                        <vue12-component></vue12-component>
+                    </div>
+
+                    <a class="btn btn-dark btn-xl col-lg-3 mt-5" :href="nextLink">{{ next }}</a>
+                </div>
+            </div>
+        </section>
+        <script>
+            Vue.component('vue12-component', {
+                template: `
+                    <div class="row">
+                        <div class="col-6"> {{ name }} </div>    
+                        <div class="col-6"> {{ key }} </div>    
+                    </div>
+                `,
+                data() {
+                    return {
+                        name: 'kokochi',
+                        key: 'this is component'
+                    }
+                }
+            });
+            new Vue({
+                el: "#vue9-11",
+                data: {
+                    vue9: {
+                        title : 'Vue.js 9강 v-if와 v-show',
+                        ifValue : 0,
+                        show : true
+                    },
+                    vue10: {
+                        title : 'Vue.js 10강 v-for 리스트 렌더링',
+                        people: [
+                            {name: 'a', age: 20},
+                            {name: 'b', age: 21},
+                            {name: 'c', age: 22},
+                            {name: 'd', age: 23}
+                        ],
+                    },
+                    vue12: {
+                        title: 'Vue.js 12강 Vue 컴포넌트'
+                    },
+                   
+                    next: '다음으로',
+                    nextLink: '#services'
+                },
+                methods: {
+                    vue9_addValue() {
+                        this.vue9.ifValue = this.vue9.ifValue > 3 ? 0 : this.vue9.ifValue+1;
+                    },
+                    vue9_show() {
+                        this.vue9.show = !this.vue9.show;
+                    }
+                },
+                computed: {
+                    reverseString() {
+                        return this.vue6.inputData.split('').reverse().join('')
+                    }
+                },
+                watch: {
+                    vue7_inputData: function(oldVal, newVal) {
+                        console.log(oldVal, newVal)
+                    }
+                }
+            })
+        </script>
+
         <!-- Services-->
-        <section class="content-section bg-success text-white text-center" id="services">
+        <section class="content-section bg-primary text-white text-center" id="services">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
                     <h3 class="text-secondary mb-0">Services</h3>
