@@ -6,7 +6,7 @@
     <li><a href="https://kokochi66.github.io/StudyFilm_FrontEnd_kokochi/[2]Web_Responsive/layout.html">반응형 사이트 따라만들기</a></li>
     <li><a href="https://kokochi66.github.io/StudyFilm_FrontEnd_kokochi/[3]Web_Corporate/index00.html">메가박스 사이트 따라만들기</a></li>
     <li><a href="https://kokochi66.github.io/StudyFilm_FrontEnd_kokochi/[7]Design_Practice/20210203~20210217-lotteconf/lotteconf.html">롯데제과 사이트 따라만들기</a></li>
-    <li><a href="https://kokochi66.github.io/StudyFilm_FrontEnd_kokochi/[9]Vuejs_prj/index.html">Vue.js 스터디 필름</a></li>
+    <li><a href="./[9]Vuejs_prj/vue_study1/readme.md">Vue.js 스터디 필름</a></li>
 </ol>
 
 <h2 id="layout">HTML & CSS 기본 레이아웃 예제</h2>
