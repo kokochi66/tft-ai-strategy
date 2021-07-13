@@ -24,37 +24,71 @@
         </header>
         <main>
             <div class="row">
-                <div class="col">
-                    <figure>
-                        <img v-bind:src="product.image" width="300px"> <!-- 이미지는 v-bind:src를 통해서 링크를 적용합니다. -->
-                    </figure>
+                <div class="nav navbar-nav navbar-right cart">
+                    <button type="button" class="btn btn-default btn-lg" v-on:click="showCheckout">
+                        <span class="glypicon glyphicon-shopping-cart">{{ cartItemCount }}</span>
+                        <span>체크아웃</span>
+                    </button>
                 </div>
-                <div class="col">
-                    <h2 v-text="product.title"></h2>
-                    <p v-html="product.description"></p>
-                    <p class="price"> {{product.price | formatPrice}} </p>
+                <div v-if="showProduct">
+                    <div class="col">
+                        <figure>
+                            <img v-bind:src="product.image" width="300px"> 
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <h2 v-text="product.title"></h2>
+                        <p v-html="product.description"></p>
+                        <p class="price"> {{product.price | formatPrice}} </p>
+                    </div>
+                    <!-- v-on:click을 이용해서 이벤트를 바인딩하여 적용할 수 있다. 
+                        v-show를 이용해서 특정 조건이 존재할 때에만 버튼이 존재하도록 바인딩해준다.-->
+                    <!-- <button class="btn btn-primary btn-lg" v-on:click="addToCart" v-show="canAddToCart">장바구니 담기</button>  -->
+    
+                    <!-- 조건을 달아서, 조건을 달성했을 때에만 버튼이 동작하도록 해준다. 보다 시각적으로 도움이 된다. 
+                    v-else는 반드시 붙어있어야한다.-->
+                    <button class="btn btn-primary btn-lg" v-on:click="addToCart" v-if="canAddToCart">장바구니 담기</button> 
+                    <button class="btn btn-primary btn-lg" v-on:click="addToCart" disabled="true" v-else>장바구니 담기</button> 
+    
+    
+                    
+                    <!-- 계산되는 속성을 표시하는 데이터 바인딩을 보여준다. -->
+                    <h2>{{ cartItemCount }} </h2>
                 </div>
+                <div v-else></div>
+
+                
             </div>
         </main>
 
     </div>
     <script>
-        // Vue는 new Vue()의 형태의 생성자를 이용하여 선언합니다.
         var store = new Vue({
             el: '#app',
-            data: { // Vue 옵션에 데이터 객체를 추가하여 데이터를 표시할 수 있습니다.
-                sitename: "Vue.js를 실습하는 페이지",
+            data: {
+                sitename: "Vue.js 애완용품샵",
+                showProduct: true,
                 product: {
-                    id: 1,
-                    title: "첫번째 상품",
-                    description: "<em>첫번째 상품</em>에 대한 설명입니다.",
-                    price: 2000, // 우리는 상품의 가격이 2000이 아닌 $20.00 으로 표시되길 원한다.
-                    image: "assets/images/product_image1.jpg"
+                    id: 1001,
+                    title: "고양이 사료, 25파운드",
+                    description: "당신의 고양이를 위한 <em>거부할 수 없는</em>, 유기농 25파운드 사료입니다..",
+                    price: 2000, 
+                    image: "assets/images/product_image1.jpg",
+                    availableInventory: 5 // 고정 된 값을 지속적으로 비교해줌을 이용해서, 상품의 양을 제한하는 기능을 구현한다.
+                },
+                cart: []
+            },
+            methods: {
+                addToCart: function() { // 메서드 객체를 이용해서 함수를 선언한다.
+                    this.cart.push(this.product.id);
+                },
+                showCheckout() { // function 없이도 바로 함수를 선언할 수 있다.
+                    this.showProduct = !this.showProduct;
                 }
             },
             filters: {
                 formatPrice: function(price) {
-                    if(!parseInt(price)) return "error"; // 입력된 값이 정수가 아니라면 error 문자열을 반환합니다.
+                    if(!parseInt(price)) return "error"; 
                     if(price > 99999) {
                         var priceString = (price / 100).toFixed(2);
                         var priceArray = priceString.split("").reverse();
@@ -68,6 +102,14 @@
                         return "$"+(price/100).toFixed(2);
                     }
                 }
+            },
+            computed: {
+                cartItemCount: function() {
+                    return this.cart.length || '';
+                },
+                canAddToCart: function() {
+                    return this.product.availableInventory > this.cartItemCount;
+                }   // 비교값을 실시간으로 확인해준다. 최댓값에 도달했다면, 숫자가 더이상 올라가지 않도록 막아야한다.
             }
         });
 
