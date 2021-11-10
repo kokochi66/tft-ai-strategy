@@ -247,7 +247,7 @@ body {background-color: #ffffff;}
   font-size: 100px; position: absolute; top: 60%; left: 60%;
   transform: translate(-50%, -50%); cursor: pointer;
 }
-.cont01 .right {height: 100%; width: 68%; float: left; transition: all .5s;}
+.cont01 .right {height: 100%; width: 68%; float: left; transition: all .5s;overflow: hidden;}
 .cont01 .right .slider .slides video {height: 100%;}
   /* //cont01 */
 

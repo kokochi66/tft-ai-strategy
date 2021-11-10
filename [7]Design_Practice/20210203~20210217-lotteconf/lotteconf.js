@@ -72,6 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
       nextEl: cont01_next,
       prevEl: cont01_prev,
     },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true // 쓸어 넘기거나 버튼 클릭 시 자동 슬라이드 정지.
+    },
   }); // cont01의 Swiper
   cont01_swiper.on('transitionEnd', function (e) {
     cont01_active_slide = document.querySelector('#contents .cont01 .right .slider .swiper-slide-active');
@@ -81,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     cont01_text_item[data_index].classList.add('active');
   }); // 슬라이드가 움직일 때 마다 텍스트 변경효과
-
+  cont01_slides_video.forEach(elem => {elem.play()})
   var cont02 = document.querySelector('#contents .cont02');
   var cont03 = document.querySelector('#contents .cont03'),
       cont03_slider = document.getElementById('cont03-slider'),
