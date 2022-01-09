@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #eee;
+        }
+        .video {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Video</h1>
+<video class="video" src="./video/v.mp4" autoplay muted loop></video>
+<canvas class="canvas" width="600" height="400"></canvas>
+<div class="control">
+    <button class="btn-color" data-color="red">R</button>
+    <button class="btn-color" data-color="green">G</button>
+    <button class="btn-color" data-color="blue">B</button>
+    <button class="btn-color">reset</button>
+</div>
+
+<script>
+    const canvas = document.querySelector('.canvas');
+    const ctx = canvas.getContext('2d');
+
+    const videoElem = document.querySelector('.video');
+    videoElem.addEventListener('canplaythrough', render);
+
+    const control = document.querySelector('.control');
+
+    let imageData;
+    let colorValue;
+
+    function render() {
+        ctx.drawImage(videoElem, 0, 0, 600, 400);
+        imageData = ctx.getImageData(0,0,600,400);
+        leng = imageData.data.length / 4;
+
+        for(let i=0;i<leng;i++) {
+            switch(colorValue) {
+                case 'red':
+                    imageData.data[i*4+0] = 255;
+                    break;
+                case 'green':
+                    imageData.data[i*4+1] = 255;
+                    break;
+                case  'blue':
+                    imageData.data[i*4+2] = 255;
+                    break;
+            }
+        }
+        ctx.putImageData(imageData,0,0);
+        requestAnimationFrame(render);
+    }
+
+    control.addEventListener('click', (e) => {
+        colorValue = e.target.getAttribute('data-color');
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

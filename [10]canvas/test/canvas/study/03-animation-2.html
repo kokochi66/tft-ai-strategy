@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<canvas class="canvas" width="600" height="400"></canvas>
+
+<script>
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+
+    let xPos = 10;
+    let yPos = 150;
+
+    function draw() {
+        context.clearRect(xPos-15,yPos-15, 30, 30);
+        context.beginPath();
+        context.arc(xPos, yPos, 10, 0, Math.PI*2, false);
+        context.fill()
+        xPos+=3;
+        // requestAnimationFrame(draw);
+    }
+
+    timerId = setInterval(draw, 20);
+    canvas.addEventListener('click', () => {
+        clearInterval(timerId);
+    })
+
+</script>
+</body>
+</html>

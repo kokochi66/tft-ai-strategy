@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<canvas class="canvas" width="600" height="400"></canvas>
+
+<script>
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+    console.log(context);
+
+    // fillRect : 사각형 만들기
+    // clearRect : 사각형 지우기
+    // strokeRect : 속이 빈 사각형 만들기
+
+    context.fillStyle = 'rgba(0,0,0,0.5)';
+    context.fillRect(0,0, 150, 150);
+
+    context.fillStyle = '#ff0000';
+    context.fillRect(0, 0, 100, 100);
+
+    context.clearRect(50,50,50,50);
+
+    context.strokeRect(200, 200, 80, 80);
+
+</script>
+</body>
+</html>

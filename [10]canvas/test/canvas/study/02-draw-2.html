@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<canvas class="canvas" width="600" height="400"></canvas>
+
+<script>
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+
+    // beginPath
+    // moveTo
+    // lineTo
+    // closePath
+    context.beginPath();        // 경로 지정을 시작함
+    context.moveTo(100, 100);   // 시작 경로 위치를 이동
+    context.lineTo(300, 200);   // 끝 경로를 지정
+    context.stroke();           // 경로에 선을 그음
+    context.closePath();        // 경로 지정을 끝냄
+
+</script>
+</body>
+</html>

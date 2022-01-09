@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #eee;
+        }
+
+        #resultImg {
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas class="canvas" width="600" height="400"></canvas>
+<div class="control">
+    <button class="color-btn" data-color="black">black</button>
+    <button class="color-btn" data-color="red">red</button>
+    <button class="color-btn" data-color="blue">blue</button>
+    <button class="color-btn" data-color="green">green</button>
+    <button class="image-btn" data-src="./images/rabbit_normal.png">image</button>
+    <button class="save-btn">save</button>
+</div>
+<div id="resultImg"></div>
+
+<script>
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+    const control = document.querySelector('.control');
+
+    let drawingFlag = false;
+    let colorValue = "black";
+    let imageValue = "";
+    let brush = "pen";
+
+    function setColor(e) {
+        // console.log(e.target)
+        if(e.target.classList.contains('color-btn')) {
+            brush = "pen";
+            colorValue = e.target.getAttribute('data-color')
+        } else if(e.target.classList.contains('image-btn')) {
+            brush = "image";
+            imageValue = new Image();
+            imageValue.src = e.target.getAttribute('data-src');
+        }
+
+    }
+
+    function moveHandler(e) {
+        if(!drawingFlag) return;
+        if(brush === "pen") {
+            context.beginPath()
+            context.fillStyle = colorValue;
+            context.arc(e.layerX, e.layerY, 5, 0, Math.PI*2, false);
+            context.fill();
+        }
+        else if(brush === 'image') {
+            context.drawImage(imageValue, e.layerX-25, e.layerY-25, 50, 50);
+        }
+
+    }
+
+    function upHandler() {
+        drawingFlag = false;
+
+    }
+
+    function downHandler() {
+        drawingFlag = true;
+    }
+
+    function saveImg() {
+        let url = canvas.toDataURL('image/png');
+        let img = document.createElement('img')
+        img.src = url;
+        document.getElementById('resultImg').appendChild(img);
+    }
+
+    // canvas.addEventListener('click', clickHandler)
+    canvas.addEventListener('mousedown', downHandler);
+    canvas.addEventListener('mousemove', moveHandler);
+    canvas.addEventListener('mouseup', upHandler);
+    document.querySelector('.save-btn').addEventListener('click', saveImg);
+
+    control.addEventListener('click', setColor);
+
+
+</script>
+</body>
+</html>
