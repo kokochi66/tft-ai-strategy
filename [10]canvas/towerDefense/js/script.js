@@ -196,12 +196,27 @@ function setCombDefenders() {
     }
 }
 function combDefenders(e) {
+    console.log('combDefender')
     let idx = e.target.getAttribute('data-index');
     let material = e.target.getAttribute('data-material');
     let result = e.target.getAttribute('data-result');
+    let posX = defenders[idx].x;
+    let posY = defenders[idx].y;
     for(let i=0;i<defenders.length;i++) {
-        if(defenders[i].name === material && i !== idx) {
-
+        if(defenders[i].name === material && i !== Number(idx)) {
+            console.log(defenders[i], i, idx);
+            console.log(material)
+            if(idx < i) {
+                defenders.splice(i, 1);
+                defenders.splice(idx, 1);
+            }
+            else {
+                defenders.splice(idx, 1);
+                defenders.splice(i, 1);
+            }
+            defenders.push(new Defender(posX, posY, df[result].name, df[result].color, df[result].power
+                , df[result].attackSpeed, df[result].projectileSpeed, df[result].comb));
+            return;
         }
     }
 }
@@ -309,17 +324,19 @@ canvas.addEventListener('click', function() {
             statusInfoBox.projectileSpeed.innerHTML = '투사체속도 : ' + defenders[i].projectileSpeed;
             statusInfoBox.combiSet.innerHTML = '';
             for(let j=0;j<defenders[i].comb.length;j++) {
+                console.log(defenders[i].comb[j])
                 let combiBox = document.createElement('div')
                 combiBox.className = 'combi';
                 combiBox.innerHTML = `
                     <div class="combi">
-                        <div class="combi-material">${df1[defenders[i].comb[j].material].name}</div>
-                        <div class="combi-result" data-index="${i}" data-material="${defenders[i].name}" data-result="${defenders[i].comb[j].result}">${df2[defenders[i].comb[j].result].name}</div>
+                        <div class="combi-material" style="background: ${df[defenders[i].comb[j].material].color}">${df[defenders[i].comb[j].material].name}</div>
+                        <div class="combi-result" data-index="${i}" data-material="${df[defenders[i].comb[j].material].name}"  style="background: ${df[defenders[i].comb[j].result].color}"
+                        data-result="${defenders[i].comb[j].result}">${df[defenders[i].comb[j].result].name}</div>
                     </div>
                 `;
                 statusInfoBox.combiSet.appendChild(combiBox);
             }
-
+            setCombDefenders();
             controlClick(1)
             return;
         }   // 조합 버튼
@@ -333,8 +350,8 @@ canvas.addEventListener('click', function() {
     if(numberOfResources >= defenderCost) {
         // defenders.push(new Defender(gridPositionX, gridPositionY, 'A','#113992FF', 20, 10, 20))
         let rd = Math.floor(Math.random() * 5); // 1성 랜덤 타워 건설
-        defenders.push(new Defender(gridPositionX, gridPositionY, df1[rd].name, df1[rd].color, df1[rd].power
-            , df1[rd].attackSpeed, df1[rd].projectileSpeed, df1[rd].comb));
+        defenders.push(new Defender(gridPositionX, gridPositionY, df[rd].name, df[rd].color, df[rd].power
+            , df[rd].attackSpeed, df[rd].projectileSpeed, df[rd].comb));
         numberOfResources -= defenderCost;
     }       // 타워를 설치하고, 자원 깎기
 
