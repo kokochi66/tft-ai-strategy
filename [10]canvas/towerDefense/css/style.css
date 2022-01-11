@@ -1,13 +1,115 @@
+* {
+    color: #fff;
+    box-sizing: border-box;
+}
 body {
     background-color: black;
 }
 
+#wrap #controller > div.displayNone {
+    display: none;
+}
+
+#wrap {
+    width: 1000px;
+    height: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
 #canvas1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     width: 800px;
     height: 650px;
     background-color: #eee;
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 20px auto;
+    display: block;
+}
+
+#controller {
+    width: 1000px;
+    height: 200px;
+    border: 1px solid #fff;
+    margin-top: 10px;
+
+}
+
+
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 47px 20px;
+}
+#main > div {
+    padding: 20px 40px;
+    margin: 20px 30px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+#main > div:hover {
+    background-color: #444444;
+}
+
+
+#status {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding: 20px 0;
+}
+#status .imgDef {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #fff;
+    margin: 5px 25px;
+}
+#status .info {
+}
+#status .info > div {
+    color: #b7b7b7;
+    padding: 5px 30px;
+}
+#status .combi-set {display: flex;}
+#status .combi {
+    width: 50px;
+    height: 100%;
+    margin: 0 10px;
+}
+#status .combi .combi-material {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    position: relative;
+}
+#status .combi .combi-material:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+#status .combi .combi-result {
+    margin-top: 57px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    position: relative;
+    cursor:pointer;
+}
+#status .exit {
+    font-weight: bold;
+    font-size: 25px;
+    color: #ccc;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
 }

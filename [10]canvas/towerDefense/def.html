@@ -6,18 +6,36 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TowerDefense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<style>
-    * {
-        color: #672c22;
-    }
-</style>
 <body>
-    <canvas id="canvas1"></canvas>
+    <div id="wrap">
+        <canvas id="canvas1"></canvas>
+        <div id="controller">
+            <div id="main">
+                <div class="start">게임시작</div>
+                <div class="nextInfo">다음 라운드 정보</div>
+                <div class="end">끝내기</div>
+            </div>
+            <div id="status" class="displayNone">
+                <div class="imgDef"></div>
+                <div class="info">
+                    <div class="name">이름 : A</div>
+                    <div class="power">공격력 : 20</div>
+                    <div class="attackSpeed">공격속도 : 100</div>
+                    <div class="projectileSpeed">투사체속도 : 10</div>
+                </div>
+                <div class="combi-set">
+                </div>
 
-    <button id="btn-add-boss">add boss</button>
 
+                <div class="exit">X</div>
+            </div>
+        </div>
+    </div>
     <script src="./js/func.js"></script>
     <script src="./js/script.js"></script>
 </body>
