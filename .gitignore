@@ -1,0 +1,3 @@
+train/
+test/
+trained_model.h5
